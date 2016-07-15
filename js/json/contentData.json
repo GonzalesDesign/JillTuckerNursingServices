@@ -1,0 +1,21 @@
+{
+	"GDSiteIntro": [
+		{
+			"title": "GDIntro",
+			"introTitle": "R.Lloyd  <br/> Gonzales",
+            "intoSubTitle": "Passionate about Arts, Designs & Coding",
+            "callout": "Scroll Down To See My Portfolio",
+			"logoTitleColumnPercent": "80",
+			"introImageColumnPercent": "100",
+			"images": [
+                {"imgName": "intro_00.jpg", "imgTitle": "Filipinas Painting", "imgDescription": "Image Description"},
+                {"imgName": "intro_01.jpg", "imgTitle": "Birdcage", "imgDescription": "Image Description"},
+                {"imgName": "intro_02.jpg", "imgTitle": "Chrysallis", "imgDescription": "Image Description"},
+                {"imgName": "intro_03.jpg", "imgTitle": "Melting Pot", "imgDescription": "Image Description"},
+                {"imgName": "intro_04.jpg", "imgTitle": "Speak", "imgDescription": "Image Description"}
+            ],
+			"codingTitle" : "Coding This Site",
+			"codingThisSite" : "This site is built mostly with Javascript code. Content are supplied from a JSON files. It's an experiment I wanted to do, to practice the new ES6. <br> The following libraries are used: jquery, bootstrap, youTube api and tweenmax for animation. Running on node.js, webpack modules, and babel transpiler. CSS are written in Sass SCSS. Here's a link to my <a href = 'https://github.com/GonzalesDesign/GDSite_2016'  target = '_blank'>github</a> repo. <br><br> <span class='closeCoding'>Close this pop-up.</span>"
+		}
+	]
+}

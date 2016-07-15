@@ -1,0 +1,704 @@
+/***********************************************
+* Project: Jill Tucker Nursing Services
+* Developer: rolandolloyd@gmail.com
+* Copyright © 2015 GonzalesDesign
+* Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
+* Module: SCSS to CSS
+***********************************************/
+$LightGrey: rgb(242, 242, 242);
+$Grey: Grey;
+$DarkGrey: rgb(27, 35, 36);
+$Red: Red;
+$YellowGreen: yellowGreen;
+$Orange: Orange;
+$Green: Green;
+$Cyanish: rgb(15, 152, 171);
+$Blueish: rgb(22, 87, 154);
+$Purple: Purple;
+$BackgroundColor: rgba(250, 250, 250, .5);
+
+$titleTopLeading: 40px;
+$titleBottomLeading: 0px; //20px;
+$paragTopLeading: 10px;
+$paragBottomLeading: 60px;
+$CopyLeading:150%;
+$CopyFontSize:1.2em;
+
+
+//font-family: 'Pathway Gothic One', sans-serif;
+//font-family: 'News Cycle', sans-serif;
+//font-family: 'Roboto', sans-serif;
+//font-family: 'Source Sans Pro', sans-serif;
+//font-family: 'Dosis', sans-serif;
+//font-family: 'Open Sans Condensed', sans-serif;
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: $CopyFontSize;
+    line-height: $CopyLeading;
+    color: $Grey;
+}
+
+.infoBanner{
+    width: 100%;
+    display: inline-block;
+    margin-top: 30px;
+    border: 0px solid $Green;
+}
+.contactInfo{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 1.2em;
+    color: $Blueish;
+    width: auto;
+    float: left;
+    vertical-align: middle;
+    border: 0px solid $Green;
+}
+.fbIcon{
+    height: 30px;
+    width: 30px;
+    float: right;
+    background: url("../images/fbLogo.jpg") center center no-repeat;
+    background-size : cover;
+    border: 0px solid $Green;
+}
+
+.mainContainer {
+  //width : 90%;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  // -webkit-box-shadow: 0px 0px 12px 3px rgba(25, 25, 25, 0.10);
+  // box-shadow: 0px 0px 20px 10px rgba(25, 25, 25, 0.10);
+  //background-color: #80d06b;
+  //float: left;
+  //border: 1px solid $Grey;
+}
+.landingPageContainer {
+  // font-family: "Merriweather", serif;
+  // font-weight: 300;
+  // font-size: $CopyFontSize
+  // margin-top: 10px;
+  // color: $Grey;
+  text-align: center;
+  border: 0px solid $Orange;
+}
+.landingPageClass{
+    margin-top: 30px;
+     p {
+         margin-top: 0px;
+     }
+}
+
+.logoContainerClassX {
+    height: auto;
+    //width: auto;
+    border: 1px solid $Orange;
+}
+.logoClass{
+    height: 150px;
+    width: 100%;
+    border: 0px solid $Orange;
+}
+.logoSubTitleClass{
+    width: 100%;
+    height: auto;
+    //font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 2.2em;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 90%;
+    color: $Cyanish;
+    margin-left: auto;
+    margin-right: auto;
+    top: -40px;
+    //margin-top: 10px;
+    //padding-top: 20px;
+    //padding-bottom: 30px;
+    position: relative;;
+    border: 0px solid $YellowGreen;
+}
+.logoAddressClass {
+    font-family: "Open-Sans", sans-serif;
+    font-weight: 300;
+    font-size: 1.4em;
+    list-style: 250%;
+    //padding-top: 10px;
+    //text-align: center;
+    /* width: 95%; */
+    margin-left: auto;
+    margin-right: auto;
+    //padding: 30px;
+    position: relative;
+    top: -34px;
+    border: 0px solid $Orange;
+}
+.landingPageDescription {
+    text-align: center;
+    width: 95%;
+    font-size: $CopyFontSize;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 20px;
+    border: 0px solid $Orange;
+}
+.introParag1 {
+  font-family: "DINAlternateBold", sans-serif;
+  font-weight: 600;
+  font-size: $CopyFontSize;
+  padding-top: 10px;
+  border: 0 solid $Orange;
+}
+.introParag2 {
+  font-family: "Open-Sans", sans-serif;
+  font-weight: 300;
+  font-size: $CopyFontSize;
+  padding-top: 10px;
+  border: 0 solid $Orange;
+}
+.menuNavContainerClass {
+  //width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  //background-color: $LightGrey;
+  border: 0px solid $Green;
+}
+.menuClass {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: 600;
+  font-size: 1.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: inline-block;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 34px;
+  padding-right: 34px;
+  color: $Grey;
+  cursor: pointer;
+  border: 0px solid Orange;
+  &:hover {
+    color: $Cyanish;
+  }
+  //padding: 20px;
+}
+h1 {
+  font-family: "Oswald", sans-serif;
+  font-weight: 300;
+  font-size: 3em;
+  color: $Grey;
+}
+h2 {
+  //font-family: 'PT Sans', sans-serif;
+  //font-family: 'PT Sans Caption', sans-serif;
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: 400;
+  font-size: 2em;
+  margin-top: 10px;
+  color: grayrgb(56, 60, 60);
+  border: 1px solid $YellowGreen;
+}
+h3 {
+  //font-family: "Oswald", sans-serif;
+  //font-weight: 300;
+  font-family: "Open Sans", sans-serif;
+  //font-family: 'PT Sans', sans-serif;
+  //font-family: 'PT Sans Caption', sans-serif;
+  //font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: 400;
+  font-size: 1.8em;
+  margin-top: 10px;
+  color: grayrgb(56, 60, 60);
+  border: 1px solid $YellowGreen;
+}
+h4 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1.5em;
+  margin-top: 10px;
+  color: rgb(56, 60, 60);
+  border: 1px solid $YellowGreen;
+}
+#subHead {
+  padding-left: 20px;
+}
+p {
+  font-family: "Open Sans", sans-serif;
+  //font-family: "Merriweather", serif;
+  font-weight: 300;
+  font-size: $CopyFontSize;
+  line-height: $CopyLeading;
+  margin-top: 30px; //$paragTopLeading;
+  color: $Grey;
+}
+
+/**-----|  |-----**/
+#introParag1 {}
+
+/**-----| CAROUSEL |-----**/
+#modalCarousel{
+    width: 100%;
+}
+.active{
+    width: 0px;
+    color: $Cyanish;
+}
+.carousel-indicators{
+    //background-color: $BackgroundColor;
+    // margin-left: 0px;
+    left: 0px;
+    top: 90%;
+    margin-left: 0px;
+    width: 100%;
+    border: 0px solid $Cyanish;
+}
+// .carousel-indicators li{
+//     border: 1px solid $Cyanish;
+//     border-radius: 10px;
+//     width: 14px;
+//     height: 14px;
+//     margin: 10px;
+// }
+
+#listItemId{
+    border-radius: 10px;
+    width: 14px;
+    height: 14px;
+    margin: 10px;
+    border: 1px solid $Cyanish;
+}
+.carousel-indicators .active {
+    width: 18px;
+    height: 18px;
+    //margin: 10px;
+    background-color: $Cyanish;
+}
+.item{
+    width: 100%;
+    /*height = "auto";*/
+}
+.imgClass{
+    position : relative;
+    padding : 0px;
+    margin : 0px;
+    /*overflow   : hidden;
+    border       : 1px solid cyan;*/
+    /*width  : 100%;
+     height  : 100%;*/
+    min-width : 210px;
+    /*minHeight : 810px;*/
+    background-size : cover;
+}
+.titleDescriptionBoxClass{
+    width: 100%;
+    position: absolute;
+    top: 65%;
+    background-color: $BackgroundColor;
+    padding-top: 30px; //$paragTopLeading;
+    padding-bottom: 40px; //$paragBottomLeading;
+}
+.carouselTitleBoxClass{
+    //font-family: "Oswald", sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 3em;
+    font-weight: 300;
+    //text-transform: uppercase;
+    //letter-spacing: 0.05em;
+    /*position: absolute;*/
+    /*top: 50%;*/
+    text-align: center;
+    line-height: 90%;
+    padding-left: 20px;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    /* float: left; */
+    color: $Blueish;
+    border: 0px solid grey;
+}
+.carouselDescriptionBoxClass{
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.4em;
+    font-weight: 300;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    /*position: absolute;*/
+    /*top: 60%;*/
+    padding-left: 20px;
+    padding-top: 8px;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    /* float: left; */
+    //color: $Cyanish;
+    color: $Blueish;
+    border: 0px solid yellow;
+}
+
+/**-----| SERVICES |-----**/
+.ulContainerClass {
+  height: auto; //350px;
+  background-color: $LightGrey;
+  padding-bottom: 20px;
+  overflow: hidden;
+  border: 0px solid $Purple;
+}
+.servicesContainerX {
+  width: auto;
+  height: auto;
+  text-align: center;
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: 300;
+  font-size: 3em;
+  text-transform: uppercase;
+  margin-top: 10px;
+  color: $Blueish;
+  border: 1px solid $YellowGreen;
+}
+.servicesContainerClass {
+  width: auto;
+  height: auto;
+  //font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 3em;
+  text-transform: uppercase;
+  text-align: center;
+  color: $Blueish;
+  margin-top: 10px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  border: 0 solid $YellowGreen;
+}
+.servicesListClassX {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: $CopyFontSize;
+  margin-top: 1px;
+  color: rgb(56, 60, 60);
+  border: 1px solid $YellowGreen;
+}
+.servicesULClass {
+  //height: 100px;
+  border: 0px solid $Purple;
+  font-size: $CopyFontSize;
+  line-height: $CopyLeading;
+  padding-left: 0px;
+  li {
+    font-family: 'Open Sans', sans-serif;
+    font-size: $CopyFontSize;
+    font-weight: 300;
+    line-height: $CopyLeading;
+    display: block;
+    width: 30%;
+    float: left;
+    padding-left: 40px;
+    padding-right: 20px;
+    border: 0px solid $YellowGreen;
+  }
+}
+// .servicesULClass li {
+//   font-family: 'Open Sans Condensed', sans-serif;
+//   font-size: $CopyFontSize;
+//   font-weight: 300;
+//   display: block;
+//   width: 30%;
+//   float: left;
+//   border: 0 solid $YellowGreen;
+// }
+.iconMainContainerClass{
+    height: auto; //300px;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border: 0px solid $Cyanish;
+}
+.icon3ColumnsContainerClass{
+    height: auto; //120px; //auto
+    width: 100%; //113px; //100%
+    // margin-right: auto;
+    // margin-left: auto;
+    //text-align: center;
+    display: inline-block;
+    top: 30%;
+    position: relative;
+    border: 0px solid $Grey;
+}
+.iconClass{
+    height: auto; //90%;
+    width: 25%;
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: 0px solid $Red;
+}
+.iconImageClass{
+    width: 120px; //100%;
+    height: 113px; //100%;
+    margin-left: auto;
+    margin-right: auto;
+    float: left;
+    background-color: $Grey;
+    border: 0px solid $Green;
+}
+.iconTitleClass{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 2em;
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 1em; //100%;
+    color: $Grey;
+    float: left;
+    position: relative;
+    width: 55%; //200px;
+    height: auto;
+    top: 30px;
+    padding-left: 0px; //10px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0px solid $YellowGreen;
+    // double-line {
+    //     line-height: 1em;
+    // }
+}
+
+/**-----| RESPONSES |-----**/
+.responsesMainContainerClass {
+  //height: 350px;
+  //background-color: $LightGrey;
+  // background: url(../images/imagesTemp_01.jpg) no-repeat center center fixed;
+  // -webkit-background-size: cover;
+  // -moz-background-size: cover;
+  // -o-background-size: cover;
+  // background-size: cover;
+  //opacity: 0.6;
+}
+.responsesContainerClass {
+    //position: absolute;
+    background: url("../images/arrowDownBG.jpg") no-repeat top center;
+    background-size: 100% 40%;
+}
+.responseTitleContainerClass {
+  width: auto;
+  height: auto;
+  //font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 3em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 100%;
+  color: $Blueish;
+  //margin-top: 10px;
+  padding-top: $titleTopLeading;
+  padding-bottom: $titleBottomLeading;
+  //z-index: 101;
+  //background: url("..../images/arrowDownBG.jpg") no-repeat center center;
+  // -webkit-background-size: cover;
+  // -moz-background-size: cover;
+  // -o-background-size: cover;
+  background-size: 100%;
+  border: 0 solid $YellowGreen;
+}
+.testimonialsContainerClass {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: $CopyFontSize;
+  //text-transform: uppercase;
+  text-align: center;
+  font-style: italic;
+  width: 80%;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
+  //padding-top: $paragTopLeading;
+  //padding-bottom: $paragBottomLeading;
+}
+
+/**-----| HEALTH CARE |-----**/
+.healthMainContainerClass {
+  height: auto;
+  background-color: $LightGrey;
+  border: 0 solid $YellowGreen;
+}
+.healthContainerClass {
+  height: auto;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  border: 0 solid $Red;
+}
+// .healthTitleClass{
+//     margin-right: auto;
+//     margin-left: auto;
+//     height: 200px;
+//     width: 90%;
+//     border: 1px solid $Grey;
+// }
+.healthTitleContainerClass {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 3em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 100%;
+  color: $Blueish;
+  //margin-top: 10px;
+  padding-top: $titleTopLeading;
+  padding-bottom: $titleBottomLeading;
+}
+.healthQuoteContainerClass {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: $CopyFontSize;
+  //text-transform: uppercase;
+  text-align: center;
+  font-style: italic;
+  // padding-top: $paragTopLeading;
+  padding-bottom: $paragBottomLeading;
+}
+.nameClass{
+    font-size: 1.3em;
+    font-style: normal;
+}
+.additionalInfo {
+  padding-top: 20px;
+  font-style: normal;
+  border: 0 solid $Red;
+  font-size: 1.2em;
+  line-height: $CopyLeading;
+}
+
+/**-----| ABOUT |-----**/
+.aboutMainContainerClass {
+  height: auto;
+  //background-color: $LightGrey;
+  border: 0 solid $YellowGreen;
+}
+.aboutContainerClass {
+  height: auto;
+  width: 82%;
+  margin-right: auto;
+  margin-left: auto;
+  border: 0 solid $Red;
+}
+// .aboutTitleClass{
+//     margin-right: auto;
+//     margin-left: auto;
+//     height: 200px;
+//     width: 90%;
+//     border: 1px solid $Grey;
+// }
+.aboutTitleContainerClass {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 3em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 100%;
+  color: $Blueish;
+  //margin-top: 10px;
+  padding-top: $titleTopLeading;
+  padding-bottom: $titleBottomLeading;
+}
+.aboutDescriptionClass {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: $CopyFontSize;
+  //text-transform: uppercase;
+  text-align: center;
+  font-style: normal; //italic normal
+  // padding-top: $paragTopLeading;
+  padding-bottom: $paragBottomLeading;
+}
+.paragSpace{
+    padding-bottom: $paragBottomLeading;
+}
+
+/**-----| FOOTER |-----**/
+.footerMainContainerClass{
+    //height: 120px;
+    width: 100%;
+    background-color: $Blueish;
+    //display: inline-block;
+    padding-top: 20px;
+}
+.footerContactContainer{
+    height: auto; //30px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-bottom: 10px;
+    background-color: $Blueish;
+    border: 0px solid aqua;
+}
+.eMailTo{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 1.2em;
+    color: $LightGrey;
+    text-align: center;
+    width: auto;
+    //float: left;
+    display: inline-block;
+    padding-top: 10px;
+    padding-right: 30px;
+    border: 0px solid $Green;
+    a:link{
+        color: $LightGrey;
+        text-decoration: none;
+    }
+    a:hover{ color: $Cyanish; }
+    a:visited{ color: $LightGrey; }
+    a:active{ color: $LightGrey; }
+
+}
+.footerContactInfo{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 1.2em;
+    color: $LightGrey;
+    text-align: center;
+    width: auto;
+    //float: left;
+    display: inline-block;
+    //padding-left: 30px;
+    padding-top: 10px;
+    padding-right: 30px;
+    border: 0px solid $Green;
+}
+.footerFB{
+    height: 30px;
+    width: 30px;
+    //float: right;
+    background: url("../images/fbLogoWhite.jpg") center center no-repeat;
+    background-size : cover;
+    display: inline-block;
+    border: 0px solid $Green;
+}
+.copyright{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 1.2em;
+    color: $LightGrey;
+    text-align: center;
+    font-style: normal;
+    padding-top: 15px;
+    height: 50px;
+    width: 100%;
+    background-color: $DarkGrey;
+    //border: 1px solid $YellowGreen;
+}
+
+
+/**-----| TEMP MISCELLANEOUS DEVELOPMENT PHASE |-----**/
+.bottomSpace {
+  padding-top: 200px;
+}

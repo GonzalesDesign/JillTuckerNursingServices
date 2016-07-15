@@ -1,0 +1,40 @@
+{
+	"ServicesListContent": [
+		{
+			"title": "ServicesList",
+			"introTitle": "Services Include:",
+			"servicesList": [
+                {"services": "Private Hospital Care", "link": "Link Here If There's Any"},
+                {"services": "Transgender Post-Op Care", "link": "Link Here If There's Any"},
+                {"services": "Geriatric Care Management", "link": "Link Here If There's Any"},
+				{"services": "Post-Op Surgical Care", "link": "Link Here If There's Any"},
+                {"services": "IVF IM Injections", "link": "Link Here If There's Any"},
+                {"services": "Elder Care and Senior Patient Care", "link": "Link Here If There's Any"},
+                {"services": "Pick Up and Nurse Excort", "link": "Link Here If There's Any"},
+				{"services": "IV Theraphy", "link": "Link Here If There's Any"},
+				{"services": "Alzheimer's & Dementia Patients Care", "link": "Link Here If There's Any"},
+				{"services": "Plastic Surgery Recovery", "link": "Link Here If There's Any"},
+				{"services": "Orthopedic Surgery Recovery", "link": "Link Here If There's Any"},
+				{"services": "Neonatal Care", "link": "Link Here If There's Any"},
+				{"services": "Home Visits by Nurse or CNA", "link": "Link Here If There's Any"},
+				{"services": "Lyme Disease IV Infusions", "link": "Link Here If There's Any"},
+				{"services": "Breast Reconstruction Recovery", "link": "Link Here If There's Any"},
+				{"services": "Knee and Hip Replacement", "link": "Link Here If There's Any"},
+				{"services": "Personalized Scheduling", "link": "Link Here If There's Any"},
+				{"services": "Cosmetic Surgery Preparation", "link": "Link Here If There's Any"},
+				{"services": "hand and Foot Surgery", "link": "Link Here If There's Any"},
+				{"services": "Flexible Rates For Extended Care", "link": "Link Here If There's Any"},
+				{"services": "Breast Augmentation Recovery", "link": "Link Here If There's Any"},
+				{"services": "Rehabilitation and Aftercare", "link": "Link Here If There's Any"},
+				{"services": "Direct Access to Nurse-Owner", "link": "Link Here If There's Any"},
+				{"services": "Bariatric Surgery Recovery", "link": "Link Here If There's Any"},
+				{"services": "Home Companion Care", "link": "Link Here If There's Any"}
+            ],
+			"servicesImages":[
+                {"image":"iconHeart.jpg", "imgTitle": "Testimonials"},
+                {"image":"iconHealth.jpg", "imgTitle": "Health Care In The News"},
+                {"image":"iconExperience.jpg", "imgTitle": "Experience"}
+            ]
+		}
+	]
+}

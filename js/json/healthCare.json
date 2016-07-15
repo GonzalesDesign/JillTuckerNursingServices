@@ -1,0 +1,17 @@
+{
+	"HealthCareListContent": [
+		{
+			"title": "HealthCare",
+			"introTitle": "Health Care In The News",
+			"quote": [
+                {"healthQuote": "<p>&#8220;Create a calm and enabling atmosphere by having a Registered Nurse administer IVF injections in your own home according to your own schedule. <b>Jill Tucker Nurses, experienced in caring for IVF patients, bring poise and personal touch that allays the anxiety associated with the IVF process.</b> Put your family's future in capable hands and arrange for nursing care from Jill Tucker Nursing Services.&#8221;</p><span class='nameClass'><b>Jill Tucker, RN</b></span><div class='additionalInfo'><b>read:</b><a href='#'> Turns Out, Getting Pregnant Using IVF Is Actually Really Awkward</a><br>Romper.com April 19, 2016 <br></div>"}
+            	],
+			"healthImages":[
+                {"image":"imagesTemp_01.jpg", "imgDescription": "Image 01 Short Description"},
+                {"image":"imagesTemp_02.jpg", "imgDescription": "Image 02 Short Description"},
+                {"image":"imagesTemp_03.jpg", "imgDescription": "Image 03 Short Description"},
+				{"image":"imagesTemp_05.jpg", "imgDescription": "Image 03 Short Description"}
+            ]
+		}
+	]
+}

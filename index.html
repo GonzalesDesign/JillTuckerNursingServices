@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Webpack Language-Babel</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Pathway+Gothic+One|News+Cycle:400,700|Roboto|Source+Sans+Pro|Dosis' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700|Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="./css/index.css">
+
+</head>
+
+<body>
+
+  <!-- Main Page Container -->
+  <div class="container mainContainer" id="containerId">
+    <div class="infoBanner">
+      <div class="contactInfo">212.431.30129 &#x25a0; 917.439.2309 &#x25a0; jill@jilltuckernursing.com</div>
+      <div class="fbIcon"></div>
+    </div>
+    <!--========== Landing Page ==========-->
+    <div class="landingPageContainer" id="landingPageContainerId"><a name="Home"></a>
+      <!-- Logo -->
+      <div class="logoContainerClass" id="logoContainerId"></div>
+      <!-- Menu Navigation -->
+      <div class="menuNavClass" id="menuNavClassId"></div>
+
+      <!--| Carousel |-->
+      <div class="carousel slide" id="modalCarousel" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators"></ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox" id="carouslInnerId"></div>
+        <!-- Controls -->
+        <a class="carousel-control left" href="#modalCarousel" data-slide="prev"><i class = "glyphicon glyphicon-chevron-left" ></i ></a>
+        <a class="carousel-control right" href="#modalCarousel" data-slide="next"><i class = "glyphicon glyphicon-chevron-right" ></i ></a>
+      </div>
+      <!-- /.carousel -->
+
+      <!-- Description -->
+      <div class="landingPageDescription" id="landingPageDescriptionId">
+        <!-- Landing Page Description goes here -->
+      </div>
+    </div>
+
+    <!--========== Services ==========-->
+    <div class="servicesMainContainer" id="servicesMainContainerId"><a name="Services"></a>
+      <div class="ulContainerClass" id="ulContainerId">
+        <!-- Services Include: Goes here -->
+      </div>
+    </div>
+
+    <!--========== Responses ==========-->
+    <div class="responsesMainContainerClass" id="responsesMainContainerId"><a name="Testimonials"></a>
+      <div class="responsesContainerClass" id="responsesContainerId">
+        <!-- Responses || Testimonials: Goes here -->
+      </div>
+    </div>
+
+    <!--========== Health Care News ==========-->
+    <div class="healthMainContainerClass" id="healthMainContainerId"><a name="News"></a>
+      <div class="healthContainerClass" id="healthContainerId">
+          <!-- Health Care News Goes here -->
+      </div>
+    </div>
+
+    <!--========== About || Experience ==========-->
+    <div class="aboutMainContainerClass" id="aboutMainContainerId"><a name="Experience"></a>
+      <div class="aboutContainerClass" id="aboutContainerId"></div>
+    </div>
+
+    <!--========== Footer ==========-->
+    <div class="footerMainContainerClass" id="footerMainContainerId">
+        <div class="footerContactContainer">
+            <div class="eMailTo">
+                <a href="mailto:jill@jilltuckernursing.com/?subject=Mail from Our Site">
+                    Click here to contact Jill Tucker
+                </a>
+            </div>
+            <div class="footerContactInfo">Phone:(212)431-30129 (917)439-2309</div>
+            <div class="footerFB"></div>
+        </div>
+        <div class="copyright">Copyright@2016 Jill Tucker Nursing Services LLC</div>
+    </div>
+
+    <!--========== Bottom Space: Development Phase ==========-->
+    <div class="bottomSpace"></div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script> -->
+  <!--======================================================-->
+  <!--= bundled es6 codes: for testing =-->
+  <!-- <script src="./js/bundled_es6/bundle.es6"></script> -->
+
+  <!-- Dynamically created by Webpack: es6 -->
+  <!-- "start": "webpack-dev-server ./js/index.es6" -->
+  <!-- localhost:8080 -->
+  <!-- <script src="bundle.js"></script> -->
+
+  <!--= transpiled es6 to es5 codes =-->
+  <!-- localhost/GonzalesDesign_ApacheWebServer/ -->
+  <script src="./js/bundled_es5/bundle.js"></script>
+  <!--=====================================================-->
+
+</body>
+
+</html>
