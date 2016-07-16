@@ -6,7 +6,7 @@ module.exports = {
     context: __dirname,
     //devtool: debug ? "inline-sourcemap" : null,
     //entry: 'js/index.js',
-    entry: 'js/index.es6',
+    entry: './js/index.es6',
     output: {
         path: __dirname,
         //filename: './js/bundled_es6/bundle.es6'

@@ -11,8 +11,8 @@
     "testX": "echo \"Error: no test specified\" && exit 1"
   },
   "scripts": {
-    "startY": "webpack-dev-server ./js/index.es6",
-    "start": "webpack js/index.es6 ./js/webpacked/bundle.es6",
+    "start": "webpack-dev-server ./js/index.es6",
+    "startX": "webpack js/index.es6 ./js/webpacked/bundle.es6",
     "build" : "babel --presets es2015 js/webpacked/bundle.es6 -d es5",
     "instruction" : "swithc between the start. npm start to webpacked files then npm run build to babelized webpacked file"
   },
