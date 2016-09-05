@@ -1,7 +1,7 @@
 /***********************************************
  * Project: Jill Tucker Nursing Services
  * Developer: rolandolloyd@gmail.com
- * Copyright © 2015 GonzalesDesign
+ * Copyright © 2016 GonzalesDesign
  * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
  * Module: CreateElementClass
  ***********************************************/
@@ -10,7 +10,7 @@
 	"use strict";
 
 	/**----------=====| CreateElementAny Class |=====----------**/
-	/** Description: Class template for creating basic "a" tag.
+	/** Description: Class template for creating a basic tag.
 	 **---------------------------------------------------------**/
 	class CreateElementAny {
 		constructor() {}

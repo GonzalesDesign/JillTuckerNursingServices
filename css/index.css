@@ -1,11 +1,11 @@
 @charset "UTF-8";
-/***********************************************
+/*-**********************************************
 * Project: Jill Tucker Nursing Services
 * Developer: rolandolloyd@gmail.com
-* Copyright © 2015 GonzalesDesign
+* Copyright © 2016 GonzalesDesign
 * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
 * Module: SCSS to CSS
-***********************************************/
+**********************************************-*/
 body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
@@ -22,7 +22,7 @@ body {
 .contactInfo {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
-  font-size: 1.2em;
+  font-size: 1.5em;
   color: #16579a;
   width: auto;
   float: left;
@@ -83,6 +83,8 @@ body {
   font-family: "Open-Sans", sans-serif;
   font-weight: 300;
   font-size: 1.4em;
+  letter-spacing: 0.1em;
+  word-spacing: .1em;
   list-style: 250%;
   /* width: 95%; */
   margin-left: auto;
@@ -393,6 +395,9 @@ p {
   background-size: 100%;
   border: 0 solid yellowGreen; }
 
+.readMore {
+  font-size: 1.3em; }
+
 .testimonialsContainerClass {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
@@ -500,9 +505,10 @@ p {
 .eMailTo {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
-  font-size: 1.2em;
+  font-size: 1.7em;
   color: #f2f2f2;
   text-align: center;
+  letter-spacing: .05em;
   width: auto;
   display: inline-block;
   padding-top: 10px;
@@ -525,9 +531,10 @@ p {
 .footerContactInfo {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
-  font-size: 1.2em;
+  font-size: 1.7em;
   color: #f2f2f2;
   text-align: center;
+  letter-spacing: .05em;
   width: auto;
   display: inline-block;
   padding-top: 10px;
@@ -539,6 +546,7 @@ p {
   width: 30px;
   background: url("../images/fbLogoWhite.jpg") center center no-repeat;
   background-size: cover;
+  vertical-align: bottom;
   display: inline-block;
   border: 0px solid Green; }
 

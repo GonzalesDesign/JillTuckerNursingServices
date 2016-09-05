@@ -1,13 +1,14 @@
 /***********************************************
  * Project: Jill Tucker Nursing Services
  * Developer: rolandolloyd@gmail.com
- * Copyright © 2015 GonzalesDesign
+ * Copyright © 2016 GonzalesDesign
  * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
  * Module: Landing Page
  ***********************************************/
 
 ( function() { /*IIFE:Immediately-Invoked Function Expression*/
 	"use strict";
+	console.log("landingPage.es6");
 
 	/**----------===| CLASS: CREATE ELEMENTS |===----------**/
 	const createElem = require( './CreateElementClass.es6' );
@@ -22,7 +23,7 @@
 
 	/**----------===| FUNCTION: ANCHOR LINK |===----------**/
 	const fGoTo = ( link ) => {
-		location.href = "#" + link;
+		location.href = link;
 	}
 
 	/**-----------=====| DOM CACHING |=====-----------**/
@@ -33,7 +34,7 @@
 	let logoContainerId = $( "#logoContainerId" );
 	let menuNavClass = $( ".menuNavClass" );
 	let menuNavClassId = $( "#menuNavClassId" );
-	let landingPageDescriptionId = $( "#landingPageDescriptionId" )
+	// let landingPageDescriptionId = $( "#landingPageDescriptionId" )
 
 	const fLandingPageAjax = () => {
 		let promise = $.get( "./js/json/landingPage.json" );
@@ -69,7 +70,7 @@
 
 					/**-----| Menu anchor links |-----**/
 					$( menuId ).click( () => {
-						fGoTo( menus.menu );
+						fGoTo( menus.link );
 					} );
 				}
 
@@ -77,13 +78,12 @@
 				let createCarousel = new carouselCreate.fBuildCarousel();
 
 				/**-----| Landing Page Description |-----**/
-				createDiv.fCreateTag( "div", "landingPage", "landingPageClass", jx, landingPageDescriptionId );
-				let landingPageId = document.getElementById( "landingPage" +
-					"Id_" + jx );
+				// createDiv.fCreateTag( "div", "landingPage", "landingPageClass", jx, landingPageDescriptionId );
+				// let landingPageId = document.getElementById( "landingPage" + "Id_" + jx );
 				//let x = $("#landingPage" + "Id_" + jx);
-				let strng = introData.landingPageDescription;
-				let subStrng = strng.substr( 0, 700 );
-				landingPageId.innerHTML = subStrng;
+				// let strng = introData.landingPageDescription;
+				// let subStrng = strng.substr( 0, 700 );
+				// landingPageId.innerHTML = subStrng;
 			}
 
 			/**-----| Screen resize querie on load |-----**/

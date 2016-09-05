@@ -56,7 +56,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 	/***********************************************
   * Project: Jill Tucker Nursing Services
   * Developer: rolandolloyd@gmail.com
-  * Copyright © 2015 GonzalesDesign
+  * Copyright © 2016 GonzalesDesign
   * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
   * Module: Index 071416
   ***********************************************/
@@ -65,8 +65,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 		/*IIFE:Immediately-Invoked Function Expression*/
 		"use strict";
 
-		/**----------===| MODULE: LANDING PAGE |===----------**/
+		console.log("index.es6");
 
+		/**----------===| MODULE: LANDING PAGE |===----------**/
 		var landingPage = __webpack_require__(6);
 		landingPage.fLandingPageAjax();
 		landingPage.fLandingPageResize();
@@ -112,7 +113,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 	/***********************************************
   * Project: Jill Tucker Nursing Services
   * Developer: rolandolloyd@gmail.com
-  * Copyright © 2015 GonzalesDesign
+  * Copyright © 2016 GonzalesDesign
   * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
   * Module: CreateElementClass
   ***********************************************/
@@ -168,7 +169,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 	/***********************************************
   * Project: Jill Tucker Nursing Services
   * Developer: rolandolloyd@gmail.com
-  * Copyright © 2015 GonzalesDesign
+  * Copyright © 2016 GonzalesDesign
   * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
   * Module: Create Carousel : Bootstrap
   ***********************************************/
@@ -414,7 +415,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 	/***********************************************
   * Project: Jill Tucker Nursing Services
   * Developer: rolandolloyd@gmail.com
-  * Copyright © 2015 GonzalesDesign
+  * Copyright © 2016 GonzalesDesign
   * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
   * Module: Responses from Patients & Clients
   ***********************************************/
@@ -467,7 +468,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 	/***********************************************
   * Project: Jill Tucker Nursing Services
   * Developer: rolandolloyd@gmail.com
-  * Copyright © 2015 GonzalesDesign
+  * Copyright © 2016 GonzalesDesign
   * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
   * Module: About || Experience
   ***********************************************/
@@ -546,20 +547,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 			});
 		};
 
-		var fLandingPageAnim = function fLandingPageAnim() {}
-		//console.log("mainContainerWidthX: ", mainContainer.width());
-
-
-		// export default function fLandingPageAnim(){
-		//     console.log("mainContainerWidthX: ", mainContainer.width());
-		// }
-
-		//  export default function cube() {
-		//   return mainContainer.width(); //x * x * x;
-		// }
-
 		/**-----------=====| EXPORTS |=====-----------**/
-		;module.exports.fAboutAjax = fAboutAjax;
+		module.exports.fAboutAjax = fAboutAjax;
 		//module.exports.fLandingPageAnim = fLandingPageAnim;
 	})();
 
@@ -571,7 +560,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 	/***********************************************
   * Project: Jill Tucker Nursing Services
   * Developer: rolandolloyd@gmail.com
-  * Copyright © 2015 GonzalesDesign
+  * Copyright © 2016 GonzalesDesign
   * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
   * Module: Health Care In The News
   ***********************************************/
@@ -645,7 +634,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 	/***********************************************
   * Project: Jill Tucker Nursing Services
   * Developer: rolandolloyd@gmail.com
-  * Copyright © 2015 GonzalesDesign
+  * Copyright © 2016 GonzalesDesign
   * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
   * Module: Landing Page
   ***********************************************/
@@ -844,7 +833,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 	/***********************************************
   * Project: Jill Tucker Nursing Services
   * Developer: rolandolloyd@gmail.com
-  * Copyright © 2015 GonzalesDesign
+  * Copyright © 2016 GonzalesDesign
   * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
   * Module: Responses from Patients & Clients
   ***********************************************/
@@ -941,7 +930,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 	/***********************************************
   * Project: Jill Tucker Nursing Services
   * Developer: rolandolloyd@gmail.com
-  * Copyright © 2015 GonzalesDesign
+  * Copyright © 2016 GonzalesDesign
   * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
   * Module: Services List
   ***********************************************/

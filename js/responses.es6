@@ -1,7 +1,7 @@
 /***********************************************
  * Project: Jill Tucker Nursing Services
  * Developer: rolandolloyd@gmail.com
- * Copyright © 2015 GonzalesDesign
+ * Copyright © 2016 GonzalesDesign
  * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
  * Module: Responses from Patients & Clients
  ***********************************************/

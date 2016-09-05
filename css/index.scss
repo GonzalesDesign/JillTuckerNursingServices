@@ -1,10 +1,10 @@
-/***********************************************
+/*-**********************************************
 * Project: Jill Tucker Nursing Services
 * Developer: rolandolloyd@gmail.com
-* Copyright © 2015 GonzalesDesign
+* Copyright © 2016 GonzalesDesign
 * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
 * Module: SCSS to CSS
-***********************************************/
+**********************************************-*/
 $LightGrey: rgb(242, 242, 242);
 $Grey: Grey;
 $DarkGrey: rgb(27, 35, 36);
@@ -48,7 +48,7 @@ body{
 .contactInfo{
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
-    font-size: 1.2em;
+    font-size: 1.5em;
     color: $Blueish;
     width: auto;
     float: left;
@@ -127,6 +127,8 @@ body{
     font-family: "Open-Sans", sans-serif;
     font-weight: 300;
     font-size: 1.4em;
+    letter-spacing: 0.1em;
+    word-spacing: .1em;
     list-style: 250%;
     //padding-top: 10px;
     //text-align: center;
@@ -227,6 +229,7 @@ h4 {
 #subHead {
   padding-left: 20px;
 }
+
 p {
   font-family: "Open Sans", sans-serif;
   //font-family: "Merriweather", serif;
@@ -506,6 +509,10 @@ p {
   background-size: 100%;
   border: 0 solid $YellowGreen;
 }
+
+.readMore {
+    font-size: 1.3em;
+}
 .testimonialsContainerClass {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
@@ -642,9 +649,10 @@ p {
 .eMailTo{
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
-    font-size: 1.2em;
+    font-size: 1.7em;
     color: $LightGrey;
     text-align: center;
+    letter-spacing: .05em;
     width: auto;
     //float: left;
     display: inline-block;
@@ -663,9 +671,10 @@ p {
 .footerContactInfo{
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
-    font-size: 1.2em;
+    font-size: 1.7em;
     color: $LightGrey;
     text-align: center;
+    letter-spacing: .05em;
     width: auto;
     //float: left;
     display: inline-block;
@@ -680,6 +689,7 @@ p {
     //float: right;
     background: url("../images/fbLogoWhite.jpg") center center no-repeat;
     background-size : cover;
+    vertical-align: bottom;
     display: inline-block;
     border: 0px solid $Green;
 }

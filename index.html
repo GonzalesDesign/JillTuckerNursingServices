@@ -3,13 +3,27 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=IE8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>Webpack Language-Babel</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <title>Jill Tucker Nursing Services</title>
+
+  <!-- CLOUD CDN -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+  <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/fonts/glyphicons-halflings-regular.ttf" type="text/css" rel="stylesheet"> -->
+  <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/fonts/glyphicons-halflings-regular.woff" type="text/css" rel="stylesheet"> -->
+
+
   <link href='https://fonts.googleapis.com/css?family=Pathway+Gothic+One|News+Cycle:400,700|Roboto|Source+Sans+Pro|Dosis' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700|Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="./css/index.css">
+
+  <!-- DEV LOCAL CDN -->
+	<!-- <link rel="stylesheet" href="localcdn/bootstrap.min.css">
+	<link href='css/fonts/Oswald-Regular.ttf' rel='stylesheet' type='text/css'>
+	<link href='css/fonts/glyphicons-halflings-regular.ttf' rel='stylesheet' type='text/css'> -->
+
+	<!-- PRODUCTION STYLESHEETS -->
+	<link rel="stylesheet" href="./css/index.css">
 
 </head>
 
@@ -38,12 +52,10 @@
         <a class="carousel-control left" href="#modalCarousel" data-slide="prev"><i class = "glyphicon glyphicon-chevron-left" ></i ></a>
         <a class="carousel-control right" href="#modalCarousel" data-slide="next"><i class = "glyphicon glyphicon-chevron-right" ></i ></a>
       </div>
-      <!-- /.carousel -->
 
       <!-- Description -->
-      <div class="landingPageDescription" id="landingPageDescriptionId">
-        <!-- Landing Page Description goes here -->
-      </div>
+      <div class="landingPageDescription" id="landingPageDescriptionId"></div>
+      
     </div>
 
     <!--========== Services ==========-->
@@ -90,21 +102,31 @@
     <div class="bottomSpace"></div>
   </div>
 
+  <!-- CLOUD JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
   <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script> -->
-  <!--======================================================-->
-  <!--= bundled es6 codes: for testing =-->
-  <!-- <script src="./js/bundled_es6/bundle.es6"></script> -->
+
+  <!-- DEV LOCAL JS -->
+	<!-- <script src="localcdn/jquery-2.0.3.min.js"></script>
+	<script src="localcdn/bootstrap.min.js"></script> -->
+
+	<!-- <script src="localcdn/TweenMax.min.js"></script> -->
+
 
   <!-- Dynamically created by Webpack: es6 -->
   <!-- "start": "webpack-dev-server ./js/index.es6" -->
   <!-- localhost:8080 -->
-  <!-- <script src="bundle.js"></script> -->
+  <!-- <script src="js/index.js"></script> -->
+  <!-- <script src="commons.js"></script>
+  <script src="./js/index_bundle.js"></script> -->
+  <script src="./dist/app.js"></script>
 
-  <!--= transpiled es6 to es5 codes =-->
+
+  <!-- PRODUCTION TRANSPILED ES5 -->
   <!-- localhost/GonzalesDesign_ApacheWebServer/ -->
-  <script src="./es5/js/index.js"></script>
+  <!-- <script src="./es5/js/index.js"></script> -->
   <!--=====================================================-->
 
 </body>
