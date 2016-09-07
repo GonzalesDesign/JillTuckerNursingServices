@@ -125,12 +125,21 @@
 			let browserWidth = window.innerWidth;
 			//console.log("browserWidth: ", browserWidth);
 			let carouselTitleBoxClass = $( ".carouselTitleBoxClass" );
+			let carouselDescriptionBoxClass = $( ".carouselDescriptionBoxClass" );
 			let titleDescriptionBoxClass = $( ".titleDescriptionBoxClass" );
+
+			let largeTitleFont = "2.6em";
+			let medTitleFont = "1.8em";
+			let largeDescFont = "1.5em";
+			let medDescFont = "1em";
 
 			/*-----[ Largest Screen ]-----*/
 			if ( browserWidth > 1170 ) {
 				carouselTitleBoxClass.css( {
-					"font-size": "3em"
+					"font-size": largeTitleFont
+				} );
+				carouselDescriptionBoxClass.css( {
+					"font-size": largeDescFont
 				} );
 				titleDescriptionBoxClass.css( {
 					"top": "65%",
@@ -141,7 +150,10 @@
 				/*-----[ .container is between 1170 and 970 width ]-----*/
 			} else if ( browserWidth <= 1170 && browserWidth > 970 ) {
 				carouselTitleBoxClass.css( {
-					"font-size": "3em"
+					"font-size": largeTitleFont
+				} );
+				carouselDescriptionBoxClass.css( {
+					"font-size": largeDescFont
 				} );
 				titleDescriptionBoxClass.css( {
 					"top": "65%",
@@ -152,7 +164,10 @@
 				/*-----[ .container is between 970 and 750 width ]-----*/
 			} else if ( browserWidth <= 970 && browserWidth > 750 ) {
 				carouselTitleBoxClass.css( {
-					"font-size": "3em"
+					"font-size": largeTitleFont
+				} );
+				carouselDescriptionBoxClass.css( {
+					"font-size": largeDescFont
 				} );
 				titleDescriptionBoxClass.css( {
 					"top": "65%",
@@ -163,7 +178,10 @@
 				/*-----[ .container is between 750 and 550 width ]-----*/
 			} else if ( browserWidth <= 750 && browserWidth > 550 ) {
 				carouselTitleBoxClass.css( {
-					"font-size": "2em"
+					"font-size": medTitleFont
+				} );
+				carouselDescriptionBoxClass.css( {
+					"font-size": medDescFont
 				} );
 				titleDescriptionBoxClass.css( {
 					"top": "65%",
@@ -174,7 +192,10 @@
 				/*-----[ .container is less than 550 width ]-----*/
 			} else {
 				carouselTitleBoxClass.css( {
-					"font-size": "2em"
+					"font-size": medTitleFont
+				} );
+				carouselDescriptionBoxClass.css( {
+					"font-size": medDescFont
 				} );
 				titleDescriptionBoxClass.css( {
 					"top": "50%"

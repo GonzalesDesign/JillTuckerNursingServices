@@ -14,13 +14,17 @@
 	//var common = require("./common");
 
 	/**----------===| MODULE: LANDING PAGE |===----------**/
-	const landingPage = require( './landingPage.es6' );
-	landingPage.fLandingPageAjax();
-	landingPage.fLandingPageResize();
+	const landingPage2 = require( './landingPage.es6' );
+	landingPage2.fLandingPageAjax();
+	landingPage2.fLandingPageResize();
 
 	/**----------===| MODULE: TESTIMONIALS |===----------**/
 	const testimonialsSection = require( './testimonials.es6' );
 	testimonialsSection.fTestimonialsAjax();
+
+	/**----------===| MODULE: TESTIMONIALS |===----------**/
+	const testimonialsBackToTop = require( './backToTop.es6' );
+	testimonialsBackToTop.fBackToTop();
 
 	// /**----------===| MODULE: IMAGE CAROUSEL |===----------**/
 	// const imageCarousel = require( './imageCarousel.es6' );
@@ -43,16 +47,28 @@
 	// aboutSection.fAboutAjax();
 
 	/**----------===| FUNCTION: SCREEN RESIZE QUERIES |===----------**/
+	let tI = 0;
+
 	let fOnWindowResize = function() {
+
+		console.log("testimonialsIndex resize: ", tI++);
 
 		//servicesList.fServicesResize();
 
-		//landingPage.fLandingPageResize();
+		landingPage2.fLandingPageResize();
 
 		//imageCarousel.fCarouselResize();
+		testimonialsBackToTop.fBackToTop();
 
 	}
 
 	$( window ).on( 'resize', fOnWindowResize );
+
+	/**----------===| FUNCTION: ON PAGE SCROLL |===----------**/
+	// let fOnScroll = () => {
+	// 	/*-----= Invoke CreateMenuNav:fProjectScrollTo: fHideShowMenuNav ) =-----*/
+	// 	//menuNav.fProjectScrollTo();
+	// };
+	// $( window ).on( 'scroll', fOnScroll );
 
 }() );

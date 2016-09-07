@@ -17,12 +17,14 @@ $Blueish: rgb(22, 87, 154);
 $Purple: Purple;
 $BackgroundColor: rgba(250, 250, 250, .5);
 
+$titleFontSize:42px;
 $titleTopLeading: 40px;
 $titleBottomLeading: 0px; //20px;
 $paragTopLeading: 10px;
 $paragBottomLeading: 60px;
 $CopyLeading:150%;
-$CopyFontSize:1.2em;
+$CopyFontSize:18px; //18px;
+$contactFontSize:18px;
 
 
 //font-family: 'Pathway Gothic One', sans-serif;
@@ -39,6 +41,11 @@ body{
     color: $Grey;
 }
 
+b, strong {
+    font-weight: 600;
+}
+
+
 .infoBanner{
     width: 100%;
     display: inline-block;
@@ -48,7 +55,7 @@ body{
 .contactInfo{
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
-    font-size: 1.5em;
+    font-size: $contactFontSize;//1.5em;
     color: $Blueish;
     width: auto;
     float: left;
@@ -62,6 +69,11 @@ body{
     background: url("../images/fbLogo.jpg") center center no-repeat;
     background-size : cover;
     border: 0px solid $Green;
+}
+
+.glyphicon-stop {
+    font-size: 10px;
+    top: -2px;
 }
 
 .mainContainer {
@@ -126,7 +138,7 @@ body{
 .logoAddressClass {
     font-family: "Open-Sans", sans-serif;
     font-weight: 300;
-    font-size: 1.4em;
+    font-size: $contactFontSize;//1.4em;
     letter-spacing: 0.1em;
     word-spacing: .1em;
     list-style: 250%;
@@ -177,8 +189,8 @@ body{
   text-transform: uppercase;
   letter-spacing: 0.1em;
   display: inline-block;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  //padding-top: 20px;
+  //padding-bottom: 20px;
   padding-left: 34px;
   padding-right: 34px;
   color: $Grey;
@@ -275,6 +287,9 @@ p {
     margin: 10px;
     border: 1px solid $Cyanish;
 }
+.carousel {
+    margin-top: 20px;
+}
 .carousel-indicators .active {
     width: 18px;
     height: 18px;
@@ -368,7 +383,7 @@ p {
   //font-family: 'Open Sans Condensed', sans-serif;
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
-  font-size: 3em;
+  font-size: $titleFontSize; //3em;
   text-transform: uppercase;
   text-align: center;
   color: $Blueish;
@@ -493,7 +508,7 @@ p {
   //font-family: 'Open Sans Condensed', sans-serif;
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
-  font-size: 3em;
+  font-size: $titleFontSize;
   text-transform: uppercase;
   text-align: center;
   line-height: 100%;
@@ -519,13 +534,47 @@ p {
   font-size: $CopyFontSize;
   //text-transform: uppercase;
   text-align: center;
-  font-style: italic;
+  // font-style: italic;
   width: 80%;
   height: auto;
   margin-right: auto;
   margin-left: auto;
   //padding-top: $paragTopLeading;
   //padding-bottom: $paragBottomLeading;
+}
+
+.testimonialTitleContainerClass {
+  width: auto;
+  height: auto;
+  //font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: $titleFontSize;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 100%;
+  color: $Blueish;
+  //margin-top: 10px;
+  padding-top: $titleTopLeading;
+  padding-bottom: $titleBottomLeading;
+  //z-index: 101;
+  //background: url("..../images/arrowDownBG.jpg") no-repeat center center;
+  // -webkit-background-size: cover;
+  // -moz-background-size: cover;
+  // -o-background-size: cover;
+  background-size: 100%;
+  border: 0px solid $YellowGreen;
+  p {
+      font-size: $CopyFontSize;
+  }
+}
+
+.testimonialsBreak {
+    // width: 100px;
+    // height: 100px;
+    padding-top: 12px;
+    display: block;
+    border: 0px solid red;
 }
 
 /**-----| HEALTH CARE |-----**/
@@ -551,7 +600,7 @@ p {
 .healthTitleContainerClass {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
-  font-size: 3em;
+  font-size: $titleFontSize;
   text-transform: uppercase;
   text-align: center;
   line-height: 100%;
@@ -571,14 +620,14 @@ p {
   padding-bottom: $paragBottomLeading;
 }
 .nameClass{
-    font-size: 1.3em;
+    font-size: $CopyFontSize; //1.3em;
     font-style: normal;
 }
 .additionalInfo {
   padding-top: 20px;
   font-style: normal;
   border: 0 solid $Red;
-  font-size: 1.2em;
+  font-size: $CopyFontSize; //1.2em;
   line-height: $CopyLeading;
 }
 
@@ -605,7 +654,7 @@ p {
 .aboutTitleContainerClass {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
-  font-size: 3em;
+  font-size: $titleFontSize;
   text-transform: uppercase;
   text-align: center;
   line-height: 100%;
@@ -649,7 +698,7 @@ p {
 .eMailTo{
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
-    font-size: 1.7em;
+    font-size: $contactFontSize; //1.7em;
     color: $LightGrey;
     text-align: center;
     letter-spacing: .05em;
@@ -671,7 +720,7 @@ p {
 .footerContactInfo{
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
-    font-size: 1.7em;
+    font-size: $contactFontSize; //1.7em;
     color: $LightGrey;
     text-align: center;
     letter-spacing: .05em;
@@ -693,10 +742,17 @@ p {
     display: inline-block;
     border: 0px solid $Green;
 }
+.fbIconFooter {
+    height: 30px;
+    width: 40px;
+    margin-left: 100px;
+    display: inline-block;
+    border: 0px solid $Green;
+}
 .copyright{
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
-    font-size: 1.2em;
+    font-size: $contactFontSize;//1.2em;
     color: $LightGrey;
     text-align: center;
     font-style: normal;

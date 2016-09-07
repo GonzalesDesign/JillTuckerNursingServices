@@ -4,7 +4,9 @@
  * Copyright © 2016 GonzalesDesign
  * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
  * Module: Services List
- ***********************************************/
+ * Show a list of Services offered. Screen queries are divided
+ 	into 1 - 3 columns depends on the screen width.
+ *************************************************************/
 
 ( function() { /*IIFE:Immediately-Invoked Function Expression*/
 	"use strict";

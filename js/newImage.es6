@@ -3,7 +3,7 @@
  * Developer: rolandolloyd@gmail.com
  * Copyright © 2016 GonzalesDesign
  * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
- * Module: 
+ * Module: New Image
  ***********************************************/
 
 ( function() { /*IIFE:Immediately-Invoked Function Expression*/

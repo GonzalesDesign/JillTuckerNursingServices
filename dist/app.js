@@ -56,8 +56,9 @@
 		"use strict";
 		console.log("index.es6x");
 		let d = new Date();
+		let h = d.getHours();
 		let n = d.getMinutes();
-		console.log("Date in minutes: ", n);
+		console.log("Date in minutes: ", h,":",n);
 	
 		/**----------===| MODULE: COMMON |===----------**/
 		var common = __webpack_require__(1);
@@ -74,7 +75,7 @@
 		/**----------===| MODULE: LANDING PAGE DESCRIPTION |===----------**/
 		const landingPageDesc = __webpack_require__( 6 );
 		landingPageDesc.fLandingPageDescAjax();
-		landingPageDesc.fLandingPageDescResize();
+		//landingPageDesc.fLandingPageDescResize();
 	
 		/**----------===| MODULE: SERVICES |===----------**/
 		const servicesList = __webpack_require__( 7 );
@@ -102,8 +103,8 @@
 			servicesList.fServicesResize();
 	
 			landingPage.fLandingPageResize();
-			
-			landingPageDesc.fLandingPageDescResize();
+	
+			//landingPageDesc.fLandingPageDescResize();
 	
 			imageCarousel.fCarouselResize();
 	
@@ -131,7 +132,8 @@
 	 * Copyright © 2016 GonzalesDesign
 	 * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
 	 * Module: Landing Page
-	 ***********************************************/
+	 * Description: Includes the following; Logo, Menu, Carousel
+	 ***********************************************************/
 	
 	( function() { /*IIFE:Immediately-Invoked Function Expression*/
 		"use strict";
@@ -186,6 +188,7 @@
 					/**-----| Menu Navigation |-----**/
 					createDiv.fCreateTag( "div", "menuNavContainer", "menuNavContainerClass", jx, menuNavClass );
 					let menuNavContainerId = document.getElementById( "menuNavContainer" + "Id_" + jx );
+	
 					for ( let menus of introData.mainMenuNavs ) {
 						ji++;
 						createDiv.fCreateTag( "div", "menu", "menuClass", ji, menuNavContainerId );
@@ -222,46 +225,51 @@
 		let screenXSmall = 550;
 		let screenSmall = 750;
 		let screenMedium = 970;
-		let largeScreen = 1170;
+		let largeScreen = 1200;
 	
 		let fLandingPageResize = () => {
+			console.log("fLandingPageResize: ");
 			let browserWidth = window.innerWidth;
 			let menuClass = $( ".menuClass" );
+			let largeFont = "28px";
+			let medFont = "26px";
+			let smallFont = "22px";
+			let tinyFont = "18px";
 	
 			/*-----[ Largest Screen ]-----*/
 			if ( browserWidth > largeScreen ) {
 				menuClass.css( {
-						"font-size": "1.8em",
+						"font-size": largeFont,
 						"padding-left": "34px",
 						"padding-right": "34px"
 					} )
 					/*-----[ .container is between largeScreen and screenMedium width ]-----*/
 			} else if ( browserWidth <= largeScreen && browserWidth > screenMedium ) {
 				menuClass.css( {
-						"font-size": "1.8em",
+						"font-size": largeFont,
 						"padding-left": "12px",
 						"padding-right": "12px"
 					} )
 					/*-----[ .container is between screenMedium and screenSmall width ]-----*/
 			} else if ( browserWidth <= screenMedium && browserWidth > screenSmall ) {
 				menuClass.css( {
-						"font-size": "1.4em",
+						"font-size": medFont,
 						"padding-left": "10px",
 						"padding-right": "10px"
 					} )
 					/*-----[ .container is between screenSmall and screenXSmall width ]-----*/
 			} else if ( browserWidth <= screenSmall && browserWidth > screenXSmall ) {
 				menuClass.css( {
-						"font-size": "1.3em",
-						"padding-left": "10px",
-						"padding-right": "10px"
+						"font-size": smallFont,
+						"padding-left": "6px",
+						"padding-right": "6px"
 					} )
 					/*-----[ .container is less than screenXSmall width ]-----*/
 			} else {
 				menuClass.css( {
-					"font-size": "1.2em",
-					"padding-left": "2px",
-					"padding-right": "2px"
+					"font-size": tinyFont,
+					"padding-left": "12px",
+					"padding-right": "12px"
 				} )
 			}
 		}
@@ -327,7 +335,7 @@
 	 * Developer: rolandolloyd@gmail.com
 	 * Copyright © 2016 GonzalesDesign
 	 * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
-	 * Module: 
+	 * Module: New Image
 	 ***********************************************/
 	
 	( function() { /*IIFE:Immediately-Invoked Function Expression*/
@@ -492,12 +500,21 @@
 				let browserWidth = window.innerWidth;
 				//console.log("browserWidth: ", browserWidth);
 				let carouselTitleBoxClass = $( ".carouselTitleBoxClass" );
+				let carouselDescriptionBoxClass = $( ".carouselDescriptionBoxClass" );
 				let titleDescriptionBoxClass = $( ".titleDescriptionBoxClass" );
+	
+				let largeTitleFont = "2.6em";
+				let medTitleFont = "1.8em";
+				let largeDescFont = "1.5em";
+				let medDescFont = "1em";
 	
 				/*-----[ Largest Screen ]-----*/
 				if ( browserWidth > 1170 ) {
 					carouselTitleBoxClass.css( {
-						"font-size": "3em"
+						"font-size": largeTitleFont
+					} );
+					carouselDescriptionBoxClass.css( {
+						"font-size": largeDescFont
 					} );
 					titleDescriptionBoxClass.css( {
 						"top": "65%",
@@ -508,7 +525,10 @@
 					/*-----[ .container is between 1170 and 970 width ]-----*/
 				} else if ( browserWidth <= 1170 && browserWidth > 970 ) {
 					carouselTitleBoxClass.css( {
-						"font-size": "3em"
+						"font-size": largeTitleFont
+					} );
+					carouselDescriptionBoxClass.css( {
+						"font-size": largeDescFont
 					} );
 					titleDescriptionBoxClass.css( {
 						"top": "65%",
@@ -519,7 +539,10 @@
 					/*-----[ .container is between 970 and 750 width ]-----*/
 				} else if ( browserWidth <= 970 && browserWidth > 750 ) {
 					carouselTitleBoxClass.css( {
-						"font-size": "3em"
+						"font-size": largeTitleFont
+					} );
+					carouselDescriptionBoxClass.css( {
+						"font-size": largeDescFont
 					} );
 					titleDescriptionBoxClass.css( {
 						"top": "65%",
@@ -530,7 +553,10 @@
 					/*-----[ .container is between 750 and 550 width ]-----*/
 				} else if ( browserWidth <= 750 && browserWidth > 550 ) {
 					carouselTitleBoxClass.css( {
-						"font-size": "2em"
+						"font-size": medTitleFont
+					} );
+					carouselDescriptionBoxClass.css( {
+						"font-size": medDescFont
 					} );
 					titleDescriptionBoxClass.css( {
 						"top": "65%",
@@ -541,7 +567,10 @@
 					/*-----[ .container is less than 550 width ]-----*/
 				} else {
 					carouselTitleBoxClass.css( {
-						"font-size": "2em"
+						"font-size": medTitleFont
+					} );
+					carouselDescriptionBoxClass.css( {
+						"font-size": medDescFont
 					} );
 					titleDescriptionBoxClass.css( {
 						"top": "50%"
@@ -649,61 +678,61 @@
 				}
 	
 				/**-----| Screen resize querie on load |-----**/
-				fLandingPageDescResize();
+				//fLandingPageDescResize();
 	
 			} )
 		};
 	
-		let screenXSmall = 550;
-		let screenSmall = 750;
-		let screenMedium = 970;
-		let largeScreen = 1170;
-	
-		let fLandingPageDescResize = () => {
-			let browserWidth = window.innerWidth;
-			let menuClass = $( ".menuClass" );
-	
-			/*-----[ Largest Screen ]-----*/
-			if ( browserWidth > largeScreen ) {
-				menuClass.css( {
-						"font-size": "1.8em",
-						"padding-left": "34px",
-						"padding-right": "34px"
-					} )
-					/*-----[ .container is between largeScreen and screenMedium width ]-----*/
-			} else if ( browserWidth <= largeScreen && browserWidth > screenMedium ) {
-				menuClass.css( {
-						"font-size": "1.8em",
-						"padding-left": "12px",
-						"padding-right": "12px"
-					} )
-					/*-----[ .container is between screenMedium and screenSmall width ]-----*/
-			} else if ( browserWidth <= screenMedium && browserWidth > screenSmall ) {
-				menuClass.css( {
-						"font-size": "1.4em",
-						"padding-left": "10px",
-						"padding-right": "10px"
-					} )
-					/*-----[ .container is between screenSmall and screenXSmall width ]-----*/
-			} else if ( browserWidth <= screenSmall && browserWidth > screenXSmall ) {
-				menuClass.css( {
-						"font-size": "1.3em",
-						"padding-left": "10px",
-						"padding-right": "10px"
-					} )
-					/*-----[ .container is less than screenXSmall width ]-----*/
-			} else {
-				menuClass.css( {
-					"font-size": "1.2em",
-					"padding-left": "2px",
-					"padding-right": "2px"
-				} )
-			}
-		}
+		// let screenXSmall = 550;
+		// let screenSmall = 750;
+		// let screenMedium = 970;
+		// let largeScreen = 1170;
+		//
+		// let fLandingPageDescResize = () => {
+		// 	let browserWidth = window.innerWidth;
+		// 	let menuClass = $( ".menuClass" );
+		//
+		// 	/*-----[ Largest Screen ]-----*/
+		// 	if ( browserWidth > largeScreen ) {
+		// 		menuClass.css( {
+		// 				"font-size": "1.8em",
+		// 				"padding-left": "34px",
+		// 				"padding-right": "34px"
+		// 			} )
+		// 			/*-----[ .container is between largeScreen and screenMedium width ]-----*/
+		// 	} else if ( browserWidth <= largeScreen && browserWidth > screenMedium ) {
+		// 		menuClass.css( {
+		// 				"font-size": "1.8em",
+		// 				"padding-left": "12px",
+		// 				"padding-right": "12px"
+		// 			} )
+		// 			/*-----[ .container is between screenMedium and screenSmall width ]-----*/
+		// 	} else if ( browserWidth <= screenMedium && browserWidth > screenSmall ) {
+		// 		menuClass.css( {
+		// 				"font-size": "1.4em",
+		// 				"padding-left": "10px",
+		// 				"padding-right": "10px"
+		// 			} )
+		// 			/*-----[ .container is between screenSmall and screenXSmall width ]-----*/
+		// 	} else if ( browserWidth <= screenSmall && browserWidth > screenXSmall ) {
+		// 		menuClass.css( {
+		// 				"font-size": "1.3em",
+		// 				"padding-left": "10px",
+		// 				"padding-right": "10px"
+		// 			} )
+		// 			/*-----[ .container is less than screenXSmall width ]-----*/
+		// 	} else {
+		// 		menuClass.css( {
+		// 			"font-size": "1.2em",
+		// 			"padding-left": "2px",
+		// 			"padding-right": "2px"
+		// 		} )
+		// 	}
+		// }
 	
 		/**-----------=====| EXPORTS |=====-----------**/
 		module.exports.fLandingPageDescAjax = fLandingPageDescAjax;
-		module.exports.fLandingPageDescResize = fLandingPageDescResize;
+		//module.exports.fLandingPageDescResize = fLandingPageDescResize;
 	
 	}() );
 
@@ -718,7 +747,9 @@
 	 * Copyright © 2016 GonzalesDesign
 	 * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
 	 * Module: Services List
-	 ***********************************************/
+	 * Show a list of Services offered. Screen queries are divided
+	 	into 1 - 3 columns depends on the screen width.
+	 *************************************************************/
 	
 	( function() { /*IIFE:Immediately-Invoked Function Expression*/
 		"use strict";

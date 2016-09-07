@@ -88,60 +88,60 @@
 			}
 
 			/**-----| Screen resize querie on load |-----**/
-			fLandingPageDescResize();
+			//fLandingPageDescResize();
 
 		} )
 	};
 
-	let screenXSmall = 550;
-	let screenSmall = 750;
-	let screenMedium = 970;
-	let largeScreen = 1170;
-
-	let fLandingPageDescResize = () => {
-		let browserWidth = window.innerWidth;
-		let menuClass = $( ".menuClass" );
-
-		/*-----[ Largest Screen ]-----*/
-		if ( browserWidth > largeScreen ) {
-			menuClass.css( {
-					"font-size": "1.8em",
-					"padding-left": "34px",
-					"padding-right": "34px"
-				} )
-				/*-----[ .container is between largeScreen and screenMedium width ]-----*/
-		} else if ( browserWidth <= largeScreen && browserWidth > screenMedium ) {
-			menuClass.css( {
-					"font-size": "1.8em",
-					"padding-left": "12px",
-					"padding-right": "12px"
-				} )
-				/*-----[ .container is between screenMedium and screenSmall width ]-----*/
-		} else if ( browserWidth <= screenMedium && browserWidth > screenSmall ) {
-			menuClass.css( {
-					"font-size": "1.4em",
-					"padding-left": "10px",
-					"padding-right": "10px"
-				} )
-				/*-----[ .container is between screenSmall and screenXSmall width ]-----*/
-		} else if ( browserWidth <= screenSmall && browserWidth > screenXSmall ) {
-			menuClass.css( {
-					"font-size": "1.3em",
-					"padding-left": "10px",
-					"padding-right": "10px"
-				} )
-				/*-----[ .container is less than screenXSmall width ]-----*/
-		} else {
-			menuClass.css( {
-				"font-size": "1.2em",
-				"padding-left": "2px",
-				"padding-right": "2px"
-			} )
-		}
-	}
+	// let screenXSmall = 550;
+	// let screenSmall = 750;
+	// let screenMedium = 970;
+	// let largeScreen = 1170;
+	//
+	// let fLandingPageDescResize = () => {
+	// 	let browserWidth = window.innerWidth;
+	// 	let menuClass = $( ".menuClass" );
+	//
+	// 	/*-----[ Largest Screen ]-----*/
+	// 	if ( browserWidth > largeScreen ) {
+	// 		menuClass.css( {
+	// 				"font-size": "1.8em",
+	// 				"padding-left": "34px",
+	// 				"padding-right": "34px"
+	// 			} )
+	// 			/*-----[ .container is between largeScreen and screenMedium width ]-----*/
+	// 	} else if ( browserWidth <= largeScreen && browserWidth > screenMedium ) {
+	// 		menuClass.css( {
+	// 				"font-size": "1.8em",
+	// 				"padding-left": "12px",
+	// 				"padding-right": "12px"
+	// 			} )
+	// 			/*-----[ .container is between screenMedium and screenSmall width ]-----*/
+	// 	} else if ( browserWidth <= screenMedium && browserWidth > screenSmall ) {
+	// 		menuClass.css( {
+	// 				"font-size": "1.4em",
+	// 				"padding-left": "10px",
+	// 				"padding-right": "10px"
+	// 			} )
+	// 			/*-----[ .container is between screenSmall and screenXSmall width ]-----*/
+	// 	} else if ( browserWidth <= screenSmall && browserWidth > screenXSmall ) {
+	// 		menuClass.css( {
+	// 				"font-size": "1.3em",
+	// 				"padding-left": "10px",
+	// 				"padding-right": "10px"
+	// 			} )
+	// 			/*-----[ .container is less than screenXSmall width ]-----*/
+	// 	} else {
+	// 		menuClass.css( {
+	// 			"font-size": "1.2em",
+	// 			"padding-left": "2px",
+	// 			"padding-right": "2px"
+	// 		} )
+	// 	}
+	// }
 
 	/**-----------=====| EXPORTS |=====-----------**/
 	module.exports.fLandingPageDescAjax = fLandingPageDescAjax;
-	module.exports.fLandingPageDescResize = fLandingPageDescResize;
+	//module.exports.fLandingPageDescResize = fLandingPageDescResize;
 
 }() );

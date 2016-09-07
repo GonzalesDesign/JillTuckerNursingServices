@@ -10,8 +10,9 @@
 	"use strict";
 	console.log("index.es6x");
 	let d = new Date();
+	let h = d.getHours();
 	let n = d.getMinutes();
-	console.log("Date in minutes: ", n);
+	console.log("Date in minutes: ", h,":",n);
 
 	/**----------===| MODULE: COMMON |===----------**/
 	var common = require("./common");
@@ -28,7 +29,7 @@
 	/**----------===| MODULE: LANDING PAGE DESCRIPTION |===----------**/
 	const landingPageDesc = require( './landingPageDescription.es6' );
 	landingPageDesc.fLandingPageDescAjax();
-	landingPageDesc.fLandingPageDescResize();
+	//landingPageDesc.fLandingPageDescResize();
 
 	/**----------===| MODULE: SERVICES |===----------**/
 	const servicesList = require( './servicesList.es6' );
@@ -56,8 +57,8 @@
 		servicesList.fServicesResize();
 
 		landingPage.fLandingPageResize();
-		
-		landingPageDesc.fLandingPageDescResize();
+
+		//landingPageDesc.fLandingPageDescResize();
 
 		imageCarousel.fCarouselResize();
 

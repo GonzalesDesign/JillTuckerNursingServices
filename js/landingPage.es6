@@ -4,7 +4,8 @@
  * Copyright © 2016 GonzalesDesign
  * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
  * Module: Landing Page
- ***********************************************/
+ * Description: Includes the following; Logo, Menu, Carousel
+ ***********************************************************/
 
 ( function() { /*IIFE:Immediately-Invoked Function Expression*/
 	"use strict";
@@ -59,6 +60,7 @@
 				/**-----| Menu Navigation |-----**/
 				createDiv.fCreateTag( "div", "menuNavContainer", "menuNavContainerClass", jx, menuNavClass );
 				let menuNavContainerId = document.getElementById( "menuNavContainer" + "Id_" + jx );
+
 				for ( let menus of introData.mainMenuNavs ) {
 					ji++;
 					createDiv.fCreateTag( "div", "menu", "menuClass", ji, menuNavContainerId );
@@ -95,46 +97,51 @@
 	let screenXSmall = 550;
 	let screenSmall = 750;
 	let screenMedium = 970;
-	let largeScreen = 1170;
+	let largeScreen = 1200;
 
 	let fLandingPageResize = () => {
+		console.log("fLandingPageResize: ");
 		let browserWidth = window.innerWidth;
 		let menuClass = $( ".menuClass" );
+		let largeFont = "28px";
+		let medFont = "26px";
+		let smallFont = "22px";
+		let tinyFont = "18px";
 
 		/*-----[ Largest Screen ]-----*/
 		if ( browserWidth > largeScreen ) {
 			menuClass.css( {
-					"font-size": "1.8em",
+					"font-size": largeFont,
 					"padding-left": "34px",
 					"padding-right": "34px"
 				} )
 				/*-----[ .container is between largeScreen and screenMedium width ]-----*/
 		} else if ( browserWidth <= largeScreen && browserWidth > screenMedium ) {
 			menuClass.css( {
-					"font-size": "1.8em",
+					"font-size": largeFont,
 					"padding-left": "12px",
 					"padding-right": "12px"
 				} )
 				/*-----[ .container is between screenMedium and screenSmall width ]-----*/
 		} else if ( browserWidth <= screenMedium && browserWidth > screenSmall ) {
 			menuClass.css( {
-					"font-size": "1.4em",
+					"font-size": medFont,
 					"padding-left": "10px",
 					"padding-right": "10px"
 				} )
 				/*-----[ .container is between screenSmall and screenXSmall width ]-----*/
 		} else if ( browserWidth <= screenSmall && browserWidth > screenXSmall ) {
 			menuClass.css( {
-					"font-size": "1.3em",
-					"padding-left": "10px",
-					"padding-right": "10px"
+					"font-size": smallFont,
+					"padding-left": "6px",
+					"padding-right": "6px"
 				} )
 				/*-----[ .container is less than screenXSmall width ]-----*/
 		} else {
 			menuClass.css( {
-				"font-size": "1.2em",
-				"padding-left": "2px",
-				"padding-right": "2px"
+				"font-size": tinyFont,
+				"padding-left": "12px",
+				"padding-right": "12px"
 			} )
 		}
 	}
