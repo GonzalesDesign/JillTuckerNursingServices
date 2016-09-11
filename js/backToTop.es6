@@ -52,7 +52,7 @@
 			"width": "50px",
 			"background": "url(./images/backToTop.png)  center center no-repeat",
 			"title": "some alt",
-			"background-color": "white",
+			//"background-color": "white",
 			"background-size": "cover", //"cover",
 			"position": "fixed", //relative absolute
 			"right": "0px",

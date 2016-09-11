@@ -201,6 +201,10 @@
 						/**-----| Menu anchor links |-----**/
 						$( menuId ).click( () => {
 							fGoTo( menus.link );
+							//Email contact form nav menu button
+							if(menus.menu === "Contact"){
+								$('#myModal').modal('show');
+							}
 						} );
 					}
 	
@@ -1058,6 +1062,7 @@
 		/**----------===| CLASS: CREATE ELEMENTS |===----------**/
 		const createElem = __webpack_require__( 3 );
 		let createDiv = new createElem.CreateElementAny();
+		//fCreateTag( div, title, className, counter, appendedTo )
 	
 		/**-----------=====| DOM CACHING |=====-----------**/
 		let mainContainer = $( ".mainContainer" );

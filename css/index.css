@@ -45,15 +45,16 @@ b, strong {
   top: -2px; }
 
 .mainContainer {
-  height: auto;
+  height: 100px;
   margin-right: auto;
   margin-left: auto;
   padding-left: 0;
-  padding-right: 0; }
+  padding-right: 0;
+  border: 1px solid Grey; }
 
 .landingPageContainer {
   text-align: center;
-  border: 0px solid Orange; }
+  border: 1px solid Orange; }
 
 .landingPageClass {
   margin-top: 30px; }
@@ -83,8 +84,9 @@ b, strong {
   margin-left: auto;
   margin-right: auto;
   top: -40px;
+  float: left;
   position: relative;
-  border: 0px solid yellowGreen; }
+  border: 1px solid yellowGreen; }
 
 .logoAddressClass {
   font-family: "Open-Sans", sans-serif;
@@ -93,12 +95,13 @@ b, strong {
   letter-spacing: 0.1em;
   word-spacing: .1em;
   list-style: 250%;
-  /* width: 95%; */
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   position: relative;
   top: -34px;
-  border: 0px solid Orange; }
+  border: 1px solid Orange;
+  float: left; }
 
 .landingPageDescription {
   text-align: center;
@@ -172,7 +175,7 @@ h4 {
   font-size: 1.5em;
   margin-top: 10px;
   color: #383c3c;
-  border: 1px solid yellowGreen; }
+  border: px solid yellowGreen; }
 
 #subHead {
   padding-left: 20px; }
@@ -597,7 +600,16 @@ p {
   padding-top: 15px;
   height: 50px;
   width: 100%;
-  background-color: #1b2324; }
+  background-color: #1b2324;
+  border: 0px solid yellowGreen; }
+
+.topBannerContainer {
+  z-index: 200;
+  border: 1px solid yellowGreen; }
+
+.input-group[class*="col-"] {
+  padding-right: 15px;
+  padding-left: 15px; }
 
 /**-----| TEMP MISCELLANEOUS DEVELOPMENT PHASE |-----**/
 .bottomSpace {

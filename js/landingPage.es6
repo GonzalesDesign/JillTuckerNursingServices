@@ -73,6 +73,10 @@
 					/**-----| Menu anchor links |-----**/
 					$( menuId ).click( () => {
 						fGoTo( menus.link );
+						//Email contact form nav menu button
+						if(menus.menu === "Contact"){
+							$('#myModal').modal('show');
+						}
 					} );
 				}
 

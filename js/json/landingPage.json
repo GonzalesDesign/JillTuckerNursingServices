@@ -17,7 +17,7 @@
                 {"menu": "Testimonials", "link": "testimonials.html"},
                 {"menu": "News", "link": "index.html#News"},
                 {"menu": "Experience", "link": "index.html#Experience"},
-                {"menu": "Contact", "link": "#Contact"}
+                {"menu": "Contact", "link": "index.html#myModal"}
             ],
 			"landingPageDescription" : "<p><b>Jill Tucker Nursing is an in home health care service offering the highest quality private nurses and health care professionals to a discerning clientele.</b></p><p>Jill Tucker is a Registered Nurse with over 30 years of experience providing nursing care to prestigious families and distinguished individuals in New York City and Washington DC. Over the course of her career, working alongside premier surgeons in the highest ranking medical offices, she has carefully hand picked and established her specialized staff of healthcare professionals. </p><p><b>Private duty nurses and licensed professionals are available for short-term and in home nurse cases, for long-term ongoing assignments, and for hotel patient visits. </b></p>"
 		}

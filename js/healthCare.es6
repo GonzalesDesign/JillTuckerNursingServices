@@ -12,6 +12,7 @@
 	/**----------===| CLASS: CREATE ELEMENTS |===----------**/
 	const createElem = require( './CreateElementClass.es6' );
 	let createDiv = new createElem.CreateElementAny();
+	//fCreateTag( div, title, className, counter, appendedTo )
 
 	/**-----------=====| DOM CACHING |=====-----------**/
 	let mainContainer = $( ".mainContainer" );
