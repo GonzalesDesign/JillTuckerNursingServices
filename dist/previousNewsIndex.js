@@ -49,12 +49,12 @@
 	 * Developer: rolandolloyd@gmail.com
 	 * Copyright © 2016 GonzalesDesign
 	 * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
-	 * Module: Testimonials Index
+	 * Module: Previous News Index
 	 ***********************************************/
 	
 	( function() { /*IIFE:Immediately-Invoked Function Expression*/
 		"use strict";
-		console.log("testimonialsIndex.es6");
+		console.log("previousNewsIndex.es6");
 	
 		/**----------===| MODULE: COMMON |===----------**/
 		//var common = require("./common");
@@ -65,25 +65,18 @@
 		landingPage2.fLandingPageResize();
 	
 		/**----------===| MODULE: TESTIMONIALS |===----------**/
-		const testimonialsSection = __webpack_require__( 12 );
-		testimonialsSection.fTestimonialsAjax();
+		const previousNewsSection = __webpack_require__( 10 );
+		previousNewsSection.fPreviousNewsAjax();
 	
 		/**----------===| MODULE: TESTIMONIALS |===----------**/
 		const testimonialsBackToTop = __webpack_require__( 11 );
 		testimonialsBackToTop.fBackToTop();
 	
 		/**----------===| FUNCTION: SCREEN RESIZE QUERIES |===----------**/
-		let tI = 0;
-	
 		let fOnWindowResize = function() {
-	
-			console.log("testimonialsIndex resize: ", tI++);
-	
-			//servicesList.fServicesResize();
 	
 			landingPage2.fLandingPageResize();
 	
-			//imageCarousel.fCarouselResize();
 			testimonialsBackToTop.fBackToTop();
 	
 		}
@@ -564,7 +557,64 @@
 /* 7 */,
 /* 8 */,
 /* 9 */,
-/* 10 */,
+/* 10 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/***********************************************
+	 * Project: Jill Tucker Nursing Services
+	 * Developer: rolandolloyd@gmail.com
+	 * Copyright © 2016 GonzalesDesign
+	 * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
+	 * Module: Previous News
+	 ***********************************************/
+	
+	( function() { /*IIFE:Immediately-Invoked Function Expression*/
+		"use strict";
+	
+		/**----------===| CLASS: CREATE ELEMENTS |===----------**/
+		const createElem = __webpack_require__( 2 );
+		let createDiv = new createElem.CreateElementAny();
+	
+		/**-----------=====| DOM CACHING |=====-----------**/
+		// let mainContainer = $( ".mainContainer" );
+		// let previousNewsMainContainerClass = $( ".previousNewsMainContainerClass" );
+		// let previousNewsMainContainerId = $( "#previousNewsMainContainerId" );
+		 let previousNewsContainerClass = $( ".previousNewsContainerClass" );
+		let previousNewsContainerId = $( "#previousNewsContainerId" );
+	
+		const fPreviousNewsAjax = () => {
+			let promise = $.get( "./js/json/previousNews.json" );
+			promise.then( function( data ) {
+				console.log("data: ", data);
+				let jx = 0;
+				let ji = 0;
+				for ( let prevNews of data.PreviousNewsListContent ) {
+					console.log("prevNews: ", prevNews);
+					/**-----| Create div to hold the title |-----**/
+					createDiv.fCreateTag( "div", "previousNewsTitleContainer", "previousNewsTitleContainerClass", jx, previousNewsContainerId );
+					let previousNewsTitleContainerId = document.getElementById( "previousNewsTitleContainer" + "Id_" + jx );
+					console.log("previousNewsTitleContainerId: ", previousNewsTitleContainerId);
+					previousNewsTitleContainerId.innerHTML = prevNews.introTitle;
+					console.log("prevNews.introTitle: ", prevNews.introTitle);
+	
+					/**----------===| previousNews |===----------**/
+					for ( let previousNews of prevNews.previousNews ) {
+						ji++;
+						createDiv.fCreateTag( "div", "previousNewsContainer", "previousNewsContainerClass", ji, previousNewsContainerId );
+						let previousNewsContId = document.getElementById( "previousNewsContainer" + "Id_" + ji );
+						previousNewsContId.innerHTML = previousNews.previousNews;
+					}
+				}
+			} )
+		};
+	
+		/**-----------=====| EXPORTS |=====-----------**/
+		module.exports.fPreviousNewsAjax = fPreviousNewsAjax;
+	
+	}() );
+
+
+/***/ },
 /* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -627,60 +677,6 @@
 	}() );
 
 
-/***/ },
-/* 12 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/***********************************************
-	 * Project: Jill Tucker Nursing Services
-	 * Developer: rolandolloyd@gmail.com
-	 * Copyright © 2016 GonzalesDesign
-	 * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
-	 * Module: Testimonials from Patients & Clients
-	 ***********************************************/
-	
-	( function() { /*IIFE:Immediately-Invoked Function Expression*/
-		"use strict";
-	
-		/**----------===| CLASS: CREATE ELEMENTS |===----------**/
-		const createElem = __webpack_require__( 2 );
-		let createDiv = new createElem.CreateElementAny();
-	
-		/**-----------=====| DOM CACHING |=====-----------**/
-		// let mainContainer = $( ".mainContainer" );
-		// let testimonialsMainContainerClass = $( ".testimonialsMainContainerClass" );
-		// let testimonialsMainContainerId = $( "#testimonialsMainContainerId" );
-		 let testimonialsContainerClass = $( ".testimonialsContainerClass" );
-		let testimonialsContainerId = $( "#testimonialsContainerId" );
-	
-		const fTestimonialsAjax = () => {
-			let promise = $.get( "./js/json/testimonials.json" );
-			promise.then( function( data ) {
-				let jx = 0;
-				let ji = 0;
-				for ( let testimonials of data.TestimonialsListContent ) {
-					/**-----| Create div to hold the title |-----**/
-					createDiv.fCreateTag( "div", "testimonialTitleContainer", "testimonialTitleContainerClass", jx, testimonialsContainerId );
-					let testimonialTitleContainerId = document.getElementById( "testimonialTitleContainer" + "Id_" + jx );
-					testimonialTitleContainerId.innerHTML = testimonials.introTitle;
-	
-					/**----------===| testimonials |===----------**/
-					for ( let testimonial of testimonials.testimonials ) {
-						ji++;
-						createDiv.fCreateTag( "div", "testimonialsContainer", "testimonialsContainerClass", ji, testimonialsContainerId );
-						let testimonialsContId = document.getElementById( "testimonialsContainer" + "Id_" + ji );
-						testimonialsContId.innerHTML = testimonial.testimonial;
-					}
-				}
-			} )
-		};
-	
-		/**-----------=====| EXPORTS |=====-----------**/
-		module.exports.fTestimonialsAjax = fTestimonialsAjax;
-	
-	}() );
-
-
 /***/ }
 /******/ ]);
-//# sourceMappingURL=testimonialsIndex.js.map
+//# sourceMappingURL=previousNewsIndex.js.map

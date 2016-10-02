@@ -15,24 +15,13 @@
 	const createElem = require('./CreateElementClass.es6');
 	let createDiv = new createElem.CreateElementAny();
 
-	//let servicesContainer = $(".servicesContainer");
-	//let servicesContainerId = $("#servicesContainerId");
-	//let servicesMainContainerId = $("#servicesMainContainerId");
-
 	/**-----------=====| DOM CACHING |=====-----------**/
 	let mainContainer = $(".mainContainer");
 	let aboutMainContainerClass = $(".aboutMainContainerClass");
 	let aboutMainContainerId = $("#aboutMainContainerId");
 
 	let aboutContainerClass = $(".aboutContainerClass");
-	let aboutContainerId = $("#aboutContainerId")
-	//console.log("aboutContainerId: ", aboutContainerId);
-
-	// let healthTitleClass = $(".healthTitleClass");
-	// let healthTitleId = $("#healthTitleId")
-	//
-	// let healthQuoteClass = $(".healthQuoteClass");
-	// let healthQuoteId = $("#healthQuoteId")
+	let aboutContainerId = $("#aboutContainerId");
 
 	const fAboutAjax = () => {
 		let promise = $.get("./js/json/about.json");
@@ -60,7 +49,5 @@
 
 	/**-----------=====| EXPORTS |=====-----------**/
 	module.exports.fAboutAjax = fAboutAjax;
-	//module.exports.fLandingPageAnim = fLandingPageAnim;
-
 
 }());

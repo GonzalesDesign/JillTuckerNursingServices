@@ -87,7 +87,7 @@ b, strong {
   // box-shadow: 0px 0px 20px 10px rgba(25, 25, 25, 0.10);
   //background-color: #80d06b;
   //float: left;
-  border: 1px solid $Grey;
+  border: 0px solid $Grey;
 }
 .landingPageContainer {
   // font-family: "Merriweather", serif;
@@ -96,7 +96,7 @@ b, strong {
   // margin-top: 10px;
   // color: $Grey;
   text-align: center;
-  border: 1px solid $Orange;
+  border: 0px solid $Orange;
 }
 .landingPageClass{
     margin-top: 30px;
@@ -108,7 +108,7 @@ b, strong {
 .logoContainerClassX {
     height: auto;
     //width: auto;
-    border: 1px solid $Orange;
+    border: 0px solid $Orange;
 }
 .logoClass{
     height: 150px;
@@ -134,7 +134,7 @@ b, strong {
     //padding-top: 20px;
     //padding-bottom: 30px;
     position: relative;;
-    border: 1px solid $YellowGreen;
+    border: 0px solid $YellowGreen;
 }
 .logoAddressClass {
     font-family: "Open-Sans", sans-serif;
@@ -151,7 +151,7 @@ b, strong {
     //padding: 30px;
     position: relative;
     top: -34px;
-    border: 1px solid $Orange;
+    border: 0px solid $Orange;
     float: left;
 }
 .landingPageDescription {
@@ -217,7 +217,7 @@ h2 {
   font-size: 2em;
   margin-top: 10px;
   color: grayrgb(56, 60, 60);
-  border: 1px solid $YellowGreen;
+  border: 0px solid $YellowGreen;
 }
 h3 {
   //font-family: "Oswald", sans-serif;
@@ -230,7 +230,7 @@ h3 {
   font-size: 1.8em;
   margin-top: 10px;
   color: grayrgb(56, 60, 60);
-  border: 1px solid $YellowGreen;
+  border: 0px solid $YellowGreen;
 }
 h4 {
   font-family: "Open Sans", sans-serif;
@@ -275,7 +275,7 @@ p {
     border: 0px solid $Cyanish;
 }
 // .carousel-indicators li{
-//     border: 1px solid $Cyanish;
+//     border: 0px solid $Cyanish;
 //     border-radius: 10px;
 //     width: 14px;
 //     height: 14px;
@@ -287,7 +287,7 @@ p {
     width: 14px;
     height: 14px;
     margin: 10px;
-    border: 1px solid $Cyanish;
+    border: 0px solid $Cyanish;
 }
 .carousel {
     margin-top: 20px;
@@ -377,7 +377,7 @@ p {
   text-transform: uppercase;
   margin-top: 10px;
   color: $Blueish;
-  border: 1px solid $YellowGreen;
+  border: 0px solid $YellowGreen;
 }
 .servicesContainerClass {
   width: auto;
@@ -400,7 +400,7 @@ p {
   font-size: $CopyFontSize;
   margin-top: 1px;
   color: rgb(56, 60, 60);
-  border: 1px solid $YellowGreen;
+  border: 0px solid $YellowGreen;
 }
 .servicesULClass {
   //height: 100px;
@@ -579,6 +579,48 @@ p {
     border: 0px solid red;
 }
 
+.previousNewsContainerClass {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: $CopyFontSize;
+  //text-transform: uppercase;
+  text-align: center;
+  // font-style: italic;
+  width: 80%;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
+  border: 1px solid yellowGreen;
+  //padding-top: $paragTopLeading;
+  //padding-bottom: $paragBottomLeading;
+}
+
+.previousNewsTitleContainerClass {
+  width: auto;
+  height: auto;
+  //font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: $titleFontSize;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 100%;
+  color: $Blueish;
+  //margin-top: 10px;
+  padding-top: $titleTopLeading;
+  padding-bottom: $titleBottomLeading;
+  //z-index: 101;
+  //background: url("..../images/arrowDownBG.jpg") no-repeat center center;
+  // -webkit-background-size: cover;
+  // -moz-background-size: cover;
+  // -o-background-size: cover;
+  background-size: 100%;
+  border: 0px solid $YellowGreen;
+  p {
+      font-size: $CopyFontSize;
+  }
+}
+
 /**-----| HEALTH CARE |-----**/
 .healthMainContainerClass {
   height: auto;
@@ -597,7 +639,7 @@ p {
 //     margin-left: auto;
 //     height: 200px;
 //     width: 90%;
-//     border: 1px solid $Grey;
+//     border: 0px solid $Grey;
 // }
 .healthTitleContainerClass {
   font-family: 'Open Sans', sans-serif;
@@ -651,7 +693,7 @@ p {
 //     margin-left: auto;
 //     height: 200px;
 //     width: 90%;
-//     border: 1px solid $Grey;
+//     border: 0px solid $Grey;
 // }
 .aboutTitleContainerClass {
   font-family: 'Open Sans', sans-serif;
@@ -768,7 +810,7 @@ p {
 // EMAIL
 .topBannerContainer{
     z-index: 200;
-    border: 1px solid $YellowGreen;
+    border: 0px solid $YellowGreen;
 }
 .input-group[class*="col-"] {
     padding-right: 15px;

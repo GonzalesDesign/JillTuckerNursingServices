@@ -9,7 +9,8 @@ module.exports = {
   context: path.join(__dirname, './js'),
   entry: {
     app: './index.es6',
-    testimonialsIndex: './testimonialsIndex.es6'
+    testimonialsIndex: './testimonialsIndex.es6',
+    previousNewsIndex: './previousNewsIndex.es6'
   },
   output: {
     path: path.join(__dirname, './dist'),

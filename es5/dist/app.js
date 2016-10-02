@@ -58,7 +58,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   * Developer: rolandolloyd@gmail.com
   * Copyright © 2016 GonzalesDesign
   * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
-  * Module: Index 071416
+  * Module: Index
   ***********************************************/
 
 	(function () {
@@ -67,11 +67,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 		console.log("index.es6x");
 		var d = new Date();
+		var h = d.getHours();
 		var n = d.getMinutes();
-		console.log("Date in minutes: ", n);
-
-		/**----------===| MODULE: COMMON |===----------**/
-		var common = __webpack_require__(1);
+		console.log("Date in minutes: ", h, ":", n);
 
 		/**----------===| MODULE: LANDING PAGE |===----------**/
 		var landingPage = __webpack_require__(2);
@@ -85,7 +83,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 		/**----------===| MODULE: LANDING PAGE DESCRIPTION |===----------**/
 		var landingPageDesc = __webpack_require__(6);
 		landingPageDesc.fLandingPageDescAjax();
-		landingPageDesc.fLandingPageDescResize();
+		//landingPageDesc.fLandingPageDescResize();
 
 		/**----------===| MODULE: SERVICES |===----------**/
 		var servicesList = __webpack_require__(7);
@@ -103,18 +101,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 		var aboutSection = __webpack_require__(10);
 		aboutSection.fAboutAjax();
 
-		/**----------===| MODULE: TESTIMONIALS |===----------**/
-		// const testimonialsSection = require( './testimonials.es6' );
-		// testimonialsSection.fTestimonialsAjax();
-
 		/**----------===| FUNCTION: SCREEN RESIZE QUERIES |===----------**/
 		var fOnWindowResize = function fOnWindowResize() {
 
 			servicesList.fServicesResize();
 
 			landingPage.fLandingPageResize();
-
-			landingPageDesc.fLandingPageDescResize();
 
 			imageCarousel.fCarouselResize();
 		};
@@ -123,14 +115,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 	})();
 
 	/***/
-},
+},,
 /* 1 */
-/***/function (module, exports) {
-
-	module.exports = "Common";
-
-	/***/
-},
 /* 2 */
 /***/function (module, exports, __webpack_require__) {
 
@@ -140,15 +126,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   * Copyright © 2016 GonzalesDesign
   * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
   * Module: Landing Page
-  ***********************************************/
+  * Description: Includes the following; Logo, Menu, Carousel
+  ***********************************************************/
 
 	(function () {
 		/*IIFE:Immediately-Invoked Function Expression*/
 		"use strict";
 
-		console.log("landingPage.es6");
-
 		/**----------===| CLASS: CREATE ELEMENTS |===----------**/
+
 		var createElem = __webpack_require__(3);
 		var createDiv = new createElem.CreateElementAny();
 
@@ -204,6 +190,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 						/**-----| Menu Navigation |-----**/
 						createDiv.fCreateTag("div", "menuNavContainer", "menuNavContainerClass", jx, menuNavClass);
 						var menuNavContainerId = document.getElementById("menuNavContainer" + "Id_" + jx);
+
 						var _iteratorNormalCompletion2 = true;
 						var _didIteratorError2 = false;
 						var _iteratorError2 = undefined;
@@ -223,6 +210,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 								/**-----| Menu anchor links |-----**/
 								$(menuId).click(function () {
 									fGoTo(menus.link);
+									//Email contact form nav menu button
+									if (menus.menu === "Contact") {
+										$('#myModal').modal('show');
+									}
 								});
 							};
 
@@ -280,46 +271,51 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 		var screenXSmall = 550;
 		var screenSmall = 750;
 		var screenMedium = 970;
-		var largeScreen = 1170;
+		var largeScreen = 1200;
 
 		var fLandingPageResize = function fLandingPageResize() {
+			console.log("fLandingPageResize: ");
 			var browserWidth = window.innerWidth;
 			var menuClass = $(".menuClass");
+			var largeFont = "28px";
+			var medFont = "26px";
+			var smallFont = "22px";
+			var tinyFont = "18px";
 
 			/*-----[ Largest Screen ]-----*/
 			if (browserWidth > largeScreen) {
 				menuClass.css({
-					"font-size": "1.8em",
+					"font-size": largeFont,
 					"padding-left": "34px",
 					"padding-right": "34px"
 				});
 				/*-----[ .container is between largeScreen and screenMedium width ]-----*/
 			} else if (browserWidth <= largeScreen && browserWidth > screenMedium) {
 				menuClass.css({
-					"font-size": "1.8em",
+					"font-size": largeFont,
 					"padding-left": "12px",
 					"padding-right": "12px"
 				});
 				/*-----[ .container is between screenMedium and screenSmall width ]-----*/
 			} else if (browserWidth <= screenMedium && browserWidth > screenSmall) {
 				menuClass.css({
-					"font-size": "1.4em",
+					"font-size": medFont,
 					"padding-left": "10px",
 					"padding-right": "10px"
 				});
 				/*-----[ .container is between screenSmall and screenXSmall width ]-----*/
 			} else if (browserWidth <= screenSmall && browserWidth > screenXSmall) {
 				menuClass.css({
-					"font-size": "1.3em",
-					"padding-left": "10px",
-					"padding-right": "10px"
+					"font-size": smallFont,
+					"padding-left": "6px",
+					"padding-right": "6px"
 				});
 				/*-----[ .container is less than screenXSmall width ]-----*/
 			} else {
 				menuClass.css({
-					"font-size": "1.2em",
-					"padding-left": "2px",
-					"padding-right": "2px"
+					"font-size": tinyFont,
+					"padding-left": "12px",
+					"padding-right": "12px"
 				});
 			}
 		};
@@ -395,7 +391,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   * Developer: rolandolloyd@gmail.com
   * Copyright © 2016 GonzalesDesign
   * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
-  * Module: 
+  * Module: New Image
   ***********************************************/
 
 	(function () {
@@ -622,12 +618,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 			var browserWidth = window.innerWidth;
 			//console.log("browserWidth: ", browserWidth);
 			var carouselTitleBoxClass = $(".carouselTitleBoxClass");
+			var carouselDescriptionBoxClass = $(".carouselDescriptionBoxClass");
 			var titleDescriptionBoxClass = $(".titleDescriptionBoxClass");
+
+			var largeTitleFont = "2.6em";
+			var medTitleFont = "1.8em";
+			var largeDescFont = "1.5em";
+			var medDescFont = "1em";
 
 			/*-----[ Largest Screen ]-----*/
 			if (browserWidth > 1170) {
 				carouselTitleBoxClass.css({
-					"font-size": "3em"
+					"font-size": largeTitleFont
+				});
+				carouselDescriptionBoxClass.css({
+					"font-size": largeDescFont
 				});
 				titleDescriptionBoxClass.css({
 					"top": "65%",
@@ -638,7 +643,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 				/*-----[ .container is between 1170 and 970 width ]-----*/
 			} else if (browserWidth <= 1170 && browserWidth > 970) {
 				carouselTitleBoxClass.css({
-					"font-size": "3em"
+					"font-size": largeTitleFont
+				});
+				carouselDescriptionBoxClass.css({
+					"font-size": largeDescFont
 				});
 				titleDescriptionBoxClass.css({
 					"top": "65%",
@@ -649,7 +657,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 				/*-----[ .container is between 970 and 750 width ]-----*/
 			} else if (browserWidth <= 970 && browserWidth > 750) {
 				carouselTitleBoxClass.css({
-					"font-size": "3em"
+					"font-size": largeTitleFont
+				});
+				carouselDescriptionBoxClass.css({
+					"font-size": largeDescFont
 				});
 				titleDescriptionBoxClass.css({
 					"top": "65%",
@@ -660,7 +671,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 				/*-----[ .container is between 750 and 550 width ]-----*/
 			} else if (browserWidth <= 750 && browserWidth > 550) {
 				carouselTitleBoxClass.css({
-					"font-size": "2em"
+					"font-size": medTitleFont
+				});
+				carouselDescriptionBoxClass.css({
+					"font-size": medDescFont
 				});
 				titleDescriptionBoxClass.css({
 					"top": "65%",
@@ -671,7 +685,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 				/*-----[ .container is less than 550 width ]-----*/
 			} else {
 				carouselTitleBoxClass.css({
-					"font-size": "2em"
+					"font-size": medTitleFont
+				});
+				carouselDescriptionBoxClass.css({
+					"font-size": medDescFont
 				});
 				titleDescriptionBoxClass.css({
 					"top": "50%"
@@ -741,51 +758,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 					for (var _iterator5 = data.LandingPageDescription[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
 						var introData = _step5.value;
 
-						// /**-----| Logo |-----**/
-						// createDiv.fCreateTag( "div", "logo", "logoClass", jx, logoContainerId );
-						// let logoId = $( "#logo" + "Id_" + jx );
-						// /**-----| Company Logo Image |-----**/
-						// createNewImg.fCreateNewImage( logoId, introData.companyLogo, "80%", "White" );
-						// /**-----| CONCIERGE HOME CARE NURSING |-----**/
-						// createDiv.fCreateTag( "div", "logoSubTitle", "logoSubTitleClass", jx, logoContainerId );
-						// //let logoSubTitleId = $("#logoSubTitleId_"+jx);
-						// let logoSubTitleId = document.getElementById( "logoSubTitle" + "Id_" + jx );
-						// logoSubTitleId.innerHTML = introData.introSubTitle;
-						// /**-----| ADDRESS: NY & DC |-----**/
-						// createDiv.fCreateTag( "div", "logoAddress", "logoAddressClass", jx, logoContainerId );
-						// let logoAddressId = document.getElementById( "logoAddress" + "Id_" + jx );
-						// logoAddressId.innerHTML = introData.logoAddress;
-						// /**-----| Menu Navigation |-----**/
-						// createDiv.fCreateTag( "div", "menuNavContainer", "menuNavContainerClass", jx, menuNavClass );
-						// let menuNavContainerId = document.getElementById( "menuNavContainer" + "Id_" + jx );
-						// for ( let menus of introData.mainMenuNavs ) {
-						// 	ji++;
-						// 	createDiv.fCreateTag( "div", "menu", "menuClass", ji, menuNavContainerId );
-						// 	let menuId = document.getElementById( "menu" + "Id_" + ji );
-						// 	//let menuId = $("#menu" + "Id_" + ji);
-						// 	//let menuId = $("#menuId_" + ji);
-						// 	let menuClass = $( ".menuClass" );
-						// 	menuId.innerHTML = menus.menu;
-						//
-						// 	/**-----| Menu anchor links |-----**/
-						// 	$( menuId ).click( () => {
-						// 		fGoTo( menus.link );
-						// 	} );
-						// }
-
-						/**-----| Images Carousel |-----**/
-						// let createCarousel = new carouselCreate.fBuildCarousel();
 
 						/**-----| Landing Page Description |-----**/
 						createDiv.fCreateTag("div", "landingPageDesc", "landingPageDescClass", jx, landingPageDescriptionId);
 						var landingPageDescId = document.getElementById("landingPageDesc" + "Id_" + jx);
-						//let x = $("#landingPage" + "Id_" + jx);
 						var strng = introData.landingPageDescription;
 						var subStrng = strng.substr(0, 700);
 						landingPageDescId.innerHTML = subStrng;
 					}
-
-					/**-----| Screen resize querie on load |-----**/
 				} catch (err) {
 					_didIteratorError5 = true;
 					_iteratorError5 = err;
@@ -800,61 +780,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 						}
 					}
 				}
-
-				fLandingPageDescResize();
 			});
-		};
-
-		var screenXSmall = 550;
-		var screenSmall = 750;
-		var screenMedium = 970;
-		var largeScreen = 1170;
-
-		var fLandingPageDescResize = function fLandingPageDescResize() {
-			var browserWidth = window.innerWidth;
-			var menuClass = $(".menuClass");
-
-			/*-----[ Largest Screen ]-----*/
-			if (browserWidth > largeScreen) {
-				menuClass.css({
-					"font-size": "1.8em",
-					"padding-left": "34px",
-					"padding-right": "34px"
-				});
-				/*-----[ .container is between largeScreen and screenMedium width ]-----*/
-			} else if (browserWidth <= largeScreen && browserWidth > screenMedium) {
-				menuClass.css({
-					"font-size": "1.8em",
-					"padding-left": "12px",
-					"padding-right": "12px"
-				});
-				/*-----[ .container is between screenMedium and screenSmall width ]-----*/
-			} else if (browserWidth <= screenMedium && browserWidth > screenSmall) {
-				menuClass.css({
-					"font-size": "1.4em",
-					"padding-left": "10px",
-					"padding-right": "10px"
-				});
-				/*-----[ .container is between screenSmall and screenXSmall width ]-----*/
-			} else if (browserWidth <= screenSmall && browserWidth > screenXSmall) {
-				menuClass.css({
-					"font-size": "1.3em",
-					"padding-left": "10px",
-					"padding-right": "10px"
-				});
-				/*-----[ .container is less than screenXSmall width ]-----*/
-			} else {
-				menuClass.css({
-					"font-size": "1.2em",
-					"padding-left": "2px",
-					"padding-right": "2px"
-				});
-			}
 		};
 
 		/**-----------=====| EXPORTS |=====-----------**/
 		module.exports.fLandingPageDescAjax = fLandingPageDescAjax;
-		module.exports.fLandingPageDescResize = fLandingPageDescResize;
 	})();
 
 	/***/
@@ -868,7 +798,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   * Copyright © 2016 GonzalesDesign
   * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
   * Module: Services List
-  ***********************************************/
+  * Show a list of Services offered. Screen queries are divided
+  	into 1 - 3 columns depends on the screen width.
+  *************************************************************/
 
 	(function () {
 		/*IIFE:Immediately-Invoked Function Expression*/
@@ -1265,6 +1197,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 		var createElem = __webpack_require__(3);
 		var createDiv = new createElem.CreateElementAny();
+		//fCreateTag( div, title, className, counter, appendedTo )
 
 		/**-----------=====| DOM CACHING |=====-----------**/
 		var mainContainer = $(".mainContainer");
@@ -1341,10 +1274,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 		var createElem = __webpack_require__(3);
 		var createDiv = new createElem.CreateElementAny();
 
-		//let servicesContainer = $(".servicesContainer");
-		//let servicesContainerId = $("#servicesContainerId");
-		//let servicesMainContainerId = $("#servicesMainContainerId");
-
 		/**-----------=====| DOM CACHING |=====-----------**/
 		var mainContainer = $(".mainContainer");
 		var aboutMainContainerClass = $(".aboutMainContainerClass");
@@ -1352,13 +1281,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 		var aboutContainerClass = $(".aboutContainerClass");
 		var aboutContainerId = $("#aboutContainerId");
-		//console.log("aboutContainerId: ", aboutContainerId);
-
-		// let healthTitleClass = $(".healthTitleClass");
-		// let healthTitleId = $("#healthTitleId")
-		//
-		// let healthQuoteClass = $(".healthQuoteClass");
-		// let healthQuoteId = $("#healthQuoteId")
 
 		var fAboutAjax = function fAboutAjax() {
 			var promise = $.get("./js/json/about.json");
@@ -1407,8 +1329,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 		/**-----------=====| EXPORTS |=====-----------**/
 		module.exports.fAboutAjax = fAboutAjax;
-		//module.exports.fLandingPageAnim = fLandingPageAnim;
-
 	})();
 
 	/***/

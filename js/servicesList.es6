@@ -57,39 +57,6 @@
 					/**----- Getting the LI height -----**/
 					let servicesLIIdHeight = $( serviceLi )[ 0 ].scrollHeight
 				}
-
-				/*----- Icon Links Main Container -----*/
-				// createDiv.fCreateTag( "div", "iconMainContainer", "iconMainContainerClass", jx, servicesMainContainerId );
-				// let iconMainContainerId = $( "#iconMainContainerId_" + jx );
-				// /*----- Icon Links 3 Columns Containers -----*/
-				// createDiv.fCreateTag( "div", "icon3ColumnsContainer", "icon3ColumnsContainerClass", jx, iconMainContainerId );
-				// let icon3ColumnsContainerId = $( "#icon3ColumnsContainerId_" + jx );
-				// /*----- Icon On Each Container -----*/
-				// for ( let iconImages of services.servicesImages ) {
-				// 	jj++;
-				// 	createDiv.fCreateTag( "div", "icon", "iconClass", jj, icon3ColumnsContainerId );
-				// 	let iconId = $( "#iconId_" + jj );
-				// 	//let iconId = document.getElementById("iconId_" + jj);
-				// 	let iconClass = $( ".iconClass" );
-				// 	/*----- Icon CSS Overide -----*/
-				// 	iconId.css( {
-				// 		//"height": "200px",
-				// 		"float": "none"
-				// 	} )
-				//
-				// 	createDiv.fCreateTag( "div", "iconImage", "iconImageClass", jj, iconId );
-				// 	let iconImageId = $( "#iconImageId_" + jj );
-				// 	createNewIconImg.fCreateNewImage( iconImageId, iconImages.image, "100%", "Grey" );
-				//
-				// 	/*----- Image Title -----*/
-				// 	createDiv.fCreateTag( "div", "iconTitle", "iconTitleClass", jj, iconId );
-				// 	//let iconTitleId = $("#iconTitleId_" + jj);
-				// 	let iconTitleId = document.getElementById( "iconTitleId_" + jj );
-				// 	iconTitleId.innerHTML = iconImages.imgTitle;
-				//
-				// 	/*----- Trigger scren queries on load -----*/
-				// 	fServicesResize();
-				// }
 			}
 		} )
 	}

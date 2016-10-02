@@ -3,7 +3,7 @@
  * Developer: rolandolloyd@gmail.com
  * Copyright © 2016 GonzalesDesign
  * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
- * Module: Index 071416
+ * Module: Index
  ***********************************************/
 
 ( function() { /*IIFE:Immediately-Invoked Function Expression*/
@@ -13,9 +13,6 @@
 	let h = d.getHours();
 	let n = d.getMinutes();
 	console.log("Date in minutes: ", h,":",n);
-
-	/**----------===| MODULE: COMMON |===----------**/
-	var common = require("./common");
 
 	/**----------===| MODULE: LANDING PAGE |===----------**/
 	const landingPage = require( './landingPage.es6' );
@@ -47,18 +44,12 @@
 	const aboutSection = require( './about.es6' );
 	aboutSection.fAboutAjax();
 
-	/**----------===| MODULE: TESTIMONIALS |===----------**/
-	// const testimonialsSection = require( './testimonials.es6' );
-	// testimonialsSection.fTestimonialsAjax();
-
 	/**----------===| FUNCTION: SCREEN RESIZE QUERIES |===----------**/
 	let fOnWindowResize = function() {
 
 		servicesList.fServicesResize();
 
 		landingPage.fLandingPageResize();
-
-		//landingPageDesc.fLandingPageDescResize();
 
 		imageCarousel.fCarouselResize();
 

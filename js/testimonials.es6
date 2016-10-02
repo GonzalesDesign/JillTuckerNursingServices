@@ -8,10 +8,6 @@
 
 ( function() { /*IIFE:Immediately-Invoked Function Expression*/
 	"use strict";
-	console.log("testimonials");
-
-	/**----------===| MODULE: COMMON |===----------**/
-	//var common = require("./common");
 
 	/**----------===| CLASS: CREATE ELEMENTS |===----------**/
 	const createElem = require( './CreateElementClass.es6' );

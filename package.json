@@ -17,6 +17,7 @@
     "buildOrig": "babel --presets es2015 js/index.js -d es5",
     "buildApp": "babel --presets es2015 dist/app.js -d es5",
     "buildTestimonials": "babel --presets es2015 dist/testimonialsIndex.js -d es5",
+    "buildPreviousNews": "babel --presets es2015 dist/previousNewsIndex.js -d es5",
     "test": "echo \"Error: No Test Specified\" && exit 1"
   },
   "devDependencies": {

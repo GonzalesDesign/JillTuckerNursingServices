@@ -29,37 +29,82 @@
 
 <body>
 
+  <!-- Email Form -->
+  <div class="container modalEmailFormContainer">
+    <!-- Button to trigger modal -->
+    <!-- <a href="#myModal" role="button" class="btn btn-custom" data-toggle="modal">Open Contact Form</a> -->
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Contact Jill Tucker</h4>
+        </div>
+        <div class="modal-body">
+          <!-- form -->
+          <form class="form-horizontal" name="commentform" method="post" action="send_form_email.php">
+            <div class="form-group">
+                <label class="control-label col-md-4" for="first_name">First Name</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-4" for="last_name">Last Name</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-4" for="email">Email Address</label>
+                <div class="col-md-6 input-group">
+                <span class="input-group-addon">@</span>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email Address"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-4" for="comment">Question or Comment</label>
+                <div class="col-md-6">
+                    <textarea rows="6" class="form-control" id="comments" name="comments" placeholder="Your question or comment here"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-6">
+                    <button type="submit" value="Submit" class="btn btn-custom pull-right">Send</button>
+                </div>
+            </div>
+        </form>
+        </div><!-- End of Modal body -->
+        </div><!-- End of Modal content -->
+        </div><!-- End of Modal dialog -->
+    </div><!-- End of Modal -->
+  </div>
+
+  <!-- Top Banner Info -->
+  <div class="container topBannerContainer">
+    <div class="infoBanner"><a name="ContactBanner"></a>
+      <div class="contactInfo">212.431.30129 <span class="glyphicon glyphicon-stop" aria-hidden="true"></span>
+        917.439.2309 <span class="glyphicon glyphicon-stop" aria-hidden="true"></span>
+        <!-- <div class="eMailTo"> -->
+          <!-- <a href="#myModal" data-toggle="modal">jill@jilltuckernursing.com</a> -->
+          <a href="#myModal" data-toggle="modal">jill@jilltuckernursing.com</a>
+        <!-- </div> -->
+      </div>
+      <a href="https://www.facebook.com/JillTuckerNursing/" target="_blank">
+        <img src="images/fbLogo.jpg" class="fbIcon" alt="Go to FaceBook" height="30px" width="30px"></a>
+    </div>
+  </div>
+
   <!-- Main Page Container -->
   <div class="container mainContainer" id="containerId">
-    <div class="infoBanner"><a name="ContactBanner"></a>
-      <div class="contactInfo">212.431.30129 <span class="glyphicon glyphicon-stop" aria-hidden="true"></span> 917.439.2309 <span class="glyphicon glyphicon-stop" aria-hidden="true"></span> jill@jilltuckernursing.com</div>
-      <div class="fbIcon"></div>
-      <!-- <a href="http://www.facebook.com" class="fbIcon"></a> -->
-    </div>
     <!--========== Landing Page ==========-->
     <div class="landingPageContainer" id="landingPageContainerId"><a name="Home"></a>
       <!-- Logo -->
       <div class="logoContainerClass" id="logoContainerId"></div>
       <!-- Menu Navigation -->
       <div class="menuNavClass" id="menuNavClassId"></div>
-
-      <!--| Carousel |-->
-      <!-- <div class="carousel slide" id="modalCarousel" data-ride="carousel">
-        <ol class="carousel-indicators"></ol>
-        <div class="carousel-inner" role="listbox" id="carouslInnerId"></div>
-        <a class="carousel-control left" href="#modalCarousel" data-slide="prev"><i class = "glyphicon glyphicon-chevron-left" ></i ></a>
-        <a class="carousel-control right" href="#modalCarousel" data-slide="next"><i class = "glyphicon glyphicon-chevron-right" ></i ></a>
-      </div> -->
-
-      <!-- Description -->
-      <!-- <div class="landingPageDescription" id="landingPageDescriptionId"></div> -->
-
     </div>
-
-    <!--========== Services ==========-->
-    <!-- <div class="servicesMainContainer" id="servicesMainContainerId"><a name="Services"></a>
-      <div class="ulContainerClass" id="ulContainerId"></div>
-    </div> -->
 
     <!--========== Testimonials ==========-->
     <div class="testimonialsMainContainerClass" id="testimonialsMainContainerId"><a name="Testimonials"></a>
@@ -68,37 +113,23 @@
 
     <div class="backToTopContainerClass" id="backToTopContainerId"></div>
 
-    <!--========== Responses ==========-->
-    <!-- <div class="responsesMainContainerClass" id="responsesMainContainerId"><a name="Testimonials"></a>
-      <div class="responsesContainerClass" id="responsesContainerId"></div>
-    </div> -->
-
-    <!--========== Health Care News ==========-->
-    <!-- <div class="healthMainContainerClass" id="healthMainContainerId"><a name="News"></a>
-      <div class="healthContainerClass" id="healthContainerId"></div>
-    </div> -->
-
-    <!--========== About || Experience ==========-->
-    <!-- <div class="aboutMainContainerClass" id="aboutMainContainerId"><a name="Experience"></a>
-      <div class="aboutContainerClass" id="aboutContainerId"></div>
-    </div> -->
-
     <!--========== Footer ==========-->
     <div class="footerMainContainerClass" id="footerMainContainerId">
         <div class="footerContactContainer">
             <div class="eMailTo">
-                <a href="mailto:jill@jilltuckernursing.com/?subject=Mail from Our Site">
-                    Click here to contact Jill Tucker
-                </a>
+                <a href="#myModal" data-toggle="modal">Click here to contact Jill Tucker</a>
             </div>
-            <div class="footerContactInfo">Phone:(212)431-30129 (917)439-2309</div>
-            <div class="footerFB"></div>
+            <div class="footerContactInfo">Phone:(212)431-30129 (917)439-2309
+              <a href="https://www.facebook.com/JillTuckerNursing/" target="_blank">
+                <img src="images/fbLogoWhite.jpg" class="fbIconFooter" alt="Go to FaceBook" height="30px" width="40px">
+              </a>
+            </div>
         </div>
         <div class="copyright">Copyright@2016 Jill Tucker Nursing Services LLC</div>
     </div>
 
     <!--========== Bottom Space: Development Phase ==========-->
-    <div class="bottomSpace"></div>
+    <!-- <div class="bottomSpace"></div> -->
   </div>
 
   <!-- CLOUD JS -->
@@ -110,22 +141,14 @@
   <!-- DEV LOCAL JS -->
 	<!-- <script src="localcdn/jquery-2.0.3.min.js"></script>
 	<script src="localcdn/bootstrap.min.js"></script> -->
-
 	<!-- <script src="localcdn/TweenMax.min.js"></script> -->
 
-
-  <!-- Dynamically created by Webpack: es6 -->
-  <!-- "start": "webpack-dev-server ./js/index.es6" -->
-  <!-- localhost:8080 -->
-  <!-- <script src="js/index.js"></script> -->
-  <!-- <script src="commons.js"></script>
-  <script src="./js/index_bundle.js"></script> -->
-  <script src="./dist/testimonialsIndex.js"></script>
-
+  <!-- DEVELOPMENT TRANSPILED ES6 -->
+  <!-- <script src="./dist/testimonialsIndex.js"></script> -->
 
   <!-- PRODUCTION TRANSPILED ES5 -->
   <!-- localhost/GonzalesDesign_ApacheWebServer/ -->
-  <!-- <script src="./es5/js/index.js"></script> -->
+  <script src="./es5/dist/testimonialsIndex.js"></script>
   <!--=====================================================-->
 
 </body>

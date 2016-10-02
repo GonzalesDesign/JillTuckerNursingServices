@@ -9,7 +9,6 @@
 
 ( function() { /*IIFE:Immediately-Invoked Function Expression*/
 	"use strict";
-	console.log("landingPage.es6");
 
 	/**----------===| CLASS: CREATE ELEMENTS |===----------**/
 	const createElem = require( './CreateElementClass.es6' );

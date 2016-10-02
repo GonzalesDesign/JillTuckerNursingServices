@@ -49,7 +49,7 @@
 	 * Developer: rolandolloyd@gmail.com
 	 * Copyright © 2016 GonzalesDesign
 	 * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
-	 * Module: Index 071416
+	 * Module: Index
 	 ***********************************************/
 	
 	( function() { /*IIFE:Immediately-Invoked Function Expression*/
@@ -60,42 +60,35 @@
 		let n = d.getMinutes();
 		console.log("Date in minutes: ", h,":",n);
 	
-		/**----------===| MODULE: COMMON |===----------**/
-		var common = __webpack_require__(1);
-	
 		/**----------===| MODULE: LANDING PAGE |===----------**/
-		const landingPage = __webpack_require__( 2 );
+		const landingPage = __webpack_require__( 1 );
 		landingPage.fLandingPageAjax();
 		landingPage.fLandingPageResize();
 	
 		/**----------===| MODULE: IMAGE CAROUSEL |===----------**/
-		const imageCarousel = __webpack_require__( 5 );
+		const imageCarousel = __webpack_require__( 4 );
 		imageCarousel.fCarouselResize();
 	
 		/**----------===| MODULE: LANDING PAGE DESCRIPTION |===----------**/
-		const landingPageDesc = __webpack_require__( 6 );
+		const landingPageDesc = __webpack_require__( 5 );
 		landingPageDesc.fLandingPageDescAjax();
 		//landingPageDesc.fLandingPageDescResize();
 	
 		/**----------===| MODULE: SERVICES |===----------**/
-		const servicesList = __webpack_require__( 7 );
+		const servicesList = __webpack_require__( 6 );
 		servicesList.fServicesListAjax();
 	
 		/**----------===| MODULE: RESPONSES |===----------**/
-		const responsesSection = __webpack_require__( 8 );
+		const responsesSection = __webpack_require__( 7 );
 		responsesSection.fResponsesAjax();
 	
 		/**----------===| MODULE: HEALTH CARE |===----------**/
-		const halthCareSection = __webpack_require__( 9 );
+		const halthCareSection = __webpack_require__( 8 );
 		halthCareSection.fHealthCareAjax();
 	
 		/**----------===| MODULE: ABOUT || EXPERIENCE |===----------**/
-		const aboutSection = __webpack_require__( 10 );
+		const aboutSection = __webpack_require__( 9 );
 		aboutSection.fAboutAjax();
-	
-		/**----------===| MODULE: TESTIMONIALS |===----------**/
-		// const testimonialsSection = require( './testimonials.es6' );
-		// testimonialsSection.fTestimonialsAjax();
 	
 		/**----------===| FUNCTION: SCREEN RESIZE QUERIES |===----------**/
 		let fOnWindowResize = function() {
@@ -103,8 +96,6 @@
 			servicesList.fServicesResize();
 	
 			landingPage.fLandingPageResize();
-	
-			//landingPageDesc.fLandingPageDescResize();
 	
 			imageCarousel.fCarouselResize();
 	
@@ -117,13 +108,6 @@
 
 /***/ },
 /* 1 */
-/***/ function(module, exports) {
-
-	module.exports = "Common";
-
-
-/***/ },
-/* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/***********************************************
@@ -137,18 +121,17 @@
 	
 	( function() { /*IIFE:Immediately-Invoked Function Expression*/
 		"use strict";
-		console.log("landingPage.es6");
 	
 		/**----------===| CLASS: CREATE ELEMENTS |===----------**/
-		const createElem = __webpack_require__( 3 );
+		const createElem = __webpack_require__( 2 );
 		let createDiv = new createElem.CreateElementAny();
 	
 		/**----------===| MODULE: NEW IMAGE |===----------**/
-		const createImage = __webpack_require__( 4 );
+		const createImage = __webpack_require__( 3 );
 		let createNewImg = new createImage.CreateNewImage();
 	
 		/**----------===| MODULE: IMAGE CAROUSEL |===----------**/
-		const carouselCreate = __webpack_require__( 5 );
+		const carouselCreate = __webpack_require__( 4 );
 	
 		/**----------===| FUNCTION: ANCHOR LINK |===----------**/
 		const fGoTo = ( link ) => {
@@ -286,7 +269,7 @@
 
 
 /***/ },
-/* 3 */
+/* 2 */
 /***/ function(module, exports) {
 
 	/***********************************************
@@ -331,7 +314,7 @@
 
 
 /***/ },
-/* 4 */
+/* 3 */
 /***/ function(module, exports) {
 
 	/***********************************************
@@ -374,7 +357,7 @@
 
 
 /***/ },
-/* 5 */
+/* 4 */
 /***/ function(module, exports) {
 
 	/***********************************************
@@ -589,7 +572,7 @@
 
 
 /***/ },
-/* 6 */
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/***********************************************
@@ -605,15 +588,15 @@
 		console.log("landingPageDescription.es6");
 	
 		/**----------===| CLASS: CREATE ELEMENTS |===----------**/
-		const createElem = __webpack_require__( 3 );
+		const createElem = __webpack_require__( 2 );
 		let createDiv = new createElem.CreateElementAny();
 	
 		/**----------===| MODULE: NEW IMAGE |===----------**/
-		const createImage = __webpack_require__( 4 );
+		const createImage = __webpack_require__( 3 );
 		let createNewImg = new createImage.CreateNewImage();
 	
 		/**----------===| MODULE: IMAGE CAROUSEL |===----------**/
-		const carouselCreate = __webpack_require__( 5 );
+		const carouselCreate = __webpack_require__( 4 );
 	
 		/**----------===| FUNCTION: ANCHOR LINK |===----------**/
 		const fGoTo = ( link ) => {
@@ -636,113 +619,27 @@
 				let jx = 0;
 				let ji = 0;
 				for ( let introData of data.LandingPageDescription ) {
-					// /**-----| Logo |-----**/
-					// createDiv.fCreateTag( "div", "logo", "logoClass", jx, logoContainerId );
-					// let logoId = $( "#logo" + "Id_" + jx );
-					// /**-----| Company Logo Image |-----**/
-					// createNewImg.fCreateNewImage( logoId, introData.companyLogo, "80%", "White" );
-					// /**-----| CONCIERGE HOME CARE NURSING |-----**/
-					// createDiv.fCreateTag( "div", "logoSubTitle", "logoSubTitleClass", jx, logoContainerId );
-					// //let logoSubTitleId = $("#logoSubTitleId_"+jx);
-					// let logoSubTitleId = document.getElementById( "logoSubTitle" + "Id_" + jx );
-					// logoSubTitleId.innerHTML = introData.introSubTitle;
-					// /**-----| ADDRESS: NY & DC |-----**/
-					// createDiv.fCreateTag( "div", "logoAddress", "logoAddressClass", jx, logoContainerId );
-					// let logoAddressId = document.getElementById( "logoAddress" + "Id_" + jx );
-					// logoAddressId.innerHTML = introData.logoAddress;
-					// /**-----| Menu Navigation |-----**/
-					// createDiv.fCreateTag( "div", "menuNavContainer", "menuNavContainerClass", jx, menuNavClass );
-					// let menuNavContainerId = document.getElementById( "menuNavContainer" + "Id_" + jx );
-					// for ( let menus of introData.mainMenuNavs ) {
-					// 	ji++;
-					// 	createDiv.fCreateTag( "div", "menu", "menuClass", ji, menuNavContainerId );
-					// 	let menuId = document.getElementById( "menu" + "Id_" + ji );
-					// 	//let menuId = $("#menu" + "Id_" + ji);
-					// 	//let menuId = $("#menuId_" + ji);
-					// 	let menuClass = $( ".menuClass" );
-					// 	menuId.innerHTML = menus.menu;
-					//
-					// 	/**-----| Menu anchor links |-----**/
-					// 	$( menuId ).click( () => {
-					// 		fGoTo( menus.link );
-					// 	} );
-					// }
-	
-					/**-----| Images Carousel |-----**/
-					// let createCarousel = new carouselCreate.fBuildCarousel();
 	
 					/**-----| Landing Page Description |-----**/
 					createDiv.fCreateTag( "div", "landingPageDesc", "landingPageDescClass", jx, landingPageDescriptionId );
 					let landingPageDescId = document.getElementById( "landingPageDesc" +
 						"Id_" + jx );
-					//let x = $("#landingPage" + "Id_" + jx);
 					let strng = introData.landingPageDescription;
 					let subStrng = strng.substr( 0, 700 );
 					landingPageDescId.innerHTML = subStrng;
 				}
 	
-				/**-----| Screen resize querie on load |-----**/
-				//fLandingPageDescResize();
-	
 			} )
 		};
 	
-		// let screenXSmall = 550;
-		// let screenSmall = 750;
-		// let screenMedium = 970;
-		// let largeScreen = 1170;
-		//
-		// let fLandingPageDescResize = () => {
-		// 	let browserWidth = window.innerWidth;
-		// 	let menuClass = $( ".menuClass" );
-		//
-		// 	/*-----[ Largest Screen ]-----*/
-		// 	if ( browserWidth > largeScreen ) {
-		// 		menuClass.css( {
-		// 				"font-size": "1.8em",
-		// 				"padding-left": "34px",
-		// 				"padding-right": "34px"
-		// 			} )
-		// 			/*-----[ .container is between largeScreen and screenMedium width ]-----*/
-		// 	} else if ( browserWidth <= largeScreen && browserWidth > screenMedium ) {
-		// 		menuClass.css( {
-		// 				"font-size": "1.8em",
-		// 				"padding-left": "12px",
-		// 				"padding-right": "12px"
-		// 			} )
-		// 			/*-----[ .container is between screenMedium and screenSmall width ]-----*/
-		// 	} else if ( browserWidth <= screenMedium && browserWidth > screenSmall ) {
-		// 		menuClass.css( {
-		// 				"font-size": "1.4em",
-		// 				"padding-left": "10px",
-		// 				"padding-right": "10px"
-		// 			} )
-		// 			/*-----[ .container is between screenSmall and screenXSmall width ]-----*/
-		// 	} else if ( browserWidth <= screenSmall && browserWidth > screenXSmall ) {
-		// 		menuClass.css( {
-		// 				"font-size": "1.3em",
-		// 				"padding-left": "10px",
-		// 				"padding-right": "10px"
-		// 			} )
-		// 			/*-----[ .container is less than screenXSmall width ]-----*/
-		// 	} else {
-		// 		menuClass.css( {
-		// 			"font-size": "1.2em",
-		// 			"padding-left": "2px",
-		// 			"padding-right": "2px"
-		// 		} )
-		// 	}
-		// }
-	
 		/**-----------=====| EXPORTS |=====-----------**/
 		module.exports.fLandingPageDescAjax = fLandingPageDescAjax;
-		//module.exports.fLandingPageDescResize = fLandingPageDescResize;
 	
 	}() );
 
 
 /***/ },
-/* 7 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/***********************************************
@@ -759,11 +656,11 @@
 		"use strict";
 	
 		/**----------===| CLASS: CREATE ELEMENTS |===----------**/
-		const createElem = __webpack_require__( 3 );
+		const createElem = __webpack_require__( 2 );
 		let createDiv = new createElem.CreateElementAny();
 	
 		/**-----------=====| REQUIRE : NEW IMAGE |=====-----------**/
-		const createIconImage = __webpack_require__( 4 );
+		const createIconImage = __webpack_require__( 3 );
 		let createNewIconImg = new createIconImage.CreateNewImage();
 	
 		/**-----------=====| DOM CACHING |=====-----------**/
@@ -804,39 +701,6 @@
 						/**----- Getting the LI height -----**/
 						let servicesLIIdHeight = $( serviceLi )[ 0 ].scrollHeight
 					}
-	
-					/*----- Icon Links Main Container -----*/
-					// createDiv.fCreateTag( "div", "iconMainContainer", "iconMainContainerClass", jx, servicesMainContainerId );
-					// let iconMainContainerId = $( "#iconMainContainerId_" + jx );
-					// /*----- Icon Links 3 Columns Containers -----*/
-					// createDiv.fCreateTag( "div", "icon3ColumnsContainer", "icon3ColumnsContainerClass", jx, iconMainContainerId );
-					// let icon3ColumnsContainerId = $( "#icon3ColumnsContainerId_" + jx );
-					// /*----- Icon On Each Container -----*/
-					// for ( let iconImages of services.servicesImages ) {
-					// 	jj++;
-					// 	createDiv.fCreateTag( "div", "icon", "iconClass", jj, icon3ColumnsContainerId );
-					// 	let iconId = $( "#iconId_" + jj );
-					// 	//let iconId = document.getElementById("iconId_" + jj);
-					// 	let iconClass = $( ".iconClass" );
-					// 	/*----- Icon CSS Overide -----*/
-					// 	iconId.css( {
-					// 		//"height": "200px",
-					// 		"float": "none"
-					// 	} )
-					//
-					// 	createDiv.fCreateTag( "div", "iconImage", "iconImageClass", jj, iconId );
-					// 	let iconImageId = $( "#iconImageId_" + jj );
-					// 	createNewIconImg.fCreateNewImage( iconImageId, iconImages.image, "100%", "Grey" );
-					//
-					// 	/*----- Image Title -----*/
-					// 	createDiv.fCreateTag( "div", "iconTitle", "iconTitleClass", jj, iconId );
-					// 	//let iconTitleId = $("#iconTitleId_" + jj);
-					// 	let iconTitleId = document.getElementById( "iconTitleId_" + jj );
-					// 	iconTitleId.innerHTML = iconImages.imgTitle;
-					//
-					// 	/*----- Trigger scren queries on load -----*/
-					// 	fServicesResize();
-					// }
 				}
 			} )
 		}
@@ -991,7 +855,7 @@
 
 
 /***/ },
-/* 8 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/***********************************************
@@ -1006,7 +870,7 @@
 		"use strict";
 	
 		/**----------===| CLASS: CREATE ELEMENTS |===----------**/
-		const createElem = __webpack_require__( 3 );
+		const createElem = __webpack_require__( 2 );
 		let createDiv = new createElem.CreateElementAny();
 	
 		/**-----------=====| DOM CACHING |=====-----------**/
@@ -1045,7 +909,7 @@
 
 
 /***/ },
-/* 9 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/***********************************************
@@ -1060,7 +924,7 @@
 		"use strict";
 	
 		/**----------===| CLASS: CREATE ELEMENTS |===----------**/
-		const createElem = __webpack_require__( 3 );
+		const createElem = __webpack_require__( 2 );
 		let createDiv = new createElem.CreateElementAny();
 		//fCreateTag( div, title, className, counter, appendedTo )
 	
@@ -1098,7 +962,7 @@
 
 
 /***/ },
-/* 10 */
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/***********************************************
@@ -1115,12 +979,8 @@
 		/** Description:
 		 ** Files requiring from other js files
 		 **----------------------------------------------------------------**/
-		const createElem = __webpack_require__(3);
+		const createElem = __webpack_require__(2);
 		let createDiv = new createElem.CreateElementAny();
-	
-		//let servicesContainer = $(".servicesContainer");
-		//let servicesContainerId = $("#servicesContainerId");
-		//let servicesMainContainerId = $("#servicesMainContainerId");
 	
 		/**-----------=====| DOM CACHING |=====-----------**/
 		let mainContainer = $(".mainContainer");
@@ -1128,14 +988,7 @@
 		let aboutMainContainerId = $("#aboutMainContainerId");
 	
 		let aboutContainerClass = $(".aboutContainerClass");
-		let aboutContainerId = $("#aboutContainerId")
-		//console.log("aboutContainerId: ", aboutContainerId);
-	
-		// let healthTitleClass = $(".healthTitleClass");
-		// let healthTitleId = $("#healthTitleId")
-		//
-		// let healthQuoteClass = $(".healthQuoteClass");
-		// let healthQuoteId = $("#healthQuoteId")
+		let aboutContainerId = $("#aboutContainerId");
 	
 		const fAboutAjax = () => {
 			let promise = $.get("./js/json/about.json");
@@ -1163,8 +1016,6 @@
 	
 		/**-----------=====| EXPORTS |=====-----------**/
 		module.exports.fAboutAjax = fAboutAjax;
-		//module.exports.fLandingPageAnim = fLandingPageAnim;
-	
 	
 	}());
 
