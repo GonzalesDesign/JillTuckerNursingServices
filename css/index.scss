@@ -590,7 +590,7 @@ p {
   height: auto;
   margin-right: auto;
   margin-left: auto;
-  border: 1px solid yellowGreen;
+  border: 0px solid yellowGreen;
   //padding-top: $paragTopLeading;
   //padding-bottom: $paragBottomLeading;
 }
@@ -660,8 +660,12 @@ p {
   //text-transform: uppercase;
   text-align: center;
   font-style: italic;
+  color: yellowGreen;
   // padding-top: $paragTopLeading;
   padding-bottom: $paragBottomLeading;
+}
+.healthQuoteText {
+    //color: white;
 }
 .nameClass{
     font-size: $CopyFontSize; //1.3em;

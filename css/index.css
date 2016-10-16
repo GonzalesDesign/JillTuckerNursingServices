@@ -451,7 +451,7 @@ p {
   height: auto;
   margin-right: auto;
   margin-left: auto;
-  border: 1px solid yellowGreen; }
+  border: 0px solid yellowGreen; }
 
 .previousNewsTitleContainerClass {
   width: auto;
@@ -501,6 +501,7 @@ p {
   font-size: 18px;
   text-align: center;
   font-style: italic;
+  color: yellowGreen;
   padding-bottom: 60px; }
 
 .nameClass {

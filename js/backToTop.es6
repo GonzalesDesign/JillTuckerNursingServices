@@ -19,7 +19,7 @@
 
 	let fBackToTop = () => {
 		let inWindowHeight = window.innerHeight -100; // / 2;
-		console.log("inWindowHeight: ",inWindowHeight);
+		//console.log("inWindowHeight: ",inWindowHeight);
 		let inWindowWidth = window.innerWidth;
 		createDiv.fCreateTag( "div", "backToTop", "backToTopClass", 0, backToTopContainerId );
 		let backToTopId = $( "#backToTop" + "Id_" + 0 );
