@@ -4,13 +4,11 @@
 			"title": "HealthCare",
 			"introTitle": "Health Care In The News",
 			"quote": [
-                {"healthQuote": "<span class='healthQuoteText>'<p>&#8220;Create a calm and enabling atmosphere by having a Registered Nurse administer IVF injections in your own home according to your own schedule. <b>Jill Tucker Nurses, experienced in caring for IVF patients, bring poise and personal touch that allays the anxiety associated with the IVF process.</b> Put your family's future in capable hands and arrange for nursing care from Jill Tucker Nursing Services.&#8221;</p></span><span class='nameClass'><b>Jill Tucker, RN</b><br><br><a href='./previousHealthCareNews.html'><i>Previous health care news articles and comments</i></a><br></span><div class='additionalInfo'><b>read:</b><a href='https://www.romper.com/p/turns-out-getting-pregnant-using-ivf-is-actually-really-awkward-8867' target='blank''> Turns Out, Getting Pregnant Using IVF Is Actually Really Awkward</a><br>Romper.com April 19, 2016 <br></div>"}
+                {"healthQuote": "<span class='healthQuoteText>'<p>&#8220;Teamwork among health care professionals assures quality of care and helps reduce recovery time. <b>Jill Tucker Nursing Services assigns nurses who have previously worked together to provide 24-hour and/or long-term team care to private clients.</b> Nurses skilled in orthopedic surgery recovery, plastic surgery recovery or home companion care come together to provide continuous and seamless care. The nurses are experts in their field, the communication is clear, and the team acts as one to assure the full and rapid recovery of the patient&#8221;</p></span><span class='newsLinkSpan'><b>Jill Tucker, RN</b><br><br><a href='./previousHealthCareNews.html'><i>Previous health care news articles and comments</i></a><br><div class='additionalInfo'><b>read:</b><a href='http://www.merinews.com/article/successful-organizations-emphasize-and-promote-teamwork/15918456.shtml' target='_blank'>Successful Organizations Emphasize and Promote Teamwork</a><br>Merinews.com August 4, 2016</span><br></div>"}
             	],
 			"healthImages":[
                 {"image":"imagesTemp_01.jpg", "imgDescription": "Image 01 Short Description"},
-                {"image":"imagesTemp_02.jpg", "imgDescription": "Image 02 Short Description"},
-                {"image":"imagesTemp_03.jpg", "imgDescription": "Image 03 Short Description"},
-				{"image":"imagesTemp_05.jpg", "imgDescription": "Image 03 Short Description"}
+                {"image":"imagesTemp_02.jpg", "imgDescription": "Image 02 Short Description"}
             ]
 		}
 	]

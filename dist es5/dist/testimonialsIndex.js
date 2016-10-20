@@ -49,34 +49,41 @@
 	 * Developer: rolandolloyd@gmail.com
 	 * Copyright © 2016 GonzalesDesign
 	 * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
-	 * Module: Previous News Index
+	 * Module: Testimonials Index
 	 ***********************************************/
 	
 	( function() { /*IIFE:Immediately-Invoked Function Expression*/
 		"use strict";
-		console.log("previousNewsIndex.es6");
+		console.log("testimonialsIndex.es6");
 	
 		/**----------===| MODULE: COMMON |===----------**/
 		//var common = require("./common");
 	
 		/**----------===| MODULE: LANDING PAGE |===----------**/
-		const landingPage2 = __webpack_require__( 1 );
+		const landingPage2 = __webpack_require__( 9 );
 		landingPage2.fLandingPageAjax();
 		landingPage2.fLandingPageResize();
 	
 		/**----------===| MODULE: TESTIMONIALS |===----------**/
-		const previousNewsSection = __webpack_require__( 10 );
-		previousNewsSection.fPreviousNewsAjax();
+		const testimonialsSection = __webpack_require__( 12 );
+		testimonialsSection.fTestimonialsAjax();
 	
 		/**----------===| MODULE: TESTIMONIALS |===----------**/
 		const testimonialsBackToTop = __webpack_require__( 11 );
 		testimonialsBackToTop.fBackToTop();
 	
 		/**----------===| FUNCTION: SCREEN RESIZE QUERIES |===----------**/
+		let tI = 0;
+	
 		let fOnWindowResize = function() {
+	
+			console.log("testimonialsIndex resize: ", tI++);
+	
+			//servicesList.fServicesResize();
 	
 			landingPage2.fLandingPageResize();
 	
+			//imageCarousel.fCarouselResize();
 			testimonialsBackToTop.fBackToTop();
 	
 		}
@@ -88,256 +95,6 @@
 
 /***/ },
 /* 1 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/***********************************************
-	 * Project: Jill Tucker Nursing Services
-	 * Developer: rolandolloyd@gmail.com
-	 * Copyright © 2016 GonzalesDesign
-	 * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
-	 * Module: Landing Page
-	 * Description: Includes the following; Logo, Menu, Carousel
-	 ***********************************************************/
-	
-	( function() { /*IIFE:Immediately-Invoked Function Expression*/
-		"use strict";
-	
-		/**----------===| CLASS: CREATE ELEMENTS |===----------**/
-		const createElem = __webpack_require__( 2 );
-		let createDiv = new createElem.CreateElementAny();
-	
-		/**----------===| MODULE: NEW IMAGE |===----------**/
-		const createImage = __webpack_require__( 3 );
-		let createNewImg = new createImage.CreateNewImage();
-	
-		/**----------===| MODULE: IMAGE CAROUSEL |===----------**/
-		const carouselCreate = __webpack_require__( 4 );
-	
-		/**----------===| FUNCTION: ANCHOR LINK |===----------**/
-		const fGoTo = ( link ) => {
-			location.href = link;
-		}
-	
-		/**-----------=====| DOM CACHING |=====-----------**/
-		let mainContainer = $( ".mainContainer" );
-		let landingPageContainer = $( ".landingPageContainer" );
-		let landingPageContainerId = $( "#landingPageContainerId" );
-		let logoContainerClass = $( ".logoContainerClass" );
-		let logoContainerId = $( "#logoContainerId" );
-		let menuNavClass = $( ".menuNavClass" );
-		let menuNavClassId = $( "#menuNavClassId" );
-		// let landingPageDescriptionId = $( "#landingPageDescriptionId" )
-	
-		const fLandingPageAjax = () => {
-			let promise = $.get( "./js/json/landingPage.json" );
-			promise.then( function( data ) {
-				let jx = 0;
-				let ji = 0;
-				for ( let introData of data.LandingPageContent ) {
-					/**-----| Logo |-----**/
-					createDiv.fCreateTag( "div", "logo", "logoClass", jx, logoContainerId );
-					let logoId = $( "#logo" + "Id_" + jx );
-					/**-----| Company Logo Image |-----**/
-					createNewImg.fCreateNewImage( logoId, introData.companyLogo, "80%", "White" );
-					/**-----| CONCIERGE HOME CARE NURSING |-----**/
-					createDiv.fCreateTag( "div", "logoSubTitle", "logoSubTitleClass", jx, logoContainerId );
-					//let logoSubTitleId = $("#logoSubTitleId_"+jx);
-					let logoSubTitleId = document.getElementById( "logoSubTitle" + "Id_" + jx );
-					logoSubTitleId.innerHTML = introData.introSubTitle;
-					/**-----| ADDRESS: NY & DC |-----**/
-					createDiv.fCreateTag( "div", "logoAddress", "logoAddressClass", jx, logoContainerId );
-					let logoAddressId = document.getElementById( "logoAddress" + "Id_" + jx );
-					logoAddressId.innerHTML = introData.logoAddress;
-					/**-----| Menu Navigation |-----**/
-					createDiv.fCreateTag( "div", "menuNavContainer", "menuNavContainerClass", jx, menuNavClass );
-					let menuNavContainerId = document.getElementById( "menuNavContainer" + "Id_" + jx );
-	
-					for ( let menus of introData.mainMenuNavs ) {
-						ji++;
-						createDiv.fCreateTag( "div", "menu", "menuClass", ji, menuNavContainerId );
-						let menuId = document.getElementById( "menu" + "Id_" + ji );
-						//let menuId = $("#menu" + "Id_" + ji);
-						//let menuId = $("#menuId_" + ji);
-						let menuClass = $( ".menuClass" );
-						menuId.innerHTML = menus.menu;
-	
-						/**-----| Menu anchor links |-----**/
-						$( menuId ).click( () => {
-							fGoTo( menus.link );
-							//Email contact form nav menu button
-							if(menus.menu === "Contact"){
-								$('#myModal').modal('show');
-							}
-						} );
-					}
-	
-					/**-----| Images Carousel |-----**/
-					let createCarousel = new carouselCreate.fBuildCarousel();
-	
-					/**-----| Landing Page Description |-----**/
-					// createDiv.fCreateTag( "div", "landingPage", "landingPageClass", jx, landingPageDescriptionId );
-					// let landingPageId = document.getElementById( "landingPage" + "Id_" + jx );
-					//let x = $("#landingPage" + "Id_" + jx);
-					// let strng = introData.landingPageDescription;
-					// let subStrng = strng.substr( 0, 700 );
-					// landingPageId.innerHTML = subStrng;
-				}
-	
-				/**-----| Screen resize querie on load |-----**/
-				fLandingPageResize();
-	
-			} )
-		};
-	
-		let screenXSmall = 550;
-		let screenSmall = 750;
-		let screenMedium = 970;
-		let largeScreen = 1200;
-	
-		let fLandingPageResize = () => {
-			console.log("fLandingPageResize: ");
-			let browserWidth = window.innerWidth;
-			let menuClass = $( ".menuClass" );
-			let largeFont = "28px";
-			let medFont = "26px";
-			let smallFont = "22px";
-			let tinyFont = "18px";
-	
-			/*-----[ Largest Screen ]-----*/
-			if ( browserWidth > largeScreen ) {
-				menuClass.css( {
-						"font-size": largeFont,
-						"padding-left": "34px",
-						"padding-right": "34px"
-					} )
-					/*-----[ .container is between largeScreen and screenMedium width ]-----*/
-			} else if ( browserWidth <= largeScreen && browserWidth > screenMedium ) {
-				menuClass.css( {
-						"font-size": largeFont,
-						"padding-left": "12px",
-						"padding-right": "12px"
-					} )
-					/*-----[ .container is between screenMedium and screenSmall width ]-----*/
-			} else if ( browserWidth <= screenMedium && browserWidth > screenSmall ) {
-				menuClass.css( {
-						"font-size": medFont,
-						"padding-left": "10px",
-						"padding-right": "10px"
-					} )
-					/*-----[ .container is between screenSmall and screenXSmall width ]-----*/
-			} else if ( browserWidth <= screenSmall && browserWidth > screenXSmall ) {
-				menuClass.css( {
-						"font-size": smallFont,
-						"padding-left": "6px",
-						"padding-right": "6px"
-					} )
-					/*-----[ .container is less than screenXSmall width ]-----*/
-			} else {
-				menuClass.css( {
-					"font-size": tinyFont,
-					"padding-left": "12px",
-					"padding-right": "12px"
-				} )
-			}
-		}
-	
-		/**-----------=====| EXPORTS |=====-----------**/
-		module.exports.fLandingPageAjax = fLandingPageAjax;
-		module.exports.fLandingPageResize = fLandingPageResize;
-	
-	}() );
-
-
-/***/ },
-/* 2 */
-/***/ function(module, exports) {
-
-	/***********************************************
-	 * Project: Jill Tucker Nursing Services
-	 * Developer: rolandolloyd@gmail.com
-	 * Copyright © 2016 GonzalesDesign
-	 * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
-	 * Module: CreateElementClass
-	 ***********************************************/
-	
-	( function() { /*IIFE:Immediately-Invoked Function Expression*/
-		"use strict";
-	
-		/**----------=====| CreateElementAny Class |=====----------**/
-		/** Description: Class template for creating a basic tag.
-		 **---------------------------------------------------------**/
-		class CreateElementAny {
-			constructor() {}
-	
-			/** Generic method for creating a tag element **/
-			fCreateTag( tagType, title, className, counter, appendedTo ) {
-				let divName = document.createElement( tagType );
-				divName.id = title + "Id_" + counter; //set id
-				divName.className = className; //title + "Class";
-				let divNameId = $( "#" + title + "Id_" + counter ); //get id
-				//console.log("divNameId: ",divNameId);
-				$( divName ).appendTo( appendedTo );
-	
-				//DEV: TEMP
-				// divNameId.css({
-				// 	"height": "100px",
-				// 	"border": "1px solid yellowGreen"
-				// })
-	
-			}
-		};
-	
-		/**-----------=====| EXPORTS |=====-----------**/
-		module.exports.CreateElementAny = CreateElementAny;
-	
-	}() );
-
-
-/***/ },
-/* 3 */
-/***/ function(module, exports) {
-
-	/***********************************************
-	 * Project: Jill Tucker Nursing Services
-	 * Developer: rolandolloyd@gmail.com
-	 * Copyright © 2016 GonzalesDesign
-	 * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
-	 * Module: New Image
-	 ***********************************************/
-	
-	( function() { /*IIFE:Immediately-Invoked Function Expression*/
-		"use strict";
-	
-		class CreateNewImage {
-			constructor() {}
-				/**----------===| NEW IMAGE CREATION |===----------**/
-			fCreateNewImage( divNameId, jsonImage, bgImgSize, bgColor ) {
-				let myIntroImage = new Image();
-				let imagesPath = "./images/";
-				myIntroImage.src = imagesPath + jsonImage; //responses.responsesImages[2].image;
-	
-				divNameId.css( {
-					// "height": imgHeight,
-					// "width": imgWidth,
-					"background": "url(" + myIntroImage.src + ")  center center no-repeat",
-					"background-color": bgColor,
-					"background-size": bgImgSize, //"cover",
-					"position": "relative", //relative absolute
-					"float": "left",
-					"opacity": "1"
-				} )
-			}
-		}
-	
-		/**-----------=====| EXPORTS |=====-----------**/
-		module.exports.CreateNewImage = CreateNewImage;
-	
-	
-	}() );
-
-
-/***/ },
-/* 4 */
 /***/ function(module, exports) {
 
 	/***********************************************
@@ -552,12 +309,100 @@
 
 
 /***/ },
+/* 2 */,
+/* 3 */
+/***/ function(module, exports) {
+
+	/***********************************************
+	 * Project: Jill Tucker Nursing Services
+	 * Developer: rolandolloyd@gmail.com
+	 * Copyright © 2016 GonzalesDesign
+	 * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
+	 * Module: CreateElementClass
+	 ***********************************************/
+	
+	( function() { /*IIFE:Immediately-Invoked Function Expression*/
+		"use strict";
+	
+		/**----------=====| CreateElementAny Class |=====----------**/
+		/** Description: Class template for creating a basic tag.
+		 **---------------------------------------------------------**/
+		class CreateElementAny {
+			constructor() {}
+	
+			/** Generic method for creating a tag element **/
+			fCreateTag( tagType, title, className, counter, appendedTo ) {
+				let divName = document.createElement( tagType );
+				divName.id = title + "Id_" + counter; //set id
+				divName.className = className; //title + "Class";
+				let divNameId = $( "#" + title + "Id_" + counter ); //get id
+				//console.log("divNameId: ",divNameId);
+				$( divName ).appendTo( appendedTo );
+	
+				//DEV: TEMP
+				// divNameId.css({
+				// 	"height": "100px",
+				// 	"border": "1px solid yellowGreen"
+				// })
+	
+			}
+		};
+	
+		/**-----------=====| EXPORTS |=====-----------**/
+		module.exports.CreateElementAny = CreateElementAny;
+	
+	}() );
+
+
+/***/ },
+/* 4 */
+/***/ function(module, exports) {
+
+	/***********************************************
+	 * Project: Jill Tucker Nursing Services
+	 * Developer: rolandolloyd@gmail.com
+	 * Copyright © 2016 GonzalesDesign
+	 * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
+	 * Module: New Image
+	 ***********************************************/
+	
+	( function() { /*IIFE:Immediately-Invoked Function Expression*/
+		"use strict";
+	
+		class CreateNewImage {
+			constructor() {}
+				/**----------===| NEW IMAGE CREATION |===----------**/
+			fCreateNewImage( divNameId, jsonImage, bgImgSize, bgColor ) {
+				let myIntroImage = new Image();
+				let imagesPath = "./images/";
+				myIntroImage.src = imagesPath + jsonImage; //responses.responsesImages[2].image;
+	
+				divNameId.css( {
+					// "height": imgHeight,
+					// "width": imgWidth,
+					"background": "url(" + myIntroImage.src + ")  center center no-repeat",
+					"background-color": bgColor,
+					"background-size": bgImgSize, //"cover",
+					"position": "relative", //relative absolute
+					"float": "left",
+					"opacity": "1"
+				} )
+			}
+		}
+	
+		/**-----------=====| EXPORTS |=====-----------**/
+		module.exports.CreateNewImage = CreateNewImage;
+	
+	
+	}() );
+
+
+/***/ },
 /* 5 */,
 /* 6 */,
 /* 7 */,
 /* 8 */,
-/* 9 */,
-/* 10 */
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/***********************************************
@@ -565,56 +410,161 @@
 	 * Developer: rolandolloyd@gmail.com
 	 * Copyright © 2016 GonzalesDesign
 	 * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
-	 * Module: Previous News
-	 ***********************************************/
+	 * Module: Landing Page
+	 * Description: Includes the following; Logo, Menu, Carousel
+	 ***********************************************************/
 	
 	( function() { /*IIFE:Immediately-Invoked Function Expression*/
 		"use strict";
 	
 		/**----------===| CLASS: CREATE ELEMENTS |===----------**/
-		const createElem = __webpack_require__( 2 );
+		const createElem = __webpack_require__( 3 );
 		let createDiv = new createElem.CreateElementAny();
 	
-		/**-----------=====| DOM CACHING |=====-----------**/
-		// let mainContainer = $( ".mainContainer" );
-		// let previousNewsMainContainerClass = $( ".previousNewsMainContainerClass" );
-		// let previousNewsMainContainerId = $( "#previousNewsMainContainerId" );
-		 let previousNewsContainerClass = $( ".previousNewsContainerClass" );
-		let previousNewsContainerId = $( "#previousNewsContainerId" );
+		/**----------===| MODULE: NEW IMAGE |===----------**/
+		const createImage = __webpack_require__( 4 );
+		let createNewImg = new createImage.CreateNewImage();
 	
-		const fPreviousNewsAjax = () => {
-			let promise = $.get( "./js/json/previousNews.json" );
+		/**----------===| MODULE: IMAGE CAROUSEL |===----------**/
+		const carouselCreate = __webpack_require__( 1 );
+	
+		/**----------===| FUNCTION: ANCHOR LINK |===----------**/
+		const fGoTo = ( link ) => {
+			location.href = link;
+		}
+	
+		/**-----------=====| DOM CACHING |=====-----------**/
+		let mainContainer = $( ".mainContainer" );
+		let landingPageContainer = $( ".landingPageContainer" );
+		let landingPageContainerId = $( "#landingPageContainerId" );
+		let logoContainerClass = $( ".logoContainerClass" );
+		let logoContainerId = $( "#logoContainerId" );
+		let menuNavClass = $( ".menuNavClass" );
+		let menuNavClassId = $( "#menuNavClassId" );
+		// let landingPageDescriptionId = $( "#landingPageDescriptionId" )
+	
+		const fLandingPageAjax = () => {
+			let promise = $.get( "./js/json/landingPage.json" );
 			promise.then( function( data ) {
-				console.log("data: ", data);
 				let jx = 0;
 				let ji = 0;
-				for ( let prevNews of data.PreviousNewsListContent ) {
-					console.log("prevNews: ", prevNews);
-					/**-----| Create div to hold the title |-----**/
-					createDiv.fCreateTag( "div", "previousNewsTitleContainer", "previousNewsTitleContainerClass", jx, previousNewsContainerId );
-					let previousNewsTitleContainerId = document.getElementById( "previousNewsTitleContainer" + "Id_" + jx );
-					console.log("previousNewsTitleContainerId: ", previousNewsTitleContainerId);
-					previousNewsTitleContainerId.innerHTML = prevNews.introTitle;
-					console.log("prevNews.introTitle: ", prevNews.introTitle);
+				for ( let introData of data.LandingPageContent ) {
+					/**-----| Logo |-----**/
+					createDiv.fCreateTag( "div", "logo", "logoClass", jx, logoContainerId );
+					let logoId = $( "#logo" + "Id_" + jx );
+					/**-----| Company Logo Image |-----**/
+					createNewImg.fCreateNewImage( logoId, introData.companyLogo, "80%", "White" );
+					/**-----| CONCIERGE HOME CARE NURSING |-----**/
+					createDiv.fCreateTag( "div", "logoSubTitle", "logoSubTitleClass", jx, logoContainerId );
+					//let logoSubTitleId = $("#logoSubTitleId_"+jx);
+					let logoSubTitleId = document.getElementById( "logoSubTitle" + "Id_" + jx );
+					logoSubTitleId.innerHTML = introData.introSubTitle;
+					/**-----| ADDRESS: NY & DC |-----**/
+					createDiv.fCreateTag( "div", "logoAddress", "logoAddressClass", jx, logoContainerId );
+					let logoAddressId = document.getElementById( "logoAddress" + "Id_" + jx );
+					logoAddressId.innerHTML = introData.logoAddress;
+					/**-----| Menu Navigation |-----**/
+					createDiv.fCreateTag( "div", "menuNavContainer", "menuNavContainerClass", jx, menuNavClass );
+					let menuNavContainerId = document.getElementById( "menuNavContainer" + "Id_" + jx );
 	
-					/**----------===| previousNews |===----------**/
-					for ( let previousNews of prevNews.previousNews ) {
+					for ( let menus of introData.mainMenuNavs ) {
 						ji++;
-						createDiv.fCreateTag( "div", "previousNewsContainer", "previousNewsContainerClass", ji, previousNewsContainerId );
-						let previousNewsContId = document.getElementById( "previousNewsContainer" + "Id_" + ji );
-						previousNewsContId.innerHTML = previousNews.previousNews;
+						createDiv.fCreateTag( "div", "menu", "menuClass", ji, menuNavContainerId );
+						let menuId = document.getElementById( "menu" + "Id_" + ji );
+						//let menuId = $("#menu" + "Id_" + ji);
+						//let menuId = $("#menuId_" + ji);
+						let menuClass = $( ".menuClass" );
+						menuId.innerHTML = menus.menu;
+	
+						/**-----| Menu anchor links |-----**/
+						$( menuId ).click( () => {
+							fGoTo( menus.link );
+							//Email contact form nav menu button
+							if(menus.menu === "Contact"){
+								$('#myModal').modal('show');
+							}
+						} );
 					}
+	
+					/**-----| Images Carousel |-----**/
+					let createCarousel = new carouselCreate.fBuildCarousel();
+	
+					/**-----| Landing Page Description |-----**/
+					// createDiv.fCreateTag( "div", "landingPage", "landingPageClass", jx, landingPageDescriptionId );
+					// let landingPageId = document.getElementById( "landingPage" + "Id_" + jx );
+					//let x = $("#landingPage" + "Id_" + jx);
+					// let strng = introData.landingPageDescription;
+					// let subStrng = strng.substr( 0, 700 );
+					// landingPageId.innerHTML = subStrng;
 				}
+	
+				/**-----| Screen resize querie on load |-----**/
+				fLandingPageResize();
+	
 			} )
 		};
 	
+		let screenXSmall = 550;
+		let screenSmall = 750;
+		let screenMedium = 970;
+		let largeScreen = 1200;
+	
+		let fLandingPageResize = () => {
+			console.log("fLandingPageResize: ");
+			let browserWidth = window.innerWidth;
+			let menuClass = $( ".menuClass" );
+			let largeFont = "28px";
+			let medFont = "26px";
+			let smallFont = "22px";
+			let tinyFont = "18px";
+	
+			/*-----[ Largest Screen ]-----*/
+			if ( browserWidth > largeScreen ) {
+				menuClass.css( {
+						"font-size": largeFont,
+						"padding-left": "34px",
+						"padding-right": "34px"
+					} )
+					/*-----[ .container is between largeScreen and screenMedium width ]-----*/
+			} else if ( browserWidth <= largeScreen && browserWidth > screenMedium ) {
+				menuClass.css( {
+						"font-size": largeFont,
+						"padding-left": "12px",
+						"padding-right": "12px"
+					} )
+					/*-----[ .container is between screenMedium and screenSmall width ]-----*/
+			} else if ( browserWidth <= screenMedium && browserWidth > screenSmall ) {
+				menuClass.css( {
+						"font-size": medFont,
+						"padding-left": "10px",
+						"padding-right": "10px"
+					} )
+					/*-----[ .container is between screenSmall and screenXSmall width ]-----*/
+			} else if ( browserWidth <= screenSmall && browserWidth > screenXSmall ) {
+				menuClass.css( {
+						"font-size": smallFont,
+						"padding-left": "6px",
+						"padding-right": "6px"
+					} )
+					/*-----[ .container is less than screenXSmall width ]-----*/
+			} else {
+				menuClass.css( {
+					"font-size": tinyFont,
+					"padding-left": "12px",
+					"padding-right": "12px"
+				} )
+			}
+		}
+	
 		/**-----------=====| EXPORTS |=====-----------**/
-		module.exports.fPreviousNewsAjax = fPreviousNewsAjax;
+		module.exports.fLandingPageAjax = fLandingPageAjax;
+		module.exports.fLandingPageResize = fLandingPageResize;
 	
 	}() );
 
 
 /***/ },
+/* 10 */,
 /* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -634,7 +584,7 @@
 		let backToTopContainerId = $( "#backToTopContainerId" );
 	
 		/**----------===| CLASS: CREATE ELEMENTS |===----------**/
-		const createElem = __webpack_require__( 2 );
+		const createElem = __webpack_require__( 3 );
 		let createDiv = new createElem.CreateElementAny();
 	
 		let fBackToTop = () => {
@@ -650,7 +600,7 @@
 			} );
 	
 			/**----------===| CLASS: CREATE NEW IMAGE |===----------**/
-			const createImgElem = __webpack_require__( 3 );
+			const createImgElem = __webpack_require__( 4 );
 			let createImg = new createImgElem.CreateNewImage();
 			/**-----| Back to top Image |-----**/
 			backToTopId.css( {
@@ -677,6 +627,60 @@
 	}() );
 
 
+/***/ },
+/* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/***********************************************
+	 * Project: Jill Tucker Nursing Services
+	 * Developer: rolandolloyd@gmail.com
+	 * Copyright © 2016 GonzalesDesign
+	 * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
+	 * Module: Testimonials from Patients & Clients
+	 ***********************************************/
+	
+	( function() { /*IIFE:Immediately-Invoked Function Expression*/
+		"use strict";
+	
+		/**----------===| CLASS: CREATE ELEMENTS |===----------**/
+		const createElem = __webpack_require__( 3 );
+		let createDiv = new createElem.CreateElementAny();
+	
+		/**-----------=====| DOM CACHING |=====-----------**/
+		// let mainContainer = $( ".mainContainer" );
+		// let testimonialsMainContainerClass = $( ".testimonialsMainContainerClass" );
+		// let testimonialsMainContainerId = $( "#testimonialsMainContainerId" );
+		 let testimonialsContainerClass = $( ".testimonialsContainerClass" );
+		let testimonialsContainerId = $( "#testimonialsContainerId" );
+	
+		const fTestimonialsAjax = () => {
+			let promise = $.get( "./js/json/testimonials.json" );
+			promise.then( function( data ) {
+				let jx = 0;
+				let ji = 0;
+				for ( let testimonials of data.TestimonialsListContent ) {
+					/**-----| Create div to hold the title |-----**/
+					createDiv.fCreateTag( "div", "testimonialTitleContainer", "testimonialTitleContainerClass", jx, testimonialsContainerId );
+					let testimonialTitleContainerId = document.getElementById( "testimonialTitleContainer" + "Id_" + jx );
+					testimonialTitleContainerId.innerHTML = testimonials.introTitle;
+	
+					/**----------===| testimonials |===----------**/
+					for ( let testimonial of testimonials.testimonials ) {
+						ji++;
+						createDiv.fCreateTag( "div", "testimonialsContainer", "testimonialsContainerClass", ji, testimonialsContainerId );
+						let testimonialsContId = document.getElementById( "testimonialsContainer" + "Id_" + ji );
+						testimonialsContId.innerHTML = testimonial.testimonial;
+					}
+				}
+			} )
+		};
+	
+		/**-----------=====| EXPORTS |=====-----------**/
+		module.exports.fTestimonialsAjax = fTestimonialsAjax;
+	
+	}() );
+
+
 /***/ }
 /******/ ]);
-//# sourceMappingURL=previousNewsIndex.js.map
+//# sourceMappingURL=testimonialsIndex.js.map

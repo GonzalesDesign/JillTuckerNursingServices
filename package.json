@@ -9,7 +9,7 @@
     ]
   },
   "scripts": {
-    "instructionDev": "Two steps: npm run startDist (traspiled the files and put it in dist), npm start to start the server",
+    "instructionDev": "Two steps: npm run startDist (traspiled the files and put it in dist), npm start to start the server. Make sure to change the link in html",
     "dev": "./node-modules/webpack-dev-server/bin/webpack-dev-server.js",
     "startDist": "node_modules/.bin/webpack --w",
     "start": "node server.js",

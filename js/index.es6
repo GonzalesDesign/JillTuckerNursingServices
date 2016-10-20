@@ -8,7 +8,7 @@
 
 ( function() { /*IIFE:Immediately-Invoked Function Expression*/
 	"use strict";
-	console.log("index.es6x");
+	console.log("index.es6");
 	let d = new Date();
 	let h = d.getHours();
 	let n = d.getMinutes();

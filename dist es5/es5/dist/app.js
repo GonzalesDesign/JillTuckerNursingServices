@@ -65,40 +65,40 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 		/*IIFE:Immediately-Invoked Function Expression*/
 		"use strict";
 
-		console.log("index.es6");
+		console.log("index.es6x");
 		var d = new Date();
 		var h = d.getHours();
 		var n = d.getMinutes();
 		console.log("Date in minutes: ", h, ":", n);
 
 		/**----------===| MODULE: LANDING PAGE |===----------**/
-		var landingPage = __webpack_require__(1);
+		var landingPage = __webpack_require__(2);
 		landingPage.fLandingPageAjax();
 		landingPage.fLandingPageResize();
 
 		/**----------===| MODULE: IMAGE CAROUSEL |===----------**/
-		var imageCarousel = __webpack_require__(4);
+		var imageCarousel = __webpack_require__(5);
 		imageCarousel.fCarouselResize();
 
 		/**----------===| MODULE: LANDING PAGE DESCRIPTION |===----------**/
-		var landingPageDesc = __webpack_require__(5);
+		var landingPageDesc = __webpack_require__(6);
 		landingPageDesc.fLandingPageDescAjax();
 		//landingPageDesc.fLandingPageDescResize();
 
 		/**----------===| MODULE: SERVICES |===----------**/
-		var servicesList = __webpack_require__(6);
+		var servicesList = __webpack_require__(7);
 		servicesList.fServicesListAjax();
 
 		/**----------===| MODULE: RESPONSES |===----------**/
-		var responsesSection = __webpack_require__(7);
+		var responsesSection = __webpack_require__(8);
 		responsesSection.fResponsesAjax();
 
 		/**----------===| MODULE: HEALTH CARE |===----------**/
-		var halthCareSection = __webpack_require__(8);
+		var halthCareSection = __webpack_require__(9);
 		halthCareSection.fHealthCareAjax();
 
 		/**----------===| MODULE: ABOUT || EXPERIENCE |===----------**/
-		var aboutSection = __webpack_require__(9);
+		var aboutSection = __webpack_require__(10);
 		aboutSection.fAboutAjax();
 
 		/**----------===| FUNCTION: SCREEN RESIZE QUERIES |===----------**/
@@ -115,8 +115,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 	})();
 
 	/***/
-},
+},,
 /* 1 */
+/* 2 */
 /***/function (module, exports, __webpack_require__) {
 
 	/***********************************************
@@ -134,15 +135,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 		/**----------===| CLASS: CREATE ELEMENTS |===----------**/
 
-		var createElem = __webpack_require__(2);
+		var createElem = __webpack_require__(3);
 		var createDiv = new createElem.CreateElementAny();
 
 		/**----------===| MODULE: NEW IMAGE |===----------**/
-		var createImage = __webpack_require__(3);
+		var createImage = __webpack_require__(4);
 		var createNewImg = new createImage.CreateNewImage();
 
 		/**----------===| MODULE: IMAGE CAROUSEL |===----------**/
-		var carouselCreate = __webpack_require__(4);
+		var carouselCreate = __webpack_require__(5);
 
 		/**----------===| FUNCTION: ANCHOR LINK |===----------**/
 		var fGoTo = function fGoTo(link) {
@@ -326,7 +327,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 	/***/
 },
-/* 2 */
+/* 3 */
 /***/function (module, exports) {
 
 	/***********************************************
@@ -382,7 +383,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 	/***/
 },
-/* 3 */
+/* 4 */
 /***/function (module, exports) {
 
 	/***********************************************
@@ -435,7 +436,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 	/***/
 },
-/* 4 */
+/* 5 */
 /***/function (module, exports) {
 
 	/***********************************************
@@ -701,7 +702,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 	/***/
 },
-/* 5 */
+/* 6 */
 /***/function (module, exports, __webpack_require__) {
 
 	/***********************************************
@@ -719,15 +720,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 		console.log("landingPageDescription.es6");
 
 		/**----------===| CLASS: CREATE ELEMENTS |===----------**/
-		var createElem = __webpack_require__(2);
+		var createElem = __webpack_require__(3);
 		var createDiv = new createElem.CreateElementAny();
 
 		/**----------===| MODULE: NEW IMAGE |===----------**/
-		var createImage = __webpack_require__(3);
+		var createImage = __webpack_require__(4);
 		var createNewImg = new createImage.CreateNewImage();
 
 		/**----------===| MODULE: IMAGE CAROUSEL |===----------**/
-		var carouselCreate = __webpack_require__(4);
+		var carouselCreate = __webpack_require__(5);
 
 		/**----------===| FUNCTION: ANCHOR LINK |===----------**/
 		var fGoTo = function fGoTo(link) {
@@ -788,7 +789,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 	/***/
 },
-/* 6 */
+/* 7 */
 /***/function (module, exports, __webpack_require__) {
 
 	/***********************************************
@@ -807,11 +808,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 		/**----------===| CLASS: CREATE ELEMENTS |===----------**/
 
-		var createElem = __webpack_require__(2);
+		var createElem = __webpack_require__(3);
 		var createDiv = new createElem.CreateElementAny();
 
 		/**-----------=====| REQUIRE : NEW IMAGE |=====-----------**/
-		var createIconImage = __webpack_require__(3);
+		var createIconImage = __webpack_require__(4);
 		var createNewIconImg = new createIconImage.CreateNewImage();
 
 		/**-----------=====| DOM CACHING |=====-----------**/
@@ -866,6 +867,39 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 								/**----- Getting the LI height -----**/
 								var servicesLIIdHeight = $(serviceLi)[0].scrollHeight;
 							}
+
+							/*----- Icon Links Main Container -----*/
+							// createDiv.fCreateTag( "div", "iconMainContainer", "iconMainContainerClass", jx, servicesMainContainerId );
+							// let iconMainContainerId = $( "#iconMainContainerId_" + jx );
+							// /*----- Icon Links 3 Columns Containers -----*/
+							// createDiv.fCreateTag( "div", "icon3ColumnsContainer", "icon3ColumnsContainerClass", jx, iconMainContainerId );
+							// let icon3ColumnsContainerId = $( "#icon3ColumnsContainerId_" + jx );
+							// /*----- Icon On Each Container -----*/
+							// for ( let iconImages of services.servicesImages ) {
+							// 	jj++;
+							// 	createDiv.fCreateTag( "div", "icon", "iconClass", jj, icon3ColumnsContainerId );
+							// 	let iconId = $( "#iconId_" + jj );
+							// 	//let iconId = document.getElementById("iconId_" + jj);
+							// 	let iconClass = $( ".iconClass" );
+							// 	/*----- Icon CSS Overide -----*/
+							// 	iconId.css( {
+							// 		//"height": "200px",
+							// 		"float": "none"
+							// 	} )
+							//
+							// 	createDiv.fCreateTag( "div", "iconImage", "iconImageClass", jj, iconId );
+							// 	let iconImageId = $( "#iconImageId_" + jj );
+							// 	createNewIconImg.fCreateNewImage( iconImageId, iconImages.image, "100%", "Grey" );
+							//
+							// 	/*----- Image Title -----*/
+							// 	createDiv.fCreateTag( "div", "iconTitle", "iconTitleClass", jj, iconId );
+							// 	//let iconTitleId = $("#iconTitleId_" + jj);
+							// 	let iconTitleId = document.getElementById( "iconTitleId_" + jj );
+							// 	iconTitleId.innerHTML = iconImages.imgTitle;
+							//
+							// 	/*----- Trigger scren queries on load -----*/
+							// 	fServicesResize();
+							// }
 						} catch (err) {
 							_didIteratorError7 = true;
 							_iteratorError7 = err;
@@ -1047,7 +1081,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 	/***/
 },
-/* 7 */
+/* 8 */
 /***/function (module, exports, __webpack_require__) {
 
 	/***********************************************
@@ -1064,7 +1098,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 		/**----------===| CLASS: CREATE ELEMENTS |===----------**/
 
-		var createElem = __webpack_require__(2);
+		var createElem = __webpack_require__(3);
 		var createDiv = new createElem.CreateElementAny();
 
 		/**-----------=====| DOM CACHING |=====-----------**/
@@ -1144,7 +1178,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 	/***/
 },
-/* 8 */
+/* 9 */
 /***/function (module, exports, __webpack_require__) {
 
 	/***********************************************
@@ -1161,7 +1195,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 		/**----------===| CLASS: CREATE ELEMENTS |===----------**/
 
-		var createElem = __webpack_require__(2);
+		var createElem = __webpack_require__(3);
 		var createDiv = new createElem.CreateElementAny();
 		//fCreateTag( div, title, className, counter, appendedTo )
 
@@ -1219,7 +1253,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 	/***/
 },
-/* 9 */
+/* 10 */
 /***/function (module, exports, __webpack_require__) {
 
 	/***********************************************
@@ -1237,7 +1271,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 		/** Description:
    ** Files requiring from other js files
    **----------------------------------------------------------------**/
-		var createElem = __webpack_require__(2);
+		var createElem = __webpack_require__(3);
 		var createDiv = new createElem.CreateElementAny();
 
 		/**-----------=====| DOM CACHING |=====-----------**/

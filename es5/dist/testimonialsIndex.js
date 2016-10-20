@@ -71,16 +71,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 		//var common = require("./common");
 
 		/**----------===| MODULE: LANDING PAGE |===----------**/
-		var landingPage2 = __webpack_require__(2);
+		var landingPage2 = __webpack_require__(1);
 		landingPage2.fLandingPageAjax();
 		landingPage2.fLandingPageResize();
 
 		/**----------===| MODULE: TESTIMONIALS |===----------**/
-		var testimonialsSection = __webpack_require__(11);
+		var testimonialsSection = __webpack_require__(12);
 		testimonialsSection.fTestimonialsAjax();
 
 		/**----------===| MODULE: TESTIMONIALS |===----------**/
-		var testimonialsBackToTop = __webpack_require__(12);
+		var testimonialsBackToTop = __webpack_require__(11);
 		testimonialsBackToTop.fBackToTop();
 
 		/**----------===| FUNCTION: SCREEN RESIZE QUERIES |===----------**/
@@ -102,9 +102,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 	})();
 
 	/***/
-},,
+},
 /* 1 */
-/* 2 */
 /***/function (module, exports, __webpack_require__) {
 
 	/***********************************************
@@ -122,15 +121,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 		/**----------===| CLASS: CREATE ELEMENTS |===----------**/
 
-		var createElem = __webpack_require__(3);
+		var createElem = __webpack_require__(2);
 		var createDiv = new createElem.CreateElementAny();
 
 		/**----------===| MODULE: NEW IMAGE |===----------**/
-		var createImage = __webpack_require__(4);
+		var createImage = __webpack_require__(3);
 		var createNewImg = new createImage.CreateNewImage();
 
 		/**----------===| MODULE: IMAGE CAROUSEL |===----------**/
-		var carouselCreate = __webpack_require__(5);
+		var carouselCreate = __webpack_require__(4);
 
 		/**----------===| FUNCTION: ANCHOR LINK |===----------**/
 		var fGoTo = function fGoTo(link) {
@@ -314,7 +313,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 	/***/
 },
-/* 3 */
+/* 2 */
 /***/function (module, exports) {
 
 	/***********************************************
@@ -370,7 +369,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 	/***/
 },
-/* 4 */
+/* 3 */
 /***/function (module, exports) {
 
 	/***********************************************
@@ -423,7 +422,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 	/***/
 },
-/* 5 */
+/* 4 */
 /***/function (module, exports) {
 
 	/***********************************************
@@ -688,13 +687,78 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 	})();
 
 	/***/
-},,,,,,
+},,,,,,,
+/* 5 */
 /* 6 */
 /* 7 */
 /* 8 */
 /* 9 */
 /* 10 */
 /* 11 */
+/***/function (module, exports, __webpack_require__) {
+
+	/***********************************************
+  * Project: Jill Tucker Nursing Services
+  * Developer: rolandolloyd@gmail.com
+  * Copyright © 2016 GonzalesDesign
+  * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
+  * Module: Back to top
+  * Description: An arrow pointing up, clcik and brings you to the top of the page.
+  ********************************************************************************/
+
+	(function () {
+		/*IIFE:Immediately-Invoked Function Expression*/
+		"use strict";
+
+		/**-----------=====| DOM CACHING |=====-----------**/
+
+		var backToTopContainerId = $("#backToTopContainerId");
+
+		/**----------===| CLASS: CREATE ELEMENTS |===----------**/
+		var createElem = __webpack_require__(2);
+		var createDiv = new createElem.CreateElementAny();
+
+		var fBackToTop = function fBackToTop() {
+			var inWindowHeight = window.innerHeight - 100; // / 2;
+			//console.log("inWindowHeight: ",inWindowHeight);
+			var inWindowWidth = window.innerWidth;
+			createDiv.fCreateTag("div", "backToTop", "backToTopClass", 0, backToTopContainerId);
+			var backToTopId = $("#backToTop" + "Id_" + 0);
+
+			/**-----| Back to top links |-----**/
+			$(backToTopId).click(function () {
+				location.href = "#ContactBanner";
+			});
+
+			/**----------===| CLASS: CREATE NEW IMAGE |===----------**/
+			var createImgElem = __webpack_require__(3);
+			var createImg = new createImgElem.CreateNewImage();
+			/**-----| Back to top Image |-----**/
+			backToTopId.css({
+				"height": "50px",
+				"width": "50px",
+				"background": "url(./images/backToTop.png)  center center no-repeat",
+				"title": "some alt",
+				//"background-color": "white",
+				"background-size": "cover", //"cover",
+				"position": "fixed", //relative absolute
+				"right": "0px",
+				"margin": "20px",
+				"float": "right",
+				"top": inWindowHeight,
+				"opacity": "1",
+				"cursor": "pointer",
+				"border": "0px solid grey"
+			});
+		};
+
+		/**-----------=====| EXPORTS |=====-----------**/
+		module.exports.fBackToTop = fBackToTop;
+	})();
+
+	/***/
+},
+/* 12 */
 /***/function (module, exports, __webpack_require__) {
 
 	/***********************************************
@@ -711,7 +775,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 		/**----------===| CLASS: CREATE ELEMENTS |===----------**/
 
-		var createElem = __webpack_require__(3);
+		var createElem = __webpack_require__(2);
 		var createDiv = new createElem.CreateElementAny();
 
 		/**-----------=====| DOM CACHING |=====-----------**/
@@ -787,70 +851,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 		/**-----------=====| EXPORTS |=====-----------**/
 		module.exports.fTestimonialsAjax = fTestimonialsAjax;
-	})();
-
-	/***/
-},
-/* 12 */
-/***/function (module, exports, __webpack_require__) {
-
-	/***********************************************
-  * Project: Jill Tucker Nursing Services
-  * Developer: rolandolloyd@gmail.com
-  * Copyright © 2016 GonzalesDesign
-  * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
-  * Module: Back to top
-  * Description: An arrow pointing up, clcik and brings you to the top of the page.
-  ********************************************************************************/
-
-	(function () {
-		/*IIFE:Immediately-Invoked Function Expression*/
-		"use strict";
-
-		/**-----------=====| DOM CACHING |=====-----------**/
-
-		var backToTopContainerId = $("#backToTopContainerId");
-
-		/**----------===| CLASS: CREATE ELEMENTS |===----------**/
-		var createElem = __webpack_require__(3);
-		var createDiv = new createElem.CreateElementAny();
-
-		var fBackToTop = function fBackToTop() {
-			var inWindowHeight = window.innerHeight - 100; // / 2;
-			console.log("inWindowHeight: ", inWindowHeight);
-			var inWindowWidth = window.innerWidth;
-			createDiv.fCreateTag("div", "backToTop", "backToTopClass", 0, backToTopContainerId);
-			var backToTopId = $("#backToTop" + "Id_" + 0);
-
-			/**-----| Back to top links |-----**/
-			$(backToTopId).click(function () {
-				location.href = "#ContactBanner";
-			});
-
-			/**----------===| CLASS: CREATE NEW IMAGE |===----------**/
-			var createImgElem = __webpack_require__(4);
-			var createImg = new createImgElem.CreateNewImage();
-			/**-----| Back to top Image |-----**/
-			backToTopId.css({
-				"height": "50px",
-				"width": "50px",
-				"background": "url(./images/backToTop.png)  center center no-repeat",
-				"title": "some alt",
-				//"background-color": "white",
-				"background-size": "cover", //"cover",
-				"position": "fixed", //relative absolute
-				"right": "0px",
-				"margin": "20px",
-				"float": "right",
-				"top": inWindowHeight,
-				"opacity": "1",
-				"cursor": "pointer",
-				"border": "0px solid grey"
-			});
-		};
-
-		/**-----------=====| EXPORTS |=====-----------**/
-		module.exports.fBackToTop = fBackToTop;
 	})();
 
 	/***/

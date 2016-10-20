@@ -58,65 +58,53 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   * Developer: rolandolloyd@gmail.com
   * Copyright © 2016 GonzalesDesign
   * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
-  * Module: Index
+  * Module: Testimonials Index
   ***********************************************/
 
 	(function () {
 		/*IIFE:Immediately-Invoked Function Expression*/
 		"use strict";
 
-		console.log("index.es6");
-		var d = new Date();
-		var h = d.getHours();
-		var n = d.getMinutes();
-		console.log("Date in minutes: ", h, ":", n);
+		console.log("testimonialsIndex.es6");
+
+		/**----------===| MODULE: COMMON |===----------**/
+		//var common = require("./common");
 
 		/**----------===| MODULE: LANDING PAGE |===----------**/
-		var landingPage = __webpack_require__(1);
-		landingPage.fLandingPageAjax();
-		landingPage.fLandingPageResize();
+		var landingPage2 = __webpack_require__(2);
+		landingPage2.fLandingPageAjax();
+		landingPage2.fLandingPageResize();
 
-		/**----------===| MODULE: IMAGE CAROUSEL |===----------**/
-		var imageCarousel = __webpack_require__(4);
-		imageCarousel.fCarouselResize();
+		/**----------===| MODULE: TESTIMONIALS |===----------**/
+		var testimonialsSection = __webpack_require__(11);
+		testimonialsSection.fTestimonialsAjax();
 
-		/**----------===| MODULE: LANDING PAGE DESCRIPTION |===----------**/
-		var landingPageDesc = __webpack_require__(5);
-		landingPageDesc.fLandingPageDescAjax();
-		//landingPageDesc.fLandingPageDescResize();
-
-		/**----------===| MODULE: SERVICES |===----------**/
-		var servicesList = __webpack_require__(6);
-		servicesList.fServicesListAjax();
-
-		/**----------===| MODULE: RESPONSES |===----------**/
-		var responsesSection = __webpack_require__(7);
-		responsesSection.fResponsesAjax();
-
-		/**----------===| MODULE: HEALTH CARE |===----------**/
-		var halthCareSection = __webpack_require__(8);
-		halthCareSection.fHealthCareAjax();
-
-		/**----------===| MODULE: ABOUT || EXPERIENCE |===----------**/
-		var aboutSection = __webpack_require__(9);
-		aboutSection.fAboutAjax();
+		/**----------===| MODULE: TESTIMONIALS |===----------**/
+		var testimonialsBackToTop = __webpack_require__(12);
+		testimonialsBackToTop.fBackToTop();
 
 		/**----------===| FUNCTION: SCREEN RESIZE QUERIES |===----------**/
+		var tI = 0;
+
 		var fOnWindowResize = function fOnWindowResize() {
 
-			servicesList.fServicesResize();
+			console.log("testimonialsIndex resize: ", tI++);
 
-			landingPage.fLandingPageResize();
+			//servicesList.fServicesResize();
 
-			imageCarousel.fCarouselResize();
+			landingPage2.fLandingPageResize();
+
+			//imageCarousel.fCarouselResize();
+			testimonialsBackToTop.fBackToTop();
 		};
 
 		$(window).on('resize', fOnWindowResize);
 	})();
 
 	/***/
-},
+},,
 /* 1 */
+/* 2 */
 /***/function (module, exports, __webpack_require__) {
 
 	/***********************************************
@@ -134,15 +122,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 		/**----------===| CLASS: CREATE ELEMENTS |===----------**/
 
-		var createElem = __webpack_require__(2);
+		var createElem = __webpack_require__(3);
 		var createDiv = new createElem.CreateElementAny();
 
 		/**----------===| MODULE: NEW IMAGE |===----------**/
-		var createImage = __webpack_require__(3);
+		var createImage = __webpack_require__(4);
 		var createNewImg = new createImage.CreateNewImage();
 
 		/**----------===| MODULE: IMAGE CAROUSEL |===----------**/
-		var carouselCreate = __webpack_require__(4);
+		var carouselCreate = __webpack_require__(5);
 
 		/**----------===| FUNCTION: ANCHOR LINK |===----------**/
 		var fGoTo = function fGoTo(link) {
@@ -326,7 +314,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 	/***/
 },
-/* 2 */
+/* 3 */
 /***/function (module, exports) {
 
 	/***********************************************
@@ -382,7 +370,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 	/***/
 },
-/* 3 */
+/* 4 */
 /***/function (module, exports) {
 
 	/***********************************************
@@ -435,7 +423,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 	/***/
 },
-/* 4 */
+/* 5 */
 /***/function (module, exports) {
 
 	/***********************************************
@@ -700,8 +688,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 	})();
 
 	/***/
-},
-/* 5 */
+},,,,,,
+/* 6 */
+/* 7 */
+/* 8 */
+/* 9 */
+/* 10 */
+/* 11 */
 /***/function (module, exports, __webpack_require__) {
 
 	/***********************************************
@@ -709,43 +702,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   * Developer: rolandolloyd@gmail.com
   * Copyright © 2016 GonzalesDesign
   * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
-  * Module: Landing Page Description
+  * Module: Testimonials from Patients & Clients
   ***********************************************/
 
 	(function () {
 		/*IIFE:Immediately-Invoked Function Expression*/
 		"use strict";
 
-		console.log("landingPageDescription.es6");
-
 		/**----------===| CLASS: CREATE ELEMENTS |===----------**/
-		var createElem = __webpack_require__(2);
+
+		var createElem = __webpack_require__(3);
 		var createDiv = new createElem.CreateElementAny();
 
-		/**----------===| MODULE: NEW IMAGE |===----------**/
-		var createImage = __webpack_require__(3);
-		var createNewImg = new createImage.CreateNewImage();
-
-		/**----------===| MODULE: IMAGE CAROUSEL |===----------**/
-		var carouselCreate = __webpack_require__(4);
-
-		/**----------===| FUNCTION: ANCHOR LINK |===----------**/
-		var fGoTo = function fGoTo(link) {
-			location.href = link;
-		};
-
 		/**-----------=====| DOM CACHING |=====-----------**/
-		var mainContainer = $(".mainContainer");
-		var landingPageContainer = $(".landingPageContainer");
-		var landingPageContainerId = $("#landingPageContainerId");
-		var logoContainerClass = $(".logoContainerClass");
-		var logoContainerId = $("#logoContainerId");
-		var menuNavClass = $(".menuNavClass");
-		var menuNavClassId = $("#menuNavClassId");
-		var landingPageDescriptionId = $("#landingPageDescriptionId");
+		// let mainContainer = $( ".mainContainer" );
+		// let testimonialsMainContainerClass = $( ".testimonialsMainContainerClass" );
+		// let testimonialsMainContainerId = $( "#testimonialsMainContainerId" );
+		var testimonialsContainerClass = $(".testimonialsContainerClass");
+		var testimonialsContainerId = $("#testimonialsContainerId");
 
-		var fLandingPageDescAjax = function fLandingPageDescAjax() {
-			var promise = $.get("./js/json/landingPageDescription.json");
+		var fTestimonialsAjax = function fTestimonialsAjax() {
+			var promise = $.get("./js/json/testimonials.json");
 			promise.then(function (data) {
 				var jx = 0;
 				var ji = 0;
@@ -754,16 +731,42 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 				var _iteratorError5 = undefined;
 
 				try {
-					for (var _iterator5 = data.LandingPageDescription[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
-						var introData = _step5.value;
+					for (var _iterator5 = data.TestimonialsListContent[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
+						var testimonials = _step5.value;
 
+						/**-----| Create div to hold the title |-----**/
+						createDiv.fCreateTag("div", "testimonialTitleContainer", "testimonialTitleContainerClass", jx, testimonialsContainerId);
+						var testimonialTitleContainerId = document.getElementById("testimonialTitleContainer" + "Id_" + jx);
+						testimonialTitleContainerId.innerHTML = testimonials.introTitle;
 
-						/**-----| Landing Page Description |-----**/
-						createDiv.fCreateTag("div", "landingPageDesc", "landingPageDescClass", jx, landingPageDescriptionId);
-						var landingPageDescId = document.getElementById("landingPageDesc" + "Id_" + jx);
-						var strng = introData.landingPageDescription;
-						var subStrng = strng.substr(0, 700);
-						landingPageDescId.innerHTML = subStrng;
+						/**----------===| testimonials |===----------**/
+						var _iteratorNormalCompletion6 = true;
+						var _didIteratorError6 = false;
+						var _iteratorError6 = undefined;
+
+						try {
+							for (var _iterator6 = testimonials.testimonials[Symbol.iterator](), _step6; !(_iteratorNormalCompletion6 = (_step6 = _iterator6.next()).done); _iteratorNormalCompletion6 = true) {
+								var testimonial = _step6.value;
+
+								ji++;
+								createDiv.fCreateTag("div", "testimonialsContainer", "testimonialsContainerClass", ji, testimonialsContainerId);
+								var testimonialsContId = document.getElementById("testimonialsContainer" + "Id_" + ji);
+								testimonialsContId.innerHTML = testimonial.testimonial;
+							}
+						} catch (err) {
+							_didIteratorError6 = true;
+							_iteratorError6 = err;
+						} finally {
+							try {
+								if (!_iteratorNormalCompletion6 && _iterator6.return) {
+									_iterator6.return();
+								}
+							} finally {
+								if (_didIteratorError6) {
+									throw _iteratorError6;
+								}
+							}
+						}
 					}
 				} catch (err) {
 					_didIteratorError5 = true;
@@ -783,12 +786,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 		};
 
 		/**-----------=====| EXPORTS |=====-----------**/
-		module.exports.fLandingPageDescAjax = fLandingPageDescAjax;
+		module.exports.fTestimonialsAjax = fTestimonialsAjax;
 	})();
 
 	/***/
 },
-/* 6 */
+/* 12 */
 /***/function (module, exports, __webpack_require__) {
 
 	/***********************************************
@@ -796,508 +799,61 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   * Developer: rolandolloyd@gmail.com
   * Copyright © 2016 GonzalesDesign
   * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
-  * Module: Services List
-  * Show a list of Services offered. Screen queries are divided
-  	into 1 - 3 columns depends on the screen width.
-  *************************************************************/
+  * Module: Back to top
+  * Description: An arrow pointing up, clcik and brings you to the top of the page.
+  ********************************************************************************/
 
 	(function () {
 		/*IIFE:Immediately-Invoked Function Expression*/
 		"use strict";
 
-		/**----------===| CLASS: CREATE ELEMENTS |===----------**/
-
-		var createElem = __webpack_require__(2);
-		var createDiv = new createElem.CreateElementAny();
-
-		/**-----------=====| REQUIRE : NEW IMAGE |=====-----------**/
-		var createIconImage = __webpack_require__(3);
-		var createNewIconImg = new createIconImage.CreateNewImage();
-
 		/**-----------=====| DOM CACHING |=====-----------**/
-		var mainContainer = $(".mainContainer");
-		var servicesMainContainerId = $("#servicesMainContainerId");
-		var ulContainerId = $("#ulContainerId");
-		var serviceLi = void 0;
 
-		var fServicesListAjax = function fServicesListAjax() {
-			var promise = $.get("./js/json/servicesList.json");
-			promise.then(function (data) {
-				var jx = 0;
-				var ji = 0;
-				var jj = 0;
-				var _iteratorNormalCompletion6 = true;
-				var _didIteratorError6 = false;
-				var _iteratorError6 = undefined;
-
-				try {
-					for (var _iterator6 = data.ServicesListContent[Symbol.iterator](), _step6; !(_iteratorNormalCompletion6 = (_step6 = _iterator6.next()).done); _iteratorNormalCompletion6 = true) {
-						var services = _step6.value;
-
-						/*----- Services Title -----*/
-						createDiv.fCreateTag("div", "servicesContainer", "servicesContainerClass", jx, ulContainerId);
-						//let servicesContainerId = $("#servicesContainer" + "Id_" + jx);
-						var servicesContainerId = document.getElementById("servicesContainer" + "Id_" + jx);
-						servicesContainerId.innerHTML = services.introTitle;
-						servicesContainerId.setAttribute("name", "#" + services.introTitle);
-
-						/*----- Services List -----*/
-						var ul = document.createElement('ul');
-						ul.className = "servicesULClass";
-						$(ul).appendTo(ulContainerId); //ulContainerId servicesContainerId
-						var servicesULIdHeight = $("ul")[0].scrollHeight;
-
-						/*----- Services List Iteration -----*/
-						var _iteratorNormalCompletion7 = true;
-						var _didIteratorError7 = false;
-						var _iteratorError7 = undefined;
-
-						try {
-							for (var _iterator7 = services.servicesList[Symbol.iterator](), _step7; !(_iteratorNormalCompletion7 = (_step7 = _iterator7.next()).done); _iteratorNormalCompletion7 = true) {
-								var servicesList = _step7.value;
-
-								ji++;
-								/**----- Using UL & LI -----**/
-								serviceLi = document.createElement('li');
-								//$(li).appendTo(servicesULId);
-								serviceLi.className = "serviceLiClass";
-								$(serviceLi).appendTo(ul);
-								serviceLi.innerHTML = serviceLi.innerHTML + servicesList.services;
-								/**----- Getting the LI height -----**/
-								var servicesLIIdHeight = $(serviceLi)[0].scrollHeight;
-							}
-						} catch (err) {
-							_didIteratorError7 = true;
-							_iteratorError7 = err;
-						} finally {
-							try {
-								if (!_iteratorNormalCompletion7 && _iterator7.return) {
-									_iterator7.return();
-								}
-							} finally {
-								if (_didIteratorError7) {
-									throw _iteratorError7;
-								}
-							}
-						}
-					}
-				} catch (err) {
-					_didIteratorError6 = true;
-					_iteratorError6 = err;
-				} finally {
-					try {
-						if (!_iteratorNormalCompletion6 && _iterator6.return) {
-							_iterator6.return();
-						}
-					} finally {
-						if (_didIteratorError6) {
-							throw _iteratorError6;
-						}
-					}
-				}
-			});
-		};
-
-		/**----------=====| fRoundToTwo Function |=====----------**/
-		/** Description: Rounds the decimals to two.
-   **-------------------------------------------------------**/
-		var fRoundToTwo = function fRoundToTwo(num) {
-			return +(Math.round(num + "e+2") + "e-2");
-		};
-
-		/**----------=====| fServicesResize Function |=====----------**/
-		/** Description: Screen queries for this module.
-   **-----------------------------------------------------------**/
-		var fServicesResize = function fServicesResize() {
-			var browserWidth = window.innerWidth;
-			var mainContainerWidth = mainContainer.width();
-			var halfBrowserWidth = browserWidth / 2;
-			var thirdBrowserWidth = fRoundToTwo(mainContainerWidth / 3) + "px";
-			var quarterBrowserWidth = browserWidth / 4;
-			var iconMainContainerClass = $(".iconMainContainerClass");
-			var icon3ColumnsContainerClass = $(".icon3ColumnsContainerClass");
-			var iconClass = $(".iconClass");
-			var iconImageClass = $(".iconImageClass");
-			var iconTitleClass = $(".iconTitleClass");
-			var serviceLiClass = $(".serviceLiClass");
-
-			/*-----[ Largest Screen ]-----*/
-			if (browserWidth > 1170) {
-				iconClass.css({
-					"width": "25%"
-				});
-				iconImageClass.css({
-					"float": "left"
-				});
-				iconTitleClass.css({
-					"font-size": "2em",
-					"top": "30px",
-					"float": "left",
-					"text-align": "left",
-					"width": "55%"
-				});
-				//fAnimIconTitle(iconTitleClass, "2em", "30px", "left", "left", "55%");
-				serviceLiClass.css({
-					"width": thirdBrowserWidth
-				});
-				//titleDescriptionBoxClass.css({"top": "65%", "padding-top": "30px", "padding-bottom": "40px"})
-
-				/*-----[ .container is between 1170 and 970 width ]-----*/
-			} else if (browserWidth <= 1170 && browserWidth > 970) {
-				iconClass.css({
-					"width": "25%"
-				});
-				iconImageClass.css({
-					"float": "none"
-				});
-				iconTitleClass.css({
-					"font-size": "2em",
-					"top": "0px",
-					"float": "none",
-					"text-align": "center",
-					"width": "100%"
-				});
-				serviceLiClass.css({
-					"width": "50%"
-				});
-
-				/*-----[ .container is between 970 and 750 width ]-----*/
-			} else if (browserWidth <= 970 && browserWidth > 750) {
-				iconClass.css({
-					"width": "32%"
-				});
-				iconImageClass.css({
-					"float": "none",
-					"width": "120px"
-				});
-				iconTitleClass.css({
-					"font-size": "2em",
-					"top": "0px",
-					"float": "none",
-					"text-align": "center",
-					"width": "100%"
-				});
-				serviceLiClass.css({
-					"width": "50%"
-				});
-
-				/*-----[ .container is between 750 and 550 width ]-----*/
-			} else if (browserWidth <= 750 && browserWidth > 550) {
-				iconClass.css({
-					"width": "32%"
-				});
-				iconImageClass.css({
-					"float": "none"
-				});
-				iconTitleClass.css({
-					"font-size": "1.6em",
-					"top": "0px",
-					"float": "none",
-					"text-align": "center",
-					"width": "100%"
-				});
-				serviceLiClass.css({
-					"width": "50%"
-				});
-
-				/*-----[ .container is between 550 and 500 width ]-----*/
-			} else if (browserWidth <= 550 && browserWidth > 500) {
-				iconClass.css({
-					"width": "60%"
-				});
-				iconImageClass.css({
-					"float": "none"
-				});
-				iconTitleClass.css({
-					"font-size": "2em",
-					"top": "0px",
-					"float": "none",
-					"text-align": "center",
-					"width": "100%"
-				});
-				serviceLiClass.css({
-					"width": "80%"
-				});
-
-				/*-----[ .container is less than 550 width ]-----*/
-			} else {
-				iconClass.css({
-					"width": "60%"
-				});
-				iconImageClass.css({
-					"float": "none"
-				});
-				iconTitleClass.css({
-					"font-size": "2em",
-					"top": "0px",
-					"float": "none",
-					"text-align": "center",
-					"width": "100%"
-				});
-				serviceLiClass.css({
-					"width": "80%"
-				});
-			}
-		};
-
-		/**-----------=====| EXPORTS |=====-----------**/
-		module.exports.fServicesListAjax = fServicesListAjax;
-		module.exports.fServicesResize = fServicesResize;
-	})();
-
-	/***/
-},
-/* 7 */
-/***/function (module, exports, __webpack_require__) {
-
-	/***********************************************
-  * Project: Jill Tucker Nursing Services
-  * Developer: rolandolloyd@gmail.com
-  * Copyright © 2016 GonzalesDesign
-  * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
-  * Module: Responses from Patients & Clients
-  ***********************************************/
-
-	(function () {
-		/*IIFE:Immediately-Invoked Function Expression*/
-		"use strict";
+		var backToTopContainerId = $("#backToTopContainerId");
 
 		/**----------===| CLASS: CREATE ELEMENTS |===----------**/
-
-		var createElem = __webpack_require__(2);
+		var createElem = __webpack_require__(3);
 		var createDiv = new createElem.CreateElementAny();
 
-		/**-----------=====| DOM CACHING |=====-----------**/
-		var mainContainer = $(".mainContainer");
-		var responsesMainContainerClass = $(".responsesMainContainerClass");
-		var responsesMainContainerId = $("#responsesMainContainerId");
-		var responsesContainerClass = $(".responsesContainerClass");
-		var responsesContainerId = $("#responsesContainerId");
+		var fBackToTop = function fBackToTop() {
+			var inWindowHeight = window.innerHeight - 100; // / 2;
+			console.log("inWindowHeight: ", inWindowHeight);
+			var inWindowWidth = window.innerWidth;
+			createDiv.fCreateTag("div", "backToTop", "backToTopClass", 0, backToTopContainerId);
+			var backToTopId = $("#backToTop" + "Id_" + 0);
 
-		var fResponsesAjax = function fResponsesAjax() {
-			var promise = $.get("./js/json/responses.json");
-			promise.then(function (data) {
-				var jx = 0;
-				var ji = 0;
-				var _iteratorNormalCompletion8 = true;
-				var _didIteratorError8 = false;
-				var _iteratorError8 = undefined;
+			/**-----| Back to top links |-----**/
+			$(backToTopId).click(function () {
+				location.href = "#ContactBanner";
+			});
 
-				try {
-					for (var _iterator8 = data.ResponsesListContent[Symbol.iterator](), _step8; !(_iteratorNormalCompletion8 = (_step8 = _iterator8.next()).done); _iteratorNormalCompletion8 = true) {
-						var responses = _step8.value;
-
-						/**-----| Create div to hold the title |-----**/
-						createDiv.fCreateTag("div", "responseTitleContainer", "responseTitleContainerClass", jx, responsesContainerId);
-						var responseTitleContainerId = document.getElementById("responseTitleContainer" + "Id_" + jx);
-						responseTitleContainerId.innerHTML = responses.introTitle;
-
-						/**----------===| RESPONSES |===----------**/
-						var _iteratorNormalCompletion9 = true;
-						var _didIteratorError9 = false;
-						var _iteratorError9 = undefined;
-
-						try {
-							for (var _iterator9 = responses.responses[Symbol.iterator](), _step9; !(_iteratorNormalCompletion9 = (_step9 = _iterator9.next()).done); _iteratorNormalCompletion9 = true) {
-								var response = _step9.value;
-
-								ji++;
-								createDiv.fCreateTag("div", "testimonialsContainer", "testimonialsContainerClass", ji, responsesContainerId);
-								var testimonialsContainerId = document.getElementById("testimonialsContainer" + "Id_" + ji);
-								testimonialsContainerId.innerHTML = response.response;
-							}
-						} catch (err) {
-							_didIteratorError9 = true;
-							_iteratorError9 = err;
-						} finally {
-							try {
-								if (!_iteratorNormalCompletion9 && _iterator9.return) {
-									_iterator9.return();
-								}
-							} finally {
-								if (_didIteratorError9) {
-									throw _iteratorError9;
-								}
-							}
-						}
-					}
-				} catch (err) {
-					_didIteratorError8 = true;
-					_iteratorError8 = err;
-				} finally {
-					try {
-						if (!_iteratorNormalCompletion8 && _iterator8.return) {
-							_iterator8.return();
-						}
-					} finally {
-						if (_didIteratorError8) {
-							throw _iteratorError8;
-						}
-					}
-				}
+			/**----------===| CLASS: CREATE NEW IMAGE |===----------**/
+			var createImgElem = __webpack_require__(4);
+			var createImg = new createImgElem.CreateNewImage();
+			/**-----| Back to top Image |-----**/
+			backToTopId.css({
+				"height": "50px",
+				"width": "50px",
+				"background": "url(./images/backToTop.png)  center center no-repeat",
+				"title": "some alt",
+				//"background-color": "white",
+				"background-size": "cover", //"cover",
+				"position": "fixed", //relative absolute
+				"right": "0px",
+				"margin": "20px",
+				"float": "right",
+				"top": inWindowHeight,
+				"opacity": "1",
+				"cursor": "pointer",
+				"border": "0px solid grey"
 			});
 		};
 
 		/**-----------=====| EXPORTS |=====-----------**/
-		module.exports.fResponsesAjax = fResponsesAjax;
-	})();
-
-	/***/
-},
-/* 8 */
-/***/function (module, exports, __webpack_require__) {
-
-	/***********************************************
-  * Project: Jill Tucker Nursing Services
-  * Developer: rolandolloyd@gmail.com
-  * Copyright © 2016 GonzalesDesign
-  * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
-  * Module: Health Care In The News
-  ***********************************************/
-
-	(function () {
-		/*IIFE:Immediately-Invoked Function Expression*/
-		"use strict";
-
-		/**----------===| CLASS: CREATE ELEMENTS |===----------**/
-
-		var createElem = __webpack_require__(2);
-		var createDiv = new createElem.CreateElementAny();
-		//fCreateTag( div, title, className, counter, appendedTo )
-
-		/**-----------=====| DOM CACHING |=====-----------**/
-		var mainContainer = $(".mainContainer");
-		var healthMainContainerClass = $(".healthMainContainerClass");
-		var healthMainContainerId = $("#healthMainContainerId");
-
-		var healthContainerClass = $(".healthContainerClass");
-		var healthContainerId = $("#healthContainerId");
-
-		var fHealthCareAjax = function fHealthCareAjax() {
-			var promise = $.get("./js/json/healthCare.json");
-			promise.then(function (data) {
-				var jx = 0;
-				var ji = 0;
-				var _iteratorNormalCompletion10 = true;
-				var _didIteratorError10 = false;
-				var _iteratorError10 = undefined;
-
-				try {
-					for (var _iterator10 = data.HealthCareListContent[Symbol.iterator](), _step10; !(_iteratorNormalCompletion10 = (_step10 = _iterator10.next()).done); _iteratorNormalCompletion10 = true) {
-						var health = _step10.value;
-
-						/**-----| Create div to hold the healthTitle |-----**/
-						createDiv.fCreateTag("div", "healthTitleContainer", "healthTitleContainerClass", jx, healthContainerId);
-						var healthTitleContainerId = document.getElementById("healthTitleContainer" + "Id_" + jx);
-						healthTitleContainerId.innerHTML = health.introTitle;
-
-						/**-----| Create div to hold Quote |-----**/
-						createDiv.fCreateTag("div", "healthQuoteContainer", "healthQuoteContainerClass", jx, healthContainerId);
-						var healthQuoteContainerId = document.getElementById("healthQuoteContainer" + "Id_" + jx);
-						healthQuoteContainerId.innerHTML = health.quote[jx].healthQuote;
-					}
-				} catch (err) {
-					_didIteratorError10 = true;
-					_iteratorError10 = err;
-				} finally {
-					try {
-						if (!_iteratorNormalCompletion10 && _iterator10.return) {
-							_iterator10.return();
-						}
-					} finally {
-						if (_didIteratorError10) {
-							throw _iteratorError10;
-						}
-					}
-				}
-			});
-		};
-
-		/**-----------=====| EXPORTS |=====-----------**/
-		module.exports.fHealthCareAjax = fHealthCareAjax;
-	})();
-
-	/***/
-},
-/* 9 */
-/***/function (module, exports, __webpack_require__) {
-
-	/***********************************************
-  * Project: Jill Tucker Nursing Services
-  * Developer: rolandolloyd@gmail.com
-  * Copyright © 2016 GonzalesDesign
-  * Platform: NodeJS, ES6, Webpack, Babel & Node-Sass
-  * Module: About || Experience
-  ***********************************************/
-
-	(function () {
-		/*IIFE:Immediately-Invoked Function Expression*/
-
-		/**-----------=====| IMPORT | REQUIRE |=====-----------**/
-		/** Description:
-   ** Files requiring from other js files
-   **----------------------------------------------------------------**/
-		var createElem = __webpack_require__(2);
-		var createDiv = new createElem.CreateElementAny();
-
-		/**-----------=====| DOM CACHING |=====-----------**/
-		var mainContainer = $(".mainContainer");
-		var aboutMainContainerClass = $(".aboutMainContainerClass");
-		var aboutMainContainerId = $("#aboutMainContainerId");
-
-		var aboutContainerClass = $(".aboutContainerClass");
-		var aboutContainerId = $("#aboutContainerId");
-
-		var fAboutAjax = function fAboutAjax() {
-			var promise = $.get("./js/json/about.json");
-			promise.then(function (data) {
-				var jx = 0;
-				var ji = 0;
-				var _iteratorNormalCompletion11 = true;
-				var _didIteratorError11 = false;
-				var _iteratorError11 = undefined;
-
-				try {
-					for (var _iterator11 = data.AboutListContent[Symbol.iterator](), _step11; !(_iteratorNormalCompletion11 = (_step11 = _iterator11.next()).done); _iteratorNormalCompletion11 = true) {
-						var about = _step11.value;
-
-						//let aboutContainerId = $("#aboutContainerId")
-						/**-----| Create div to hold the healthTitle |-----**/
-						createDiv.fCreateTag("div", "aboutTitleContainer", "aboutTitleContainerClass", jx, aboutContainerId);
-						var aboutTitleContainerId = document.getElementById("aboutTitleContainer" + "Id_" + jx);
-						aboutTitleContainerId.innerHTML = about.introTitle;
-						//console.log("aboutTitleContainerId: ", aboutTitleContainerId);
-						//console.log("about.introTitle: ", about.introTitle);
-
-						/**-----| Create div to hold Description |-----**/
-						createDiv.fCreateTag("div", "aboutDescription", "aboutDescriptionClass", jx, aboutContainerId);
-						var aboutDescriptionId = document.getElementById("aboutDescription" + "Id_" + jx);
-						aboutDescriptionId.innerHTML = about.description[jx].aboutDesription;
-						//console.log("aboutContainerId: ", aboutContainerId);
-						//console.log("about.quote[jx].about: ", about.quote[jx].about);
-					}
-				} catch (err) {
-					_didIteratorError11 = true;
-					_iteratorError11 = err;
-				} finally {
-					try {
-						if (!_iteratorNormalCompletion11 && _iterator11.return) {
-							_iterator11.return();
-						}
-					} finally {
-						if (_didIteratorError11) {
-							throw _iteratorError11;
-						}
-					}
-				}
-			});
-		};
-
-		/**-----------=====| EXPORTS |=====-----------**/
-		module.exports.fAboutAjax = fAboutAjax;
+		module.exports.fBackToTop = fBackToTop;
 	})();
 
 	/***/
 }
 /******/]);
-//# sourceMappingURL=app.js.map
+//# sourceMappingURL=testimonialsIndex.js.map

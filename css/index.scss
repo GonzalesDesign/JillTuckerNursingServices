@@ -287,7 +287,7 @@ p {
     width: 14px;
     height: 14px;
     margin: 10px;
-    border: 0px solid $Cyanish;
+    border: 1px solid $Cyanish;
 }
 .carousel {
     margin-top: 20px;
@@ -362,7 +362,7 @@ p {
 /**-----| SERVICES |-----**/
 .ulContainerClass {
   height: auto; //350px;
-  background-color: $LightGrey;
+  background-color: #606060;
   padding-bottom: 20px;
   overflow: hidden;
   border: 0px solid $Purple;
@@ -388,7 +388,7 @@ p {
   font-size: $titleFontSize; //3em;
   text-transform: uppercase;
   text-align: center;
-  color: $Blueish;
+  color: #d0ddea;
   margin-top: 10px;
   padding-top: 20px;
   padding-bottom: 30px;
@@ -412,6 +412,7 @@ p {
     font-family: 'Open Sans', sans-serif;
     font-size: $CopyFontSize;
     font-weight: 300;
+    color: white;
     line-height: $CopyLeading;
     display: block;
     width: 30%;
@@ -536,7 +537,7 @@ p {
   font-size: $CopyFontSize;
   //text-transform: uppercase;
   text-align: center;
-  // font-style: italic;
+  font-style: italic;
   width: 80%;
   height: auto;
   margin-right: auto;
@@ -552,6 +553,7 @@ p {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   font-size: $titleFontSize;
+  font-style: normal;
   text-transform: uppercase;
   text-align: center;
   line-height: 100%;
@@ -624,7 +626,7 @@ p {
 /**-----| HEALTH CARE |-----**/
 .healthMainContainerClass {
   height: auto;
-  background-color: $LightGrey;
+  background-color: #606060;
   border: 0 solid $YellowGreen;
 }
 .healthContainerClass {
@@ -648,7 +650,7 @@ p {
   text-transform: uppercase;
   text-align: center;
   line-height: 100%;
-  color: $Blueish;
+  color: #d0ddea;
   //margin-top: 10px;
   padding-top: $titleTopLeading;
   padding-bottom: $titleBottomLeading;
@@ -660,16 +662,24 @@ p {
   //text-transform: uppercase;
   text-align: center;
   font-style: italic;
-  color: yellowGreen;
+  color: white;
   // padding-top: $paragTopLeading;
   padding-bottom: $paragBottomLeading;
 }
 .healthQuoteText {
     //color: white;
 }
-.nameClass{
+.newsLinkSpan{
     font-size: $CopyFontSize; //1.3em;
     font-style: normal;
+    // color: #d0ddea;
+    a:link{
+        color: $Cyanish;
+        text-decoration: none;
+    }
+    a:hover{ color: $Cyanish; }
+    a:visited{ color: $Cyanish; }
+    a:active{ color: $LightGrey; }
 }
 .additionalInfo {
   padding-top: 20px;

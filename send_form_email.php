@@ -2,7 +2,7 @@
 if(isset($_POST['email'])) {
 
     // EDIT THE 2 LINES BELOW AS REQUIRED
-    $email_to = "rolandolloyd@gmail.com";
+    $email_to = "drewolewnick@gmail.com";
     $email_subject = "Contact Us Website Email";
 
     function died($error) {
@@ -63,7 +63,7 @@ $headers = 'From: '.$email_from."\r\n".
 'X-Mailer: PHP/' . phpversion();
 @mail($email_to, $email_subject, $email_message, $headers);
 sleep(2); //refreshess after 2 seconds
-echo "<meta http-equiv='refresh' content=\"0; url=http://http://jilltuckernursing.com//\">";
+echo "<meta http-equiv='refresh' content=\"0; url=http://http://tuckernursingtucson.com//\">";
 ?>
 
 <?php

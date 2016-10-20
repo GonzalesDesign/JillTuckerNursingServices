@@ -58,9 +58,8 @@ b, strong {
 
 .landingPageClass {
   margin-top: 30px; }
-
-.landingPageClass p {
-  margin-top: 0px; }
+  .landingPageClass p {
+    margin-top: 0px; }
 
 .logoContainerClassX {
   height: auto;
@@ -143,9 +142,8 @@ b, strong {
   color: Grey;
   cursor: pointer;
   border: 0px solid Orange; }
-
-.menuClass:hover {
-  color: #0f98ab; }
+  .menuClass:hover {
+    color: #0f98ab; }
 
 h1 {
   font-family: "Oswald", sans-serif;
@@ -209,7 +207,7 @@ p {
   width: 14px;
   height: 14px;
   margin: 10px;
-  border: 0px solid #0f98ab; }
+  border: 1px solid #0f98ab; }
 
 .carousel {
   margin-top: 20px; }
@@ -278,7 +276,7 @@ p {
 /**-----| SERVICES |-----**/
 .ulContainerClass {
   height: auto;
-  background-color: #f2f2f2;
+  background-color: #606060;
   padding-bottom: 20px;
   overflow: hidden;
   border: 0px solid Purple; }
@@ -303,7 +301,7 @@ p {
   font-size: 42px;
   text-transform: uppercase;
   text-align: center;
-  color: #16579a;
+  color: #d0ddea;
   margin-top: 10px;
   padding-top: 20px;
   padding-bottom: 30px;
@@ -322,18 +320,18 @@ p {
   font-size: 18px;
   line-height: 150%;
   padding-left: 0px; }
-
-.servicesULClass li {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 150%;
-  display: block;
-  width: 30%;
-  float: left;
-  padding-left: 40px;
-  padding-right: 20px;
-  border: 0px solid yellowGreen; }
+  .servicesULClass li {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: white;
+    line-height: 150%;
+    display: block;
+    width: 30%;
+    float: left;
+    padding-left: 40px;
+    padding-right: 20px;
+    border: 0px solid yellowGreen; }
 
 .iconMainContainerClass {
   height: auto;
@@ -414,6 +412,7 @@ p {
   font-weight: 300;
   font-size: 18px;
   text-align: center;
+  font-style: italic;
   width: 80%;
   height: auto;
   margin-right: auto;
@@ -425,6 +424,7 @@ p {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   font-size: 42px;
+  font-style: normal;
   text-transform: uppercase;
   text-align: center;
   line-height: 100%;
@@ -433,9 +433,8 @@ p {
   padding-bottom: 0px;
   background-size: 100%;
   border: 0px solid yellowGreen; }
-
-.testimonialTitleContainerClass p {
-  font-size: 18px; }
+  .testimonialTitleContainerClass p {
+    font-size: 18px; }
 
 .testimonialsBreak {
   padding-top: 12px;
@@ -467,14 +466,13 @@ p {
   padding-bottom: 0px;
   background-size: 100%;
   border: 0px solid yellowGreen; }
-
-.previousNewsTitleContainerClass p {
-  font-size: 18px; }
+  .previousNewsTitleContainerClass p {
+    font-size: 18px; }
 
 /**-----| HEALTH CARE |-----**/
 .healthMainContainerClass {
   height: auto;
-  background-color: #f2f2f2;
+  background-color: #606060;
   border: 0 solid yellowGreen; }
 
 .healthContainerClass {
@@ -491,7 +489,7 @@ p {
   text-transform: uppercase;
   text-align: center;
   line-height: 100%;
-  color: #16579a;
+  color: #d0ddea;
   padding-top: 40px;
   padding-bottom: 0px; }
 
@@ -501,12 +499,21 @@ p {
   font-size: 18px;
   text-align: center;
   font-style: italic;
-  color: yellowGreen;
+  color: white;
   padding-bottom: 60px; }
 
-.nameClass {
+.newsLinkSpan {
   font-size: 18px;
   font-style: normal; }
+  .newsLinkSpan a:link {
+    color: #0f98ab;
+    text-decoration: none; }
+  .newsLinkSpan a:hover {
+    color: #0f98ab; }
+  .newsLinkSpan a:visited {
+    color: #0f98ab; }
+  .newsLinkSpan a:active {
+    color: #f2f2f2; }
 
 .additionalInfo {
   padding-top: 20px;
@@ -577,19 +584,15 @@ p {
   padding-top: 10px;
   padding-right: 30px;
   border: 0px solid Green; }
-
-.eMailTo a:link {
-  color: #f2f2f2;
-  text-decoration: none; }
-
-.eMailTo a:hover {
-  color: #0f98ab; }
-
-.eMailTo a:visited {
-  color: #f2f2f2; }
-
-.eMailTo a:active {
-  color: #f2f2f2; }
+  .eMailTo a:link {
+    color: #f2f2f2;
+    text-decoration: none; }
+  .eMailTo a:hover {
+    color: #0f98ab; }
+  .eMailTo a:visited {
+    color: #f2f2f2; }
+  .eMailTo a:active {
+    color: #f2f2f2; }
 
 .footerContactInfo {
   font-family: 'Open Sans', sans-serif;

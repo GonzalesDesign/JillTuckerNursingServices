@@ -3,13 +3,13 @@
 		{
 			"title": "ContentData",
 			"introTitle": "Content Data Intro",
-            "intoSubTitle": "Content Data Intro Sub-Title",
-            "carouselIntervalTimer":"10",
+      "intoSubTitle": "Content Data Intro Sub-Title",
+      "carouselIntervalTimer":"10",
 			"images": [
-				{"imgName": "jilltuckernursing_image1.jpg", "imgTitle": "Home Visits by Nurse or CNA", "imgDescription": "Short Description Goes Here"},
-				{"imgName": "jilltuckernursing_image2.jpg", "imgTitle": "Orthopedic Surgery Recovery", "imgDescription": "Short Description Goes Here"},
-				{"imgName": "jilltuckernursing_image3.jpg", "imgTitle": "Elder Care and Senior Patient Care", "imgDescription": "Short Description Goes Here"}
-      ]
+                {"imgName": "jilltuckernursing_image1.jpg", "imgTitle": "Elder Care and Senior Patient Care", "imgDescription": "DAILY VISITS OR 24-HOUR COVERAGE"},
+								{"imgName": "jilltuckernursing_image2.jpg", "imgTitle": "Private Hospital Care", "imgDescription": "A REGISTERED NURSE OR CERTIFIED NURSE IN YOUR ROOM"},
+								{"imgName": "jilltuckernursing_image3.jpg", "imgTitle": "Home Visits by Nurse or CNA", "imgDescription": "ARRANGE FOR CARE ACCORDING TO YOUR SCHEDULE"}
+            ]
 		}
 	]
 }
